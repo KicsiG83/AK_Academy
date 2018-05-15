@@ -17,6 +17,8 @@ public class Main {
 		Player.fillPairArrays(Player.losers, Player.losers.length);
 		System.out.println("\n---------------------Csata az 5-8 közötti helyekért.---------------------");
 		Game.letsPlay(playerOne, playerTwo, Player.losers, 1, 3);
+		Player.point();
+		
 	}
 
 	private static String[] createFirstArray() {

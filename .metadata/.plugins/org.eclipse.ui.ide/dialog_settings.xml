@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\JAVA\AK_Academy\AK_Academy\TennisSimulation"/>
 		<item value="D:\Java\AK_Academy"/>
 		<item value="D:\JAVA\AK_Academy\AK_Academy"/>
 	</list>

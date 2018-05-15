@@ -65,18 +65,30 @@ public class Printer {
 	public static void printWinner(Player playerOne, Player playerTwo, int playerOneSet, int playerTwoSet,
 			String array[], int index, int min, int max) {
 		String[] gameArray = array;
+		int playerOneCurrentPoint = 0;
+		int playerTwoCurrentPoint = 0;
+		try {
+		playerOneCurrentPoint = Player.point.get(gameArray[0]); 
+		}catch(Exception e) {
+			playerOneCurrentPoint = 0;
+		}
+		try {
+			playerTwoCurrentPoint = Player.point.get(gameArray[1]); 
+		}catch(Exception e) {
+			playerTwoCurrentPoint = 0;
+		}
 		if (playerOneSet > playerTwoSet) {
 			System.out.println("\n" + gameArray[0] + " nyerte a meccset " + playerOneSet + " : " + playerTwoSet);
 			Player.winners[index] = gameArray[0];
 			Player.losers[index] = gameArray[1];
-			Player.point.put(gameArray[0], max);
-			Player.point.put(gameArray[1], min);
+			Player.point.put(gameArray[0], max + playerOneCurrentPoint);
+			Player.point.put(gameArray[1], min + playerTwoCurrentPoint);
 		} else {
 			System.out.println("\n" + gameArray[1] + " nyerte a meccset " + playerTwoSet + " : " + playerOneSet);
 			Player.winners[index] = gameArray[1];
 			Player.losers[index] = gameArray[0];
-			Player.point.put(gameArray[1], max);
-			Player.point.put(gameArray[0], min);
+			Player.point.put(gameArray[1], max + playerTwoCurrentPoint);
+			Player.point.put(gameArray[0], min + playerOneCurrentPoint);
 		}
 	}
 }

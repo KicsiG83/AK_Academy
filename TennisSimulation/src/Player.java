@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.stream.IntStream;
@@ -5,8 +6,7 @@ import java.util.stream.IntStream;
 public class Player {
 	private static Map<Integer, String> name = Map.of(0, "Roger Federer", 1, "Rafael Nadal", 2, "Novak Đoković", 3,
 			"Pete Sampras", 4, "Andre Agassi", 5, "Björn Borg", 6, "Boris Becker", 7, "Andy Roddick");
-	public static Map<String, Integer> point = Map.of("Roger Federer", 0, "Rafael Nadal", 0, "Novak Đoković", 0,
-			"Pete Sampras", 0, "Andre Agassi", 0, "Björn Borg", 0, "Boris Becker", 0, "Andy Roddick", 0);
+	public static HashMap<String, Integer> point = new HashMap<String, Integer>();
 	public static String getName(int index) {
 		return name.get(index);
 	}
@@ -24,8 +24,6 @@ public class Player {
 	static String[] winnersLosers = new String[2];
 	static String[] losers = new String[4];
 
-	
-	
 	public static void randomPlayer(int[] sequence, String[] playerArray) {
 		String[] arrayName = playerArray;
 		int[] indexArray = sequence;
@@ -100,4 +98,9 @@ public class Player {
 		fourthPair = new String[2];
 	}
 	
+	public static void point() {
+		for(int i = 0; i < 8; i++) {
+			System.out.println(Player.point.get(Player.name.get(i)));
+		}
+	}
 }
