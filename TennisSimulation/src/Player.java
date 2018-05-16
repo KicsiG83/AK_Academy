@@ -7,22 +7,33 @@ public class Player {
 	private static Map<Integer, String> name = Map.of(0, "Roger Federer", 1, "Rafael Nadal", 2, "Novak Đoković", 3,
 			"Pete Sampras", 4, "Andre Agassi", 5, "Björn Borg", 6, "Boris Becker", 7, "Andy Roddick");
 	public static HashMap<String, Integer> point = new HashMap<String, Integer>();
+
 	public static String getName(int index) {
 		return name.get(index);
 	}
 
 	static int index = 0;
 	static Random random = new Random();
-	static int[] indexOfArray = new int[8];
-	static int[] indexOfLoserArray = new int[4];
+	static int[] indexOfEightPlayerArray = new int[8];
+	static int[] indexOfFourPlayerWinners = new int[4];
+	static int[] indexOfFourPlayerLosers = new int[4];
+	static int[] indexOfTwoPlayerArray = new int[2];
 	static String[] firstPair = new String[2];
 	static String[] secondPair = new String[2];
 	static String[] thirdPair = new String[2];
 	static String[] fourthPair = new String[2];
 	static String[] winners = new String[4];
+	static String[] losers = new String[4];
 	static String[] winnersWinners = new String[2];
 	static String[] winnersLosers = new String[2];
-	static String[] losers = new String[4];
+	static String[] losersWinner = new String[2];
+	static String[] losersLosers = new String[2];
+
+	// Az indexArray-t ebben a metódusban nem használom, a player generálásra 2
+	// játékos esetén nincs szükség, de a program egyébként használja.
+	public static void twoPlayer(int first, int second) {
+		int[] indexArray = { first, second };
+	}
 
 	public static void randomPlayer(int[] sequence, String[] playerArray) {
 		String[] arrayName = playerArray;
@@ -90,16 +101,16 @@ public class Player {
 			System.out.println(index + " meccsén vesztett: " + losers[i]);
 		}
 	}
-	
+
 	public static void emptyPlayerlist() {
 		firstPair = new String[2];
 		secondPair = new String[2];
 		thirdPair = new String[2];
 		fourthPair = new String[2];
 	}
-	
+
 	public static void point() {
-		for(int i = 0; i < 8; i++) {
+		for (int i = 0; i < 8; i++) {
 			System.out.println(Player.point.get(Player.name.get(i)));
 		}
 	}

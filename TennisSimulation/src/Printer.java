@@ -5,7 +5,8 @@ public class Printer {
 
 	/**
 	 * Üdvözlő üzenet
-	 * @throws InterruptedException 
+	 * 
+	 * @throws InterruptedException
 	 */
 	public static void welcome() throws InterruptedException {
 		System.out.println("Üdvözöljük olvasóinkat ezen a jeles Tenisz eseményen, innen "
@@ -13,13 +14,13 @@ public class Printer {
 				+ "\nAhogy az IP címekből látom összegyűlt a világ színe JAVA.\n");
 		getInput();
 		System.out.println("\nÚgy látom a játékosok csak erre vártak, és a mérkőzés máris kezdetét veszi.");
-		TimeUnit.SECONDS.sleep(5);
+		// TimeUnit.SECONDS.sleep(5);
 	}
 
 	/**
 	 * Adománybekérés a Titokzatos X-től.
 	 */
-	private static void getInput()  {
+	private static void getInput() {
 		Scanner sc = new Scanner(System.in);
 		int totalRemuneration = 0;
 		System.out.println(
@@ -29,8 +30,9 @@ public class Printer {
 				System.out.print("Kedves X kérem árulja el az olvasóinknak, hogy mennyi lesz a díjazás: ");
 				totalRemuneration = sc.nextInt();
 				sc.nextLine();
-				if(totalRemuneration <= 0) {
-					System.out.println("Attól tartok valami rendszerhiba van a kapcsolatban, de a szakértőink már dolgoznak a problémán.\n");
+				if (totalRemuneration <= 0) {
+					System.out.println(
+							"Attól tartok valami rendszerhiba van a kapcsolatban, de a szakértőink már dolgoznak a problémán.\n");
 				}
 			} catch (Exception e) {
 				sc.nextLine();
@@ -38,7 +40,7 @@ public class Printer {
 						"Attól tartok valami rendszerhiba van a kapcsolatban, de a szakértőink már dolgoznak a problémán.\n");
 			}
 		} while (totalRemuneration <= 0);
-		System.out.println("Tisztelt Hölgyeim és Uraim! Önök hisznek a szemüknek? A felajánlás teljes összege: "
+		System.out.println("Hölgyeim és Uraim! Önök hisznek a szemüknek?\nA felajánlás teljes összege: "
 				+ totalRemuneration + " Birodalmi váltó!");
 		sc.close();
 	}
@@ -68,13 +70,13 @@ public class Printer {
 		int playerOneCurrentPoint = 0;
 		int playerTwoCurrentPoint = 0;
 		try {
-		playerOneCurrentPoint = Player.point.get(gameArray[0]); 
-		}catch(Exception e) {
+			playerOneCurrentPoint = Player.point.get(gameArray[0]);
+		} catch (Exception e) {
 			playerOneCurrentPoint = 0;
 		}
 		try {
-			playerTwoCurrentPoint = Player.point.get(gameArray[1]); 
-		}catch(Exception e) {
+			playerTwoCurrentPoint = Player.point.get(gameArray[1]);
+		} catch (Exception e) {
 			playerTwoCurrentPoint = 0;
 		}
 		if (playerOneSet > playerTwoSet) {
