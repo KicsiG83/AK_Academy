@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Printer {
+	private static int totalRemuneration;
 
 	/**
 	 * Üdvözlő üzenet
@@ -22,15 +23,15 @@ public class Printer {
 	 */
 	private static void getInput() {
 		Scanner sc = new Scanner(System.in);
-		int totalRemuneration = 0;
+		setTotalRemuneration(0);
 		System.out.println(
 				"Mielőtt elkezdenénk a mérkőzést, szeretném körünkben üdövözölni azt a névtelen adományozót, aki a játék összdíjazázását egyedül fogja fedezni.");
 		do {
 			try {
 				System.out.print("Kedves X kérem árulja el az olvasóinknak, hogy mennyi lesz a díjazás: ");
-				totalRemuneration = sc.nextInt();
+				setTotalRemuneration(sc.nextInt());
 				sc.nextLine();
-				if (totalRemuneration <= 0) {
+				if (getTotalRemuneration() <= 0) {
 					System.out.println(
 							"Attól tartok valami rendszerhiba van a kapcsolatban, de a szakértőink már dolgoznak a problémán.\n");
 				}
@@ -39,9 +40,9 @@ public class Printer {
 				System.out.println(
 						"Attól tartok valami rendszerhiba van a kapcsolatban, de a szakértőink már dolgoznak a problémán.\n");
 			}
-		} while (totalRemuneration <= 0);
+		} while (getTotalRemuneration() <= 0);
 		System.out.println("Hölgyeim és Uraim! Önök hisznek a szemüknek?\nA felajánlás teljes összege: "
-				+ totalRemuneration + " Birodalmi váltó!");
+				+ getTotalRemuneration() + " Birodalmi váltó!");
 		sc.close();
 	}
 
@@ -64,7 +65,7 @@ public class Printer {
 	 * @param playerOneSet
 	 * @param playerTwoSet
 	 */
-	public static void printWinner(Player playerOne, Player playerTwo, int playerOneSet, int playerTwoSet,
+	public static void printAndFillPlayerArrays(Player playerOne, Player playerTwo, int playerOneSet, int playerTwoSet,
 			String array[], int index, int min, int max) {
 		String[] gameArray = array;
 		int playerOneCurrentPoint = 0;
@@ -81,16 +82,49 @@ public class Printer {
 		}
 		if (playerOneSet > playerTwoSet) {
 			System.out.println("\n" + gameArray[0] + " nyerte a meccset " + playerOneSet + " : " + playerTwoSet);
-			Player.winners[index] = gameArray[0];
-			Player.losers[index] = gameArray[1];
 			Player.point.put(gameArray[0], max + playerOneCurrentPoint);
 			Player.point.put(gameArray[1], min + playerTwoCurrentPoint);
 		} else {
 			System.out.println("\n" + gameArray[1] + " nyerte a meccset " + playerTwoSet + " : " + playerOneSet);
-			Player.winners[index] = gameArray[1];
-			Player.losers[index] = gameArray[0];
 			Player.point.put(gameArray[1], max + playerTwoCurrentPoint);
 			Player.point.put(gameArray[0], min + playerOneCurrentPoint);
 		}
+	}
+
+	/**
+	 * Adomány felosztása
+	 * 
+	 * @param totalRemuneration
+	 * 
+	 *            A titokzatos X felajánlásának szétosztása a helyezettek között. 1.
+	 *            helyezett az adomány 35 %-át kapja 2. helyezett az adomány 25 %-át
+	 *            kapja 3. helyezett az adomány 10 %-át kapja 4. helyezett az
+	 *            adomány 8 %-át kapja 5. helyezett az adomány 7 %-át kapja 6.
+	 *            helyezett az adomány 6 %-át kapja 7. helyezett az adomány 5 %-át
+	 *            kapja 8. helyezett az adomány 4 %-át kapja
+	 * 
+	 */
+	public static void calculateRemuneration(int totalRemuneration) {
+		double[] remunerations = new double[8];
+		remunerations[0] = totalRemuneration / 100.0 * 35.0;
+		remunerations[1] = totalRemuneration / 100.0 * 25.0;
+		remunerations[2] = totalRemuneration / 100.0 * 10.0;
+		remunerations[3] = totalRemuneration / 100.0 * 8.0;
+		remunerations[4] = totalRemuneration / 100.0 * 7.0;
+		remunerations[5] = totalRemuneration / 100.0 * 6.0;
+		remunerations[6] = totalRemuneration / 100.0 * 5.0;
+		remunerations[7] = totalRemuneration / 100.0 * 4.0;
+		System.out.println("A teljes felajánlott összeg: " + totalRemuneration + " birodalmi váltó.");
+		for (int i = 0; i < remunerations.length; i++) {
+			System.out.format("%d. helyezett nyereménye: %.2f birodalmi váltó.\n", i + 1, remunerations[i]);
+		}
+	}
+
+	public static int getTotalRemuneration() {
+		return totalRemuneration;
+	}
+
+	public static void setTotalRemuneration(int remuneration) {
+		totalRemuneration = remuneration;
 	}
 }

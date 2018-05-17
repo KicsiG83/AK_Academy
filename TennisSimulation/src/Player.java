@@ -110,8 +110,10 @@ public class Player {
 	}
 
 	public static void point() {
+		System.out.println();
 		for (int i = 0; i < 8; i++) {
-			System.out.println(Player.point.get(Player.name.get(i)));
+			System.out.println(Player.name.get(i) + " - " + Player.point.get(Player.name.get(i)));
 		}
+		System.out.println();
 	}
 }

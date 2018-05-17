@@ -22,7 +22,7 @@ public class Main {
 		Player.twoPlayer(0,1);
 		Player.fillPairArrays(Player.losersLosers, Player.losersLosers.length);
 		Game.setArrayIndex(0);
-		System.out.println("\n---------------------Csata az 7-8 helyért.---------------------");
+		System.out.println("\n---------------------Csata a 7-8 helyért.---------------------");
 		Game.letsPlay(playerOne, playerTwo, Player.losersLosers, 0, 1, 4);
 		Player.emptyPlayerlist();
 		Player.twoPlayer(2,3);
@@ -31,30 +31,27 @@ public class Main {
 		System.out.println("\n---------------------Csata az 5-6 helyért.---------------------");
 		Game.letsPlay(playerOne, playerTwo, Player.losersLosers, 1, 2, 4);
 		Player.emptyPlayerlist();
-		Player.randomPlayer(Player.indexOfFourPlayerWinners, Player.winners);
+		Player.fillPairArrays(Player.winners, Player.winners.length);
 		Game.setArrayIndex(0);
 		System.out.println("\n---------------------Csata az 1-4 közötti helyekért.---------------------");
-		Game.letsPlay(playerOne, playerTwo, Player.losersLosers, 2, 4, 2);
+		Game.letsPlay(playerOne, playerTwo, Player.winners, 2, 4, 2);
 		Player.emptyPlayerlist();
 		Player.twoPlayer(0,1);
 		Player.fillPairArrays(Player.winnersLosers, Player.winnersLosers.length);
 		Game.setArrayIndex(0);
-		System.out.println("\n---------------------Csata az 3-4 helyért.---------------------");
-		Game.letsPlay(playerOne, playerTwo, Player.losersLosers, 0, 1, 4);
+		System.out.println("\n---------------------Csata a 3-4 helyért.---------------------");
+		Game.letsPlay(playerOne, playerTwo, Player.winnersLosers, 0, 1, 4);
 		Player.emptyPlayerlist();
 		Player.twoPlayer(2,3);
 		Player.fillPairArrays(Player.winnersWinners, Player.winnersWinners.length);
 		Game.setArrayIndex(0);
 		System.out.println("\n---------------------Csata az 1-2 helyért.---------------------");
-		Game.letsPlay(playerOne, playerTwo, Player.losersLosers, 1, 2, 4);
+		Game.letsPlay(playerOne, playerTwo, Player.winnersWinners, 1, 2, 4);
 		Player.point();
-		
-		
+		Printer.calculateRemuneration(Printer.getTotalRemuneration());
 		/*
-		 * A printer osztályban visszakapcsolni a várakozást és a game osztályban is!
+		 * A printer és a game osztályban visszakapcsolni a várakozást!
 		 */
-		
-		
 	}
 
 	private static String[] createFirstArray() {

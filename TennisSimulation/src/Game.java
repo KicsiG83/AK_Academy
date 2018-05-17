@@ -5,15 +5,15 @@ public class Game {
 
 	static Random random = new Random();
 	private static int arrayIndex;
-	
+
 	public static int getArrayIndex() {
 		return arrayIndex;
 	}
-	
+
 	public static void setArrayIndex(int number) {
 		arrayIndex = number;
 	}
-	
+
 	/**
 	 * Játékmenet
 	 * 
@@ -39,10 +39,12 @@ public class Game {
 		int playerOneSet = 0;
 		int playerTwoSet = 0;
 		int playerTwoPoint = 0;
-		int endOfset = 6;
+		int endOfSet = 6;
 		int i = 1;
 		do {
 			System.out.format("\n---------- %d szett ----------\n\n", i);
+			System.out
+			.println(gameArray[0] + " " + playerOnePoint + " | " + gameArray[1] + " " + playerTwoPoint);
 			do {
 				int pointOne = random.nextInt(2);
 				int pointTwo = random.nextInt(2);
@@ -57,22 +59,29 @@ public class Game {
 					System.out
 							.println(gameArray[0] + " " + playerOnePoint + " | " + gameArray[1] + " " + playerTwoPoint);
 				}
-				if (playerOnePoint == endOfset || playerTwoPoint == endOfset) {
-					if (playerOnePoint == endOfset) {
+				/*
+				 * Tie Break még nincs kész!
+				 * 
+				 * if(playerOnePoint == 6 && playerTwoPoint == 6) {
+				 * System.out.println("Tie Break."); playerOnePoint = 0; playerTwoPoint = 0;
+				 * endOfSet = 6; }
+				 */
+				if (playerOnePoint == endOfSet || playerTwoPoint == endOfSet) {
+					if (playerOnePoint == endOfSet) {
 						if (playerOnePoint - 1 == playerTwoPoint) {
-							endOfset++;
+							endOfSet++;
 						} else {
 							break;
 						}
 					} else {
 						if (playerTwoPoint - 1 == playerOnePoint) {
-							endOfset++;
+							endOfSet++;
 						} else {
 							break;
 						}
 					}
 				}
-			} while (playerOnePoint != endOfset && playerTwoPoint != endOfset);
+			} while (playerOnePoint != endOfSet && playerTwoPoint != endOfSet);
 			if (playerOnePoint > playerTwoPoint) {
 				playerOneSet++;
 			} else {
@@ -85,7 +94,7 @@ public class Game {
 			}
 			playerOnePoint = 0;
 			playerTwoPoint = 0;
-			endOfset = 6;
+			endOfSet = 6;
 			i++;
 			if (i == 5) {
 				System.out.println(
@@ -93,64 +102,81 @@ public class Game {
 			}
 			// TimeUnit.SECONDS.sleep(2);
 		} while (playerOneSet < 3 && playerTwoSet < 3);
-		fillWinnersAndLosersArrays(gameIndex, gameArray, playerOneSet, arrayIndex);
-//		arrayIndex = 0;
-		Printer.printWinner(playerOne, playerTwo, playerOneSet, playerTwoSet, gameArray, index, min, max);
+		fillWinnersAndLosersArrays(gameIndex, gameArray, playerOneSet, playerTwoSet, arrayIndex);
+		Printer.printAndFillPlayerArrays(playerOne, playerTwo, playerOneSet, playerTwoSet, gameArray, index, min, max);
 	}
 
-	/*
-	 * Ezt a metódust átnézni, miért nem tölti rendesen a neveket, lehet a hiba nem
-	 * itt van, hanem a winnerLoser és winnerWinner töltésnél!!!
+	/**
+	 * Győztes és vesztes játékosok tárolása tömbökben
+	 * 
+	 * @param gameIndex
+	 * @param gameArray
+	 * @param playerOneSet
+	 * @param playerTwoSet
+	 * @param arrayIndex
+	 * 
+	 *            A gameIndex paraméter vezérli, hogy mikor melyik tömbben tárolja a
+	 *            program az adatokat. 
+	 *            0 = 4 győztes - 4 vesztes tömbök töltése; 
+	 *            1 = A 4 vesztes játékos tovább versenyeztetése után további 2 vesztes
+	 *            és 2 győztes tömbbe töltése; 
+	 *            2 = A 4 győztes játékos tovább versenyeztetése után további 2 vesztes 
+	 *            és 2 győztes tömbbe töltése.
+	 * 
 	 */
 	private static void fillWinnersAndLosersArrays(int gameIndex, String[] gameArray, int playerOneSet,
-			int arrayIndex) {
-		if (playerOneSet > playerOneSet) {
-			switch (getArrayIndex()) {
+			int playerTwoSet, int arrayIndex) {
+		if (playerOneSet > playerTwoSet) {
+			switch (gameIndex) {
 			case 0:
 				Player.winners[getArrayIndex()] = gameArray[0];
 				Player.losers[getArrayIndex()] = gameArray[1];
 				break;
 			case 1:
-				// 4 vesztes játékos további kvalifikálása
 				Player.losersWinner[getArrayIndex()] = gameArray[0];
 				Player.losersLosers[getArrayIndex()] = gameArray[1];
 				break;
 			case 2:
-				// 4 győztes játékos további kvalifikálása
 				Player.winnersWinners[getArrayIndex()] = gameArray[0];
 				Player.winnersLosers[getArrayIndex()] = gameArray[1];
 				break;
 			default:
-				// végjáték, amikor már nem tároljuk el a játékosokat a továbbiakban, csak a
-				// megszerzett pontjaikat.
 				break;
 			}
 		} else {
 			switch (gameIndex) {
 			case 0:
-				// 8 játékos kvalifikálása és a játékosok tárolása a győztekes és vesztesek
-				// tömbjébe.
 				Player.winners[getArrayIndex()] = gameArray[1];
 				Player.losers[getArrayIndex()] = gameArray[0];
 				break;
 			case 1:
-				// 4 vesztes játékos további kvalifikálása
 				Player.losersWinner[getArrayIndex()] = gameArray[1];
 				Player.losersLosers[getArrayIndex()] = gameArray[0];
 				break;
 			case 2:
-				// 4 győztes játékos további kvalifikálása
 				Player.winnersWinners[getArrayIndex()] = gameArray[1];
 				Player.winnersLosers[getArrayIndex()] = gameArray[0];
 				break;
 			default:
-				// végjáték, amikor már nem tároljuk el a játékosokat a továbbiakban, csak a
-				// megszerzett pontjaikat.
 				break;
 			}
 		}
 		setArrayIndex(getArrayIndex() + 1);
 	}
+
+	/**
+	 * Játék indítása
+	 * 
+	 * @param playerOne
+	 * @param playerTwo
+	 * @param playersArray
+	 * @param min
+	 * @param max
+	 * @param gameIndex
+	 * @throws InterruptedException
+	 * 
+	 *             A párba állított játékosok nevének kiírása és a játék.
+	 */
 
 	public static void letsPlay(Player playerOne, Player playerTwo, String[] playersArray, int min, int max,
 			int gameIndex) throws InterruptedException {
