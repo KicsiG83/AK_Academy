@@ -10,9 +10,9 @@ public class TaxNumberGenerator {
 		int lastDigit;
 		int vatNumber = (int) (Math.random() * (5)) + 1;
 		int validTaxNumber;
+		int[] numbers = new int[max];
 		int[] sumNumbers = new int[max];
 		int[] multiplier = { 9, 7, 3, 1, 9, 7, 3 };
-		int[] numbers = new int[max];
 
 		generateTaxOffice();
 		generateNumbers(numbers);
@@ -25,12 +25,11 @@ public class TaxNumberGenerator {
 
 	private static void generateTaxOffice() {
 		int taxOffice = (int) (Math.random() * (44 - 2) + 1) + 2;
-		if(taxOffice < 10) {
+		if (taxOffice < 10) {
 			strTaxOffice = "0" + taxOffice;
-		}
-		else if(taxOffice == 21) {
-			strTaxOffice = "51"; 
-		}else {
+		} else if (taxOffice == 21) {
+			strTaxOffice = "51";
+		} else {
 			strTaxOffice = "" + taxOffice;
 		}
 	}
@@ -67,9 +66,8 @@ public class TaxNumberGenerator {
 	}
 
 	private static void generateNumbers(int[] numbers) {
-		int number;
 		for (int i = min; i < numbers.length; i++) {
-			number = (int) (Math.random() * (max - min + 1)) + min;
+			int number = (int) (Math.random() * (max - min + 1)) + min;
 			numbers[i] = number;
 		}
 	}

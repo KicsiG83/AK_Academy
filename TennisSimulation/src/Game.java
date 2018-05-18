@@ -100,7 +100,7 @@ public class Game {
 				System.out.println(
 						"\nRoppant kiélezett a küzdelem, mindkét játékos maximális erőbedobással küzd a győzelemért.");
 			}
-			// TimeUnit.SECONDS.sleep(2);
+			 TimeUnit.SECONDS.sleep(2);
 		} while (playerOneSet < 3 && playerTwoSet < 3);
 		fillWinnersAndLosersArrays(gameIndex, gameArray, playerOneSet, playerTwoSet, arrayIndex);
 		Printer.printAndFillPlayerArrays(playerOne, playerTwo, playerOneSet, playerTwoSet, gameArray, index, min, max);

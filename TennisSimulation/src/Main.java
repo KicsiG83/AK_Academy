@@ -47,11 +47,8 @@ public class Main {
 		Game.setArrayIndex(0);
 		System.out.println("\n---------------------Csata az 1-2 helyért.---------------------");
 		Game.letsPlay(playerOne, playerTwo, Player.winnersWinners, 1, 2, 4);
-		Player.point();
-		Printer.calculateRemuneration(Printer.getTotalRemuneration());
-		/*
-		 * A printer és a game osztályban visszakapcsolni a várakozást!
-		 */
+		Player.calculateRemuneration(Printer.getTotalRemuneration());
+		
 	}
 
 	private static String[] createFirstArray() {

@@ -15,7 +15,7 @@ public class Printer {
 				+ "\nAhogy az IP címekből látom összegyűlt a világ színe JAVA.\n");
 		getInput();
 		System.out.println("\nÚgy látom a játékosok csak erre vártak, és a mérkőzés máris kezdetét veszi.");
-		// TimeUnit.SECONDS.sleep(5);
+		 TimeUnit.SECONDS.sleep(5);
 	}
 
 	/**
@@ -104,21 +104,6 @@ public class Printer {
 	 *            kapja 8. helyezett az adomány 4 %-át kapja
 	 * 
 	 */
-	public static void calculateRemuneration(int totalRemuneration) {
-		double[] remunerations = new double[8];
-		remunerations[0] = totalRemuneration / 100.0 * 35.0;
-		remunerations[1] = totalRemuneration / 100.0 * 25.0;
-		remunerations[2] = totalRemuneration / 100.0 * 10.0;
-		remunerations[3] = totalRemuneration / 100.0 * 8.0;
-		remunerations[4] = totalRemuneration / 100.0 * 7.0;
-		remunerations[5] = totalRemuneration / 100.0 * 6.0;
-		remunerations[6] = totalRemuneration / 100.0 * 5.0;
-		remunerations[7] = totalRemuneration / 100.0 * 4.0;
-		System.out.println("A teljes felajánlott összeg: " + totalRemuneration + " birodalmi váltó.");
-		for (int i = 0; i < remunerations.length; i++) {
-			System.out.format("%d. helyezett nyereménye: %.2f birodalmi váltó.\n", i + 1, remunerations[i]);
-		}
-	}
 
 	public static int getTotalRemuneration() {
 		return totalRemuneration;

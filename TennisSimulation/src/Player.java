@@ -28,6 +28,7 @@ public class Player {
 	static String[] winnersLosers = new String[2];
 	static String[] losersWinner = new String[2];
 	static String[] losersLosers = new String[2];
+	static Map<Integer, String> playerPosition = new HashMap<Integer, String>();
 
 	// Az indexArray-t ebben a metódusban nem használom, a player generálásra 2
 	// játékos esetén nincs szükség, de a program egyébként használja.
@@ -108,12 +109,36 @@ public class Player {
 		thirdPair = new String[2];
 		fourthPair = new String[2];
 	}
-
-	public static void point() {
-		System.out.println();
-		for (int i = 0; i < 8; i++) {
-			System.out.println(Player.name.get(i) + " - " + Player.point.get(Player.name.get(i)));
+	
+	public static void position() {
+		int index = 0;
+		for (Map.Entry<String, Integer> entry : point.entrySet())  {
+			String name = entry.getKey();
+			index = entry.getValue();
+			playerPosition.put(index, name);
 		}
-		System.out.println();
+	}
+	
+	public static void calculateRemuneration(int totalRemuneration) {
+		position();
+		int j = 14;
+		double[] remunerations = new double[8];
+		remunerations[0] = totalRemuneration / 100.0 * 35.0;
+		remunerations[1] = totalRemuneration / 100.0 * 25.0;
+		remunerations[2] = totalRemuneration / 100.0 * 10.0;
+		remunerations[3] = totalRemuneration / 100.0 * 8.0;
+		remunerations[4] = totalRemuneration / 100.0 * 7.0;
+		remunerations[5] = totalRemuneration / 100.0 * 6.0;
+		remunerations[6] = totalRemuneration / 100.0 * 5.0;
+		remunerations[7] = totalRemuneration / 100.0 * 4.0;
+		System.out.println("\nA teljes felajánlott összeg: " + totalRemuneration + " birodalmi váltó.");
+		for (int i = 0; i < remunerations.length; i++) {
+			String playerName = playerPosition.get(j);
+			if (playerName != null) {
+				System.out.println(i + 1 + ". helyezett " + playerName + " - " + j + " ponttal. Nyereménye: "
+						+ remunerations[i] + " birodalmi váltó.");
+			}
+			j--;
+		}
 	}
 }
