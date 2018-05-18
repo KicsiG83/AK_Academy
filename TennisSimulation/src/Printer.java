@@ -15,7 +15,7 @@ public class Printer {
 				+ "\nAhogy az IP címekből látom összegyűlt a világ színe JAVA.\n");
 		getInput();
 		System.out.println("\nÚgy látom a játékosok csak erre vártak, és a mérkőzés máris kezdetét veszi.");
-		 TimeUnit.SECONDS.sleep(5);
+		 //TimeUnit.SECONDS.sleep(5);
 	}
 
 	/**

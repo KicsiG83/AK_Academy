@@ -8,13 +8,16 @@ public class Main {
 
 		Universe blackHole = new BlackHole();
 		blackHole.setName(Name.randomName().getTextual());
-		blackHole.setWeight(rnNumber());
+		blackHole.setWeight();
 		blackHole.setDiameter();
-		System.out.println(blackHole.getName() + " " + blackHole.getWeight() + " " + blackHole.getWeight());
+		System.out.println(blackHole.getName() + " " + blackHole.getWeight() + " " + blackHole.getDiameter());
 		
 		
-	}
-	public static int rnNumber() {
-		return rn.nextInt(10000);
+		Globula globula = new Globula();
+		System.out.println(globula.getName() + " " + globula.getWeight() + " " + globula.getDiameter());
+		
+		Globula gl = new Globula(100, 200);
+		System.out.println(gl.getName() + " " + gl.getWeight() + " " + gl.getDiameter());
+		
 	}
 }

@@ -121,7 +121,7 @@ public class Player {
 	
 	public static void calculateRemuneration(int totalRemuneration) {
 		position();
-		int j = 14;
+		int i = 0;
 		double[] remunerations = new double[8];
 		remunerations[0] = totalRemuneration / 100.0 * 35.0;
 		remunerations[1] = totalRemuneration / 100.0 * 25.0;
@@ -132,13 +132,13 @@ public class Player {
 		remunerations[6] = totalRemuneration / 100.0 * 5.0;
 		remunerations[7] = totalRemuneration / 100.0 * 4.0;
 		System.out.println("\nA teljes felajánlott összeg: " + totalRemuneration + " birodalmi váltó.");
-		for (int i = 0; i < remunerations.length; i++) {
+		for (int j = 14; j > 0; j--) {
 			String playerName = playerPosition.get(j);
 			if (playerName != null) {
 				System.out.println(i + 1 + ". helyezett " + playerName + " - " + j + " ponttal. Nyereménye: "
 						+ remunerations[i] + " birodalmi váltó.");
+				i++;
 			}
-			j--;
 		}
 	}
 }

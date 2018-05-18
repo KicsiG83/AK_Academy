@@ -9,20 +9,32 @@ public class Universe {
 	private String name;
 	
 	public Universe() {
-		this.getName();
+		setName(Name.randomName().getTextual());
+		setWeight();
+		setDiameter();
 	}
-	
+	public Universe(String name) {
+		this.name = name;
+		setDiameter();
+		setWeight();
+	}
+	public Universe(int weight, int diameter) {
+		setName(Name.randomName().getTextual());
+		this.weight = weight;
+		this.diameter = diameter;
+	}
+
 	public int getWeight() {
 		return weight;
 	}
-	public int setWeight(int number) {
-		return number;
+	public int setWeight() {
+		return weight = rn.nextInt(1000);
 	}
 	public int getDiameter() {
 		return diameter;
 	}
 	public int setDiameter() {
-		return rn.nextInt(1000);
+		return diameter = rn.nextInt(1000);
 	}
 	public String getName() {
 		return name;
