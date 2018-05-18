@@ -1836,7 +1836,11 @@ Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4
 	at com.google.gson.Gson.fromJson(Gson.java:887)
 	... 8 more
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 !SESSION 2018-05-17 18:24:44.139 -----------------------------------------------
+=======
+!SESSION 2018-05-17 09:02:27.275 -----------------------------------------------
+>>>>>>> Stashed changes
 =======
 !SESSION 2018-05-17 09:02:27.275 -----------------------------------------------
 >>>>>>> Stashed changes
@@ -1848,10 +1852,13 @@ Framework arguments:  -product org.eclipse.epp.package.java.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 !ENTRY org.eclipse.egit.ui 2 0 2018-05-17 18:24:57.015
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\Gergo'. If this is
 =======
+=======
+>>>>>>> Stashed changes
 !ENTRY org.eclipse.ui 4 4 2018-05-17 09:02:38.026
 !MESSAGE Unable to create part
 !SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2018-05-17 09:02:38.026
@@ -2003,13 +2010,20 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/TennisSimulat
 !ENTRY org.eclipse.egit.ui 2 0 2018-05-17 09:02:39.701
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\Balogh Geri'. If this is
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 !ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-05-17 18:25:06.784
+=======
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-05-17 09:02:47.625
+>>>>>>> Stashed changes
 =======
 !ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-05-17 09:02:47.625
 >>>>>>> Stashed changes
@@ -2033,6 +2047,7 @@ Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4
 	at com.google.gson.Gson.fromJson(Gson.java:887)
 	... 8 more
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 !ENTRY org.eclipse.jdt.ui 4 10001 2018-05-17 20:01:18.604
 !MESSAGE Internal Error
@@ -2058,6 +2073,8 @@ Java Model Exception: Java Model Status [setDiameter(int) {key=LUniverse;.setDia
 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4238)
 	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3817)
 =======
+=======
+>>>>>>> Stashed changes
 !ENTRY org.eclipse.ui 4 0 2018-05-17 09:18:02.484
 !MESSAGE Unhandled event loop exception
 !STACK 0
@@ -2070,6 +2087,9 @@ java.lang.NullPointerException
 	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:182)
 	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4213)
 	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3820)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1150)
 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
@@ -2092,6 +2112,7 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 !SUBENTRY 1 org.eclipse.jdt.core 4 969 2018-05-17 20:01:18.605
 !MESSAGE setDiameter(int) {key=LUniverse;.setDiameter(I)V} [in Universe [in [Working copy] Universe.java [in <default> [in src [in Universe]]]]] does not exist
@@ -2118,6 +2139,8 @@ Java Model Exception: Java Model Status [setDiameter(int) {key=LUniverse;.setDia
 	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4238)
 	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3817)
 =======
+=======
+>>>>>>> Stashed changes
 
 !ENTRY org.eclipse.debug.ui 4 2 2018-05-17 09:18:02.833
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.ui".
@@ -2402,6 +2425,9 @@ java.lang.NullPointerException
 	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:182)
 	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4213)
 	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3820)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1150)
 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
@@ -2425,9 +2451,12 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 !SUBENTRY 1 org.eclipse.jdt.core 4 969 2018-05-17 20:01:18.636
 !MESSAGE setDiameter(int) {key=LUniverse;.setDiameter(I)V} [in Universe [in [Working copy] Universe.java [in <default> [in src [in Universe]]]]] does not exist
 =======
+=======
+>>>>>>> Stashed changes
 
 !ENTRY org.eclipse.debug.ui 4 2 2018-05-17 09:18:03.509
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.ui".
@@ -3577,4 +3606,7 @@ Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:218)
 	at com.google.gson.Gson.fromJson(Gson.java:887)
 	... 8 more
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

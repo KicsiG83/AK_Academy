@@ -56,9 +56,15 @@
 <fullyQualifiedTypeName name="Printer"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="Universe"/>
 <fullyQualifiedTypeName name="BlackHole"/>
+=======
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="java.util.stream.IntStream"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+>>>>>>> Stashed changes
 =======
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="java.util.stream.IntStream"/>
