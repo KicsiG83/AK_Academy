@@ -34,17 +34,18 @@ public class Game {
 	 */
 	public static void game(Player playerOne, Player playerTwo, String[] array, int index, int min, int max,
 			int gameIndex) throws InterruptedException {
-		String[] gameArray = array;
+		String[] playerArray = array;
 		int playerOnePoint = 0;
 		int playerOneSet = 0;
 		int playerTwoSet = 0;
 		int playerTwoPoint = 0;
 		int endOfSet = 6;
 		int i = 1;
+		boolean tieBreak = false;
 		do {
 			System.out.format("\n---------- %d szett ----------\n\n", i);
 			System.out
-			.println(gameArray[0] + " " + playerOnePoint + " | " + gameArray[1] + " " + playerTwoPoint);
+			.println(playerArray[0] + " " + playerOnePoint + " | " + playerArray[1] + " " + playerTwoPoint);
 			do {
 				int pointOne = random.nextInt(2);
 				int pointTwo = random.nextInt(2);
@@ -57,15 +58,19 @@ public class Game {
 						playerTwoPoint++;
 					}
 					System.out
-							.println(gameArray[0] + " " + playerOnePoint + " | " + gameArray[1] + " " + playerTwoPoint);
+							.println(playerArray[0] + " " + playerOnePoint + " | " + playerArray[1] + " " + playerTwoPoint);
 				}
-				/*
-				 * Tie Break még nincs kész!
-				 * 
-				 * if(playerOnePoint == 6 && playerTwoPoint == 6) {
-				 * System.out.println("Tie Break."); playerOnePoint = 0; playerTwoPoint = 0;
-				 * endOfSet = 6; }
-				 */
+				if (!tieBreak) {
+					if (playerOnePoint == 6 && playerTwoPoint == 6) {
+						System.out.println("Tie Break.");
+						playerOnePoint = 0;
+						playerTwoPoint = 0;
+						endOfSet = 6;
+						tieBreak = true;
+						System.out
+						.println(playerArray[0] + " " + playerOnePoint + " | " + playerArray[1] + " " + playerTwoPoint);
+					}
+				}
 				if (playerOnePoint == endOfSet || playerTwoPoint == endOfSet) {
 					if (playerOnePoint == endOfSet) {
 						if (playerOnePoint - 1 == playerTwoPoint) {
@@ -88,9 +93,9 @@ public class Game {
 				playerTwoSet++;
 			}
 			if (playerOnePoint > playerTwoPoint) {
-				System.out.println("\n " + gameArray[0] + " nyerte a szettet.");
+				System.out.println("\n " + playerArray[0] + " nyerte a szettet.");
 			} else {
-				System.out.println("\n " + gameArray[1] + " nyerte a szettet.");
+				System.out.println("\n " + playerArray[1] + " nyerte a szettet.");
 			}
 			playerOnePoint = 0;
 			playerTwoPoint = 0;
@@ -98,19 +103,19 @@ public class Game {
 			i++;
 			if (i == 5) {
 				System.out.println(
-						"\nRoppant kiélezett a küzdelem, mindkét játékos maximális erőbedobással küzd a győzelemért.");
+						"\nRoppant kiélezett küzdelemnek voltunk szemtanúi.\nMindkét játékos bevetette tudása leg(JAVA)t.");
 			}
-			 //TimeUnit.SECONDS.sleep(2);
+			 TimeUnit.SECONDS.sleep(2);
 		} while (playerOneSet < 3 && playerTwoSet < 3);
-		fillWinnersAndLosersArrays(gameIndex, gameArray, playerOneSet, playerTwoSet, arrayIndex);
-		Printer.printAndFillPlayerArrays(playerOne, playerTwo, playerOneSet, playerTwoSet, gameArray, index, min, max);
+		fillWinnersAndLosersArrays(gameIndex, playerArray, playerOneSet, playerTwoSet, arrayIndex);
+		Printer.printAndFillPlayerArrays(playerOne, playerTwo, playerOneSet, playerTwoSet, playerArray, index, min, max);
 	}
 
 	/**
 	 * Győztes és vesztes játékosok tárolása tömbökben
 	 * 
 	 * @param gameIndex
-	 * @param gameArray
+	 * @param playerArray
 	 * @param playerOneSet
 	 * @param playerTwoSet
 	 * @param arrayIndex
@@ -124,21 +129,21 @@ public class Game {
 	 *            és 2 győztes tömbbe töltése.
 	 * 
 	 */
-	private static void fillWinnersAndLosersArrays(int gameIndex, String[] gameArray, int playerOneSet,
+	private static void fillWinnersAndLosersArrays(int gameIndex, String[] playerArray, int playerOneSet,
 			int playerTwoSet, int arrayIndex) {
 		if (playerOneSet > playerTwoSet) {
 			switch (gameIndex) {
 			case 0:
-				Player.winners[getArrayIndex()] = gameArray[0];
-				Player.losers[getArrayIndex()] = gameArray[1];
+				Player.winners[getArrayIndex()] = playerArray[0];
+				Player.losers[getArrayIndex()] = playerArray[1];
 				break;
 			case 1:
-				Player.losersWinner[getArrayIndex()] = gameArray[0];
-				Player.losersLosers[getArrayIndex()] = gameArray[1];
+				Player.losersWinner[getArrayIndex()] = playerArray[0];
+				Player.losersLosers[getArrayIndex()] = playerArray[1];
 				break;
 			case 2:
-				Player.winnersWinners[getArrayIndex()] = gameArray[0];
-				Player.winnersLosers[getArrayIndex()] = gameArray[1];
+				Player.winnersWinners[getArrayIndex()] = playerArray[0];
+				Player.winnersLosers[getArrayIndex()] = playerArray[1];
 				break;
 			default:
 				break;
@@ -146,16 +151,16 @@ public class Game {
 		} else {
 			switch (gameIndex) {
 			case 0:
-				Player.winners[getArrayIndex()] = gameArray[1];
-				Player.losers[getArrayIndex()] = gameArray[0];
+				Player.winners[getArrayIndex()] = playerArray[1];
+				Player.losers[getArrayIndex()] = playerArray[0];
 				break;
 			case 1:
-				Player.losersWinner[getArrayIndex()] = gameArray[1];
-				Player.losersLosers[getArrayIndex()] = gameArray[0];
+				Player.losersWinner[getArrayIndex()] = playerArray[1];
+				Player.losersLosers[getArrayIndex()] = playerArray[0];
 				break;
 			case 2:
-				Player.winnersWinners[getArrayIndex()] = gameArray[1];
-				Player.winnersLosers[getArrayIndex()] = gameArray[0];
+				Player.winnersWinners[getArrayIndex()] = playerArray[1];
+				Player.winnersLosers[getArrayIndex()] = playerArray[0];
 				break;
 			default:
 				break;

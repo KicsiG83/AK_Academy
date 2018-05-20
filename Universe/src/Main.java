@@ -6,18 +6,20 @@ public class Main {
 	
 	public static void main(String[] args) {
 
-		Universe blackHole = new BlackHole();
+		BlackHole blackHole = new BlackHole();
 		blackHole.setName(Name.randomName().getTextual());
 		blackHole.setWeight();
-		blackHole.setDiameter();
-		System.out.println(blackHole.getName() + " " + blackHole.getWeight() + " " + blackHole.getDiameter());
-		
+		blackHole.setElectricCharge(Universe.randomNumber());
+		blackHole.setRotation(0.95);
+		blackHole.printBlackHole(blackHole.getName(), blackHole.getType(), blackHole.getWeight(), blackHole.getRotation(), blackHole.getElectricCharge());
 		
 		Globula globula = new Globula();
-		System.out.println(globula.getName() + " " + globula.getWeight() + " " + globula.getDiameter());
+		globula.setType("globula");
+		globula.setWeight();
+		globula.printGlobula(Name.randomName().getTextual(), globula.getType(), globula.getWeight());
 		
-		Globula gl = new Globula(100, 200);
-		System.out.println(gl.getName() + " " + gl.getWeight() + " " + gl.getDiameter());
-		
+		Blazar blazar = new Blazar();
+		blazar.setName(Name.randomName().getTextual());
+		blazar.printBlazar(blazar.getName(), blazar.getType(), blazar.isRadioBroadcasting());
 	}
 }

@@ -13,4 +13,8 @@ public class Globula extends Universe{
 		super(name);
 	}
 	
+	public void printGlobula(String inputName, String inputType, int inputWeight) {
+		System.out.println(inputName + " - " + inputType + ". \nA súlya: " + inputWeight + " millió kg.");
+	}
+	
 }

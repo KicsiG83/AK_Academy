@@ -30,12 +30,14 @@ public class Player {
 	static String[] losersLosers = new String[2];
 	static Map<Integer, String> playerPosition = new HashMap<Integer, String>();
 
-	// Az indexArray-t ebben a metódusban nem használom, a player generálásra 2
-	// játékos esetén nincs szükség, de a program egyébként használja.
-	public static void twoPlayer(int first, int second) {
-		int[] indexArray = { first, second };
+	public static String[] firstArray() {
+		String[] playerArray = new String[8];
+		for(int i = 0; i < playerArray.length; i++) {
+			playerArray[i] = Player.getName(i);
+		}
+		return playerArray;
 	}
-
+	
 	public static void randomPlayer(int[] sequence, String[] playerArray) {
 		String[] arrayName = playerArray;
 		int[] indexArray = sequence;

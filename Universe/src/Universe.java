@@ -7,7 +7,14 @@ public class Universe {
 	private int weight;
 	private int diameter;
 	private String name;
+	private String type	;
 	
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	public Universe() {
 		setName(Name.randomName().getTextual());
 		setWeight();
@@ -47,4 +54,11 @@ public class Universe {
 		return rnNumber = rn.nextInt(1000);
 	}
 	
+	public static void printData (String inputName, String inputType, int inputWeight, int inputDiameter) {
+		String printName = inputName;
+		String printType = inputType;
+		int printWeight = inputWeight;
+		int printDiameter = inputDiameter;
+		System.out.println(printName + " - " + printType + ". \nA súlya: " + printWeight + " millió kg. \nÁtmérője: " + printDiameter + " millió km.\n");
+	}
 }

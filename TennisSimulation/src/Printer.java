@@ -15,7 +15,7 @@ public class Printer {
 				+ "\nAhogy az IP címekből látom összegyűlt a világ színe JAVA.\n");
 		getInput();
 		System.out.println("\nÚgy látom a játékosok csak erre vártak, és a mérkőzés máris kezdetét veszi.");
-		 //TimeUnit.SECONDS.sleep(5);
+		 TimeUnit.SECONDS.sleep(5);
 	}
 
 	/**
@@ -66,7 +66,7 @@ public class Printer {
 	 * @param playerTwoSet
 	 */
 	public static void printAndFillPlayerArrays(Player playerOne, Player playerTwo, int playerOneSet, int playerTwoSet,
-			String array[], int index, int min, int max) {
+			String[] array, int index, int min, int max) {
 		String[] gameArray = array;
 		int playerOneCurrentPoint = 0;
 		int playerTwoCurrentPoint = 0;
