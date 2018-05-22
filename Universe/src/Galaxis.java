@@ -1,4 +1,4 @@
 
-public class Galaxis extends Universe{
+public class Galaxis extends ComplexObject{
 
 }

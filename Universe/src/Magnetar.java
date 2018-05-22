@@ -1,4 +1,4 @@
 
-public class Magnetar extends Universe{
+public class Magnetar extends SimpleObject{
 
 }

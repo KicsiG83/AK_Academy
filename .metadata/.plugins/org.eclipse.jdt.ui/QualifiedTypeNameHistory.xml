@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="Globula"/>
-<fullyQualifiedTypeName name="Universe"/>
 <fullyQualifiedTypeName name="BlackHole"/>
+<fullyQualifiedTypeName name="Universe"/>
+<fullyQualifiedTypeName name="NonSolarSkyBodies"/>
+<fullyQualifiedTypeName name="SimpleObject"/>
+<fullyQualifiedTypeName name="ComplexObject"/>
+<fullyQualifiedTypeName name="ExtensiveObject"/>
+<fullyQualifiedTypeName name="SolarSystem"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Separator"/>
+<fullyQualifiedTypeName name="WelcomeAndGetNumber"/>
+<fullyQualifiedTypeName name="Euler"/>
+<fullyQualifiedTypeName name="MathematicalCalculation"/>
+<fullyQualifiedTypeName name="Ancient"/>
+<fullyQualifiedTypeName name="Liebniz"/>
 </qualifiedTypeNameHistroy>

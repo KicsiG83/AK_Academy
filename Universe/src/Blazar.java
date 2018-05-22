@@ -1,5 +1,5 @@
 
-public class Blazar extends Universe{
+public class Blazar extends ComplexObject{
 
 	private String type = "Blazár";
 	private boolean radioBroadcasting = true;

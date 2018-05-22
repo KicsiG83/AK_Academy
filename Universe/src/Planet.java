@@ -1,4 +1,4 @@
 
-public class Planet extends Universe{
+public class Planet extends SolarSystem{
 
 }

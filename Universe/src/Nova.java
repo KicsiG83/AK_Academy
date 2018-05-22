@@ -1,4 +1,4 @@
 
-public class Nova extends Universe{
+public class Nova extends SimpleObject{
 
 }

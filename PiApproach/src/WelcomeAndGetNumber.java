@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
 public class WelcomeAndGetNumber {
-	static int number = 0;
 
 	public static void welcome() {
 		System.out.println("A program célja végtelen összeggel és szorzattal való közelítés.");
 	}
 
 	public static int getNumber() {
+		int number = 0;
 		Scanner sc = new Scanner(System.in);
 		do {
 			try {

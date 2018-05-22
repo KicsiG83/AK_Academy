@@ -1,4 +1,4 @@
 
-public class DwarfPlanet extends Universe{
+public class DwarfPlanet extends SolarSystem{
 
 }

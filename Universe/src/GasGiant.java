@@ -1,4 +1,4 @@
 
-public class GasGiant extends Universe{
+public class GasGiant extends SolarSystem{
 
 }

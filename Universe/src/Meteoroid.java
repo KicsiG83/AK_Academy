@@ -1,4 +1,4 @@
 
-public class Meteoroid extends Universe{
+public class Meteoroid extends SolarSystem{
 
 }

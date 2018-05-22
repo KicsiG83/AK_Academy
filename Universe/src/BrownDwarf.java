@@ -1,4 +1,4 @@
 
-public class BrownDwarf extends Universe {
+public class BrownDwarf extends SimpleObject {
 
 }

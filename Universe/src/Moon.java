@@ -1,4 +1,4 @@
 
-public class Moon extends Universe {
+public class Moon extends SolarSystem {
 
 }

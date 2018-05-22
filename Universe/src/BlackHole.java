@@ -1,5 +1,5 @@
 
-public class BlackHole extends Universe {
+public class BlackHole extends SimpleObject {
 
 	private String type = "Fekete lyuk";
 	private boolean gravitation = true;

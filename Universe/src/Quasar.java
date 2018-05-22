@@ -1,4 +1,4 @@
 
-public class Quasar extends Universe{
+public class Quasar extends ComplexObject{
 
 }

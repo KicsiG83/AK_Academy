@@ -1,4 +1,4 @@
 
-public class Nebula extends Universe{
+public class Nebula extends ExtensiveObject{
 
 }

@@ -1,4 +1,4 @@
 
-public class Star extends Universe {
+public class Star extends SimpleObject {
 
 }

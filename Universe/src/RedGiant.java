@@ -1,4 +1,4 @@
 
-public class RedGiant extends Universe {
+public class RedGiant extends SimpleObject {
 
 }

@@ -1,4 +1,4 @@
 
-public class HRegionII extends Universe{
+public class HRegionII extends ExtensiveObject{
 
 }
