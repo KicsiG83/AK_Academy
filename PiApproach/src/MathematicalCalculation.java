@@ -15,25 +15,6 @@ public class MathematicalCalculation {
 		System.out.println("Euler féle sor alapján a közelítő érték \u2243 " + a);
 	}
 
-	public static void vietleLine(int input) {
-		System.out.println("\n-----------------------Viètel féle sor-----------------------");
-		double x = 2 / Math.PI;
-		System.out.println("\n2 / \u03C0 = " + x);
-		double counter = Math.sqrt(2.0);
-		double denominator = 2.0;
-		double a = 0.0;
-		for (int i = 0; i < input; i++) {
-			if(i == 0) {
-				a = counter / 2;
-			}else {
-				denominator = denominator * 2;
-				a = (a * (Math.sqrt(2.0 + a)) / denominator);
-			}
-		}
-//		a = a / denominator;
-		System.out.println("Viètel féle sor alapján a közelítő érték \u2243 " + a);
-	}
-
 	public static void liebniz(int input) {
 		System.out.println("\n----------------------Liebniz féle sor-----------------------");
 		double x = Math.PI / 4;
@@ -76,4 +57,20 @@ public class MathematicalCalculation {
 		}
 		System.out.println("Wallis féle sor alapján a közelítő érték \u2243 :" + a);
 	}
+	
+	public static void vietleLine(int input) {
+		System.out.println("\n-----------------------Viètel féle sor-----------------------");
+		double x = 2 / Math.PI;
+		System.out.println("\n2 / \u03C0 = " + x);
+		double a = 0.0;
+		for (int i = 0; i < input; i++) {
+			if (i == 0) {
+				a = Math.sqrt(2.0) / 2;
+			} else {
+				a = a * (Math.sqrt(2.0 + 2 * a)) / 2;
+			}
+		}
+		System.out.println("Viètel féle sor alapján a közelítő érték \u2243 " + a);
+	}
+	
 }
