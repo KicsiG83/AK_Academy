@@ -12,6 +12,10 @@
 <fullyQualifiedTypeName name="WelcomeAndGetNumber"/>
 <fullyQualifiedTypeName name="Euler"/>
 <fullyQualifiedTypeName name="MathematicalCalculation"/>
-<fullyQualifiedTypeName name="Ancient"/>
 <fullyQualifiedTypeName name="Liebniz"/>
+<fullyQualifiedTypeName name="Wallis"/>
+<fullyQualifiedTypeName name="Ancient"/>
+<fullyQualifiedTypeName name="Viètel"/>
+<fullyQualifiedTypeName name="Mathematics"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
 </qualifiedTypeNameHistroy>

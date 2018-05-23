@@ -1,4 +1,4 @@
-public class PiApproach {
+public class Main {
 
 	static int number = 0;
 
@@ -7,7 +7,7 @@ public class PiApproach {
 		int input = WelcomeAndGetNumber.getNumber();
 		new Euler(input);
 		new Liebniz(input);
-//		MathematicalCalculation.wallisLine(input);
-//		MathematicalCalculation.vietleLine(input);
+		new Wallis(input);
+		new Viètel(input);
 	}
 }
