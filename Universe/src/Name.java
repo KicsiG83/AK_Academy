@@ -110,6 +110,5 @@ private String textual;
 	
 	public String getTextual() {
 		return textual;
-	
 	}
 }

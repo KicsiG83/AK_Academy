@@ -1,4 +1,4 @@
 
-public class Magnetar extends SimpleObject{
+public class Magnetar extends Star{
 
 }

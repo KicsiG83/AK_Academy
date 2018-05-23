@@ -1,4 +1,4 @@
 
-public class Comet extends SolarSystem {
+public class Comet extends Orb{
 
 }

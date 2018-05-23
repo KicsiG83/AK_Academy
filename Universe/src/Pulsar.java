@@ -1,4 +1,4 @@
 
-public class Pulsar extends SimpleObject{
+public class Pulsar extends Star{
 
 }

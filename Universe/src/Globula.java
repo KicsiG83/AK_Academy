@@ -1,5 +1,5 @@
 
-public class Globula extends ExtensiveObject{
+public class Globula extends Nebula{
 
 	public Globula() {
 		super();

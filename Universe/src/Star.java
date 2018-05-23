@@ -1,4 +1,4 @@
 
-public class Star extends SimpleObject {
+public class Star extends Orb {
 
 }

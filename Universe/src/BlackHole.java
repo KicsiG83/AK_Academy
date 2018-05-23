@@ -1,5 +1,5 @@
 
-public class BlackHole extends SimpleObject {
+public class BlackHole extends Star {
 
 	private String type = "Fekete lyuk";
 	private boolean gravitation = true;
@@ -31,12 +31,10 @@ public class BlackHole extends SimpleObject {
 		return type;
 	}
 	
-	public void printBlackHole(String inputName, String inputType, int inputWeight, double inputRotation, int inputElectricCharge) {
-		String printName = inputName;
-		String printType = inputType;
-		int printWeight = inputWeight;
-		double printRotation = inputRotation;
-		int printElectricCharge = inputElectricCharge;
-		System.out.println(printName + " - " + printType + ". \nA súlya: " + printWeight + " millió kg. \nForgási sebesége: " + printRotation + " a* vagyis ~950 forgás \\ mp.\n" + "Elektromos töltése: " + printElectricCharge + " yottawatt\n");
+	public void printBlackHole(String inputName, String inputType, int inputWeight, double inputRotation,
+			int inputElectricCharge) {
+		System.out.println(inputName + " - " + inputType + ". \nA súlya: " + inputWeight
+				+ " millió kg. \nForgási sebesége: " + inputRotation + " a* vagyis ~950 forgás \\ mp.\n"
+				+ "Elektromos töltése: " + inputElectricCharge + " yottawatt\n");
 	}
 }

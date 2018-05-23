@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Universe {
+public class Orb {
 
 	static Random rn = new Random();
 	static int rnNumber;
@@ -15,17 +15,17 @@ public class Universe {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public Universe() {
+	public Orb() {
 		setName(Name.randomName().getTextual());
 		setWeight();
 		setDiameter();
 	}
-	public Universe(String name) {
+	public Orb(String name) {
 		this.name = name;
 		setDiameter();
 		setWeight();
 	}
-	public Universe(int weight, int diameter) {
+	public Orb(int weight, int diameter) {
 		setName(Name.randomName().getTextual());
 		this.weight = weight;
 		this.diameter = diameter;
@@ -55,10 +55,6 @@ public class Universe {
 	}
 	
 	public static void printData (String inputName, String inputType, int inputWeight, int inputDiameter) {
-		String printName = inputName;
-		String printType = inputType;
-		int printWeight = inputWeight;
-		int printDiameter = inputDiameter;
-		System.out.println(printName + " - " + printType + ". \nA súlya: " + printWeight + " millió kg. \nÁtmérője: " + printDiameter + " millió km.\n");
+		System.out.println(inputName + " - " + inputType + ". \nA súlya: " + inputWeight + " millió kg. \nÁtmérője: " + inputDiameter + " millió km.\n");
 	}
 }

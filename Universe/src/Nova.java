@@ -1,4 +1,4 @@
 
-public class Nova extends SimpleObject{
+public class Nova extends Star{
 
 }

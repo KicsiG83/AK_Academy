@@ -1,4 +1,4 @@
 
-public class HRegionII extends ExtensiveObject{
+public class HRegionII extends Nebula{
 
 }

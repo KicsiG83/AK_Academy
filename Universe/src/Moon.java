@@ -1,4 +1,4 @@
 
-public class Moon extends SolarSystem {
+public class Moon extends Orb {
 
 }

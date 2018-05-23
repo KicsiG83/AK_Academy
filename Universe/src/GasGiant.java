@@ -1,4 +1,4 @@
 
-public class GasGiant extends SolarSystem{
+public class GasGiant extends GiantPlanet{
 
 }

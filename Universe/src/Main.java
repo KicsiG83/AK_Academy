@@ -9,7 +9,7 @@ public class Main {
 		BlackHole blackHole = new BlackHole();
 		blackHole.setName(Name.randomName().getTextual());
 		blackHole.setWeight();
-		blackHole.setElectricCharge(Universe.randomNumber());
+		blackHole.setElectricCharge(Orb.randomNumber());
 		blackHole.setRotation(0.95);
 		blackHole.printBlackHole(blackHole.getName(), blackHole.getType(), blackHole.getWeight(), blackHole.getRotation(), blackHole.getElectricCharge());
 		
@@ -21,5 +21,9 @@ public class Main {
 		Blazar blazar = new Blazar();
 		blazar.setName(Name.randomName().getTextual());
 		blazar.printBlazar(blazar.getName(), blazar.getType(), blazar.isRadioBroadcasting());
+		
+		BrownDwarf brownDwarf = new BrownDwarf();
+		brownDwarf.setName(Name.randomName().getTextual());
+		brownDwarf.printData(brownDwarf.getName(), brownDwarf.getType(), brownDwarf.getWeight(), brownDwarf.getDiameter());
 	}
 }
