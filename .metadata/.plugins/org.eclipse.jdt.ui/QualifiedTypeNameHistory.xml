@@ -23,5 +23,7 @@
 <fullyQualifiedTypeName name="GiantPlanet"/>
 <fullyQualifiedTypeName name="Nebula"/>
 <fullyQualifiedTypeName name="Star"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="BrownDwarf"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
 </qualifiedTypeNameHistroy>

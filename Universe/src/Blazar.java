@@ -13,11 +13,13 @@ public class Blazar extends Quasar{
 		return type;
 	}
 	
-	public void printBlazar (String inputName, String inputType, boolean radioBroadcasting) {
-		String printName = inputName;
-		String printType = inputType;
-		boolean printRadioBroadcasting = radioBroadcasting;
-		System.out.println("\n" + printName + " - " + printType + "\n" + (printRadioBroadcasting? "Erős rádiósugárzást bocsát ki." : " nem bocsát ki rádiósugárzást.") );
+	public Blazar () {
+		this.setName(Name.randomName().getTextual());
+	}
+	
+	@Override
+	public String toString() {
+		return getName() + " - " + getType() + ". \nA súlya: " + getWeight() + " millió kg. \nÁtmérője: " + getDiameter() + " millió km.\n" + (radioBroadcasting? "Erős rádiósugárzást bocsát ki." : "Meglepő módon nem bocsát ki rádiósugárzást.") + "\n";
 	}
 	
 }

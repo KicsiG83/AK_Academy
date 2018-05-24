@@ -6,6 +6,20 @@ public class BlackHole extends Star {
 	private double rotation;
 	private int electricCharge;
 	
+	public BlackHole() {
+		this.setName(Name.randomName().getTextual());
+		this.setWeight();
+		this.setElectricCharge(Orb.randomNumber());
+		this.setRotation(0.95);
+	}
+	
+	@Override
+	public String toString() {
+		return getName() + " - " + getType() + ". \nA súlya: " + getWeight() + " millió kg. \nForgási sebesége: "
+				+ getRotation() + " a* vagyis ~950 forgás \\ mp.\n" + "Elektromos töltése: " + getElectricCharge()
+				+ " yottawatt\n";
+	}
+	
 	public int getElectricCharge() {
 		return electricCharge;
 	}
@@ -29,12 +43,5 @@ public class BlackHole extends Star {
 	@Override
 	public String getType() {
 		return type;
-	}
-	
-	public void printBlackHole(String inputName, String inputType, int inputWeight, double inputRotation,
-			int inputElectricCharge) {
-		System.out.println(inputName + " - " + inputType + ". \nA súlya: " + inputWeight
-				+ " millió kg. \nForgási sebesége: " + inputRotation + " a* vagyis ~950 forgás \\ mp.\n"
-				+ "Elektromos töltése: " + inputElectricCharge + " yottawatt\n");
 	}
 }

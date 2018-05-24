@@ -8,4 +8,8 @@ public class BrownDwarf extends Star {
 		return type;
 	}
 	
+	public BrownDwarf() {
+		this.setName(Name.randomName().getTextual());
+	}
+	
 }

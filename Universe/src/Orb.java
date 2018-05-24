@@ -54,7 +54,8 @@ public class Orb {
 		return rnNumber = rn.nextInt(1000);
 	}
 	
-	public static void printData (String inputName, String inputType, int inputWeight, int inputDiameter) {
-		System.out.println(inputName + " - " + inputType + ". \nA súlya: " + inputWeight + " millió kg. \nÁtmérője: " + inputDiameter + " millió km.\n");
+	@Override
+	public String toString () {
+		return getName() + " - " + getType() + ". \nA súlya: " + getWeight() + " millió kg. \nÁtmérője: " + getDiameter() + " millió km.\n";
 	}
 }

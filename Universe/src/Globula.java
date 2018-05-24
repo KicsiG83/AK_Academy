@@ -1,8 +1,18 @@
 
 public class Globula extends Nebula{
 
+	private static String type = "Globula";
+	
+	@Override
+	public String getType() {
+		return type;
+	}
+
 	public Globula() {
-		super();
+		this.setWeight();
+		this.setName(Name.randomName().getTextual());
+		this.setType(getType());
+		this.setWeight();
 	}
 	
 	public Globula(int weight, int diameter) {
@@ -12,9 +22,4 @@ public class Globula extends Nebula{
 	public Globula(String name) {
 		super(name);
 	}
-	
-	public void printGlobula(String inputName, String inputType, int inputWeight) {
-		System.out.println(inputName + " - " + inputType + ". \nA súlya: " + inputWeight + " millió kg.");
-	}
-	
 }
