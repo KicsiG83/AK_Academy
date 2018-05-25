@@ -56,6 +56,6 @@ public class Orb {
 	
 	@Override
 	public String toString () {
-		return getName() + " - " + getType() + ". \nA súlya: " + getWeight() + " millió kg. \nÁtmérője: " + getDiameter() + " millió km.\n";
+		return "\n" + getName() + " - " + getType() + ". \nA súlya: " + getWeight() + " millió kg. \nÁtmérője: " + getDiameter() + " millió km.\n";
 	}
 }
