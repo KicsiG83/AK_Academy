@@ -31,4 +31,7 @@
 <fullyQualifiedTypeName name="Meteoroid"/>
 <fullyQualifiedTypeName name="GiantPlanet"/>
 <fullyQualifiedTypeName name="Orb"/>
+<fullyQualifiedTypeName name="Planet"/>
+<fullyQualifiedTypeName name="Pulsar"/>
+<fullyQualifiedTypeName name="com.sun.corba.se.spi.activation.InitialNameServicePackage.NameAlreadyBound"/>
 </qualifiedTypeNameHistroy>
