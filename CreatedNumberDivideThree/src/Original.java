@@ -96,5 +96,4 @@ public class Original {
                 System.out.println("A beírt választ nem értem.");
         }
     }
- 
 }
