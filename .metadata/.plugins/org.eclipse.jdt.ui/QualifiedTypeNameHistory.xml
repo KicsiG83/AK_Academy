@@ -26,7 +26,6 @@
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
-<fullyQualifiedTypeName name="DwarfPlanet"/>
 <fullyQualifiedTypeName name="Galaxis"/>
 <fullyQualifiedTypeName name="Meteoroid"/>
 <fullyQualifiedTypeName name="GiantPlanet"/>
@@ -34,4 +33,5 @@
 <fullyQualifiedTypeName name="Planet"/>
 <fullyQualifiedTypeName name="Pulsar"/>
 <fullyQualifiedTypeName name="com.sun.corba.se.spi.activation.InitialNameServicePackage.NameAlreadyBound"/>
+<fullyQualifiedTypeName name="DwarfPlanet"/>
 </qualifiedTypeNameHistroy>

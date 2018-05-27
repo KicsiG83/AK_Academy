@@ -7,10 +7,14 @@ public class DwarfPlanet extends SolarSystem{
 	private static String type = "Törpebolygó";
 	private static int min = 2006;
 	private static int max = Calendar.getInstance().get(Calendar.YEAR);
+	private String name;
 
-	@Override
-	public String getType() {
-		return type;
+	public DwarfPlanet() {
+		
+	}
+
+	public DwarfPlanet(Name name) {
+		setName(name.getTextual());
 	}
 
 	public static int getMin() {
@@ -23,6 +27,21 @@ public class DwarfPlanet extends SolarSystem{
 
 	public static int getYearOfDiscovery(int min, int max){
 	    return rn.ints(min,(max+1)).findFirst().getAsInt();
+	}
+	
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	@Override
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	@Override
+	public String getType() {
+		return type;
 	}
 	
 	@Override

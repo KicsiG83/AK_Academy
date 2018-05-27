@@ -4,22 +4,6 @@ public class Comet extends Orb {
 	private boolean coma = true;
 	private boolean plume = true;
 
-	@Override
-	public String toString() {
-		return "\n" + getName() + " - " + getType() + ". \nA súlya: " + getWeight() + " millió kg. \n"
-				+ (coma ? "Van kómája" : "Nincs kómája.") + "\n" + (plume ? "Van csóvája" : "Nincs csóvája");
-	}
-
-	@Override
-	public String getType() {
-		return type;
-	}
-
-	@Override
-	public void setType(String type) {
-		this.type = type;
-	}
-
 	public boolean isComa() {
 		return coma;
 	}
@@ -34,5 +18,21 @@ public class Comet extends Orb {
 
 	public void setPlume(boolean plume) {
 		this.plume = plume;
+	}
+	
+	@Override
+	public String getType() {
+		return type;
+	}
+
+	@Override
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	@Override
+	public String toString() {
+		return "\n" + getName() + " - " + getType() + ". \nA súlya: " + getWeight() + " millió kg. \n"
+				+ (coma ? "Van kómája" : "Nincs kómája.") + "\n" + (plume ? "Van csóvája" : "Nincs csóvája");
 	}
 }
