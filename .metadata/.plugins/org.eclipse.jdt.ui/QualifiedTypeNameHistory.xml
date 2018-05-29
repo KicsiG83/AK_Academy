@@ -34,4 +34,5 @@
 <fullyQualifiedTypeName name="Pulsar"/>
 <fullyQualifiedTypeName name="com.sun.corba.se.spi.activation.InitialNameServicePackage.NameAlreadyBound"/>
 <fullyQualifiedTypeName name="DwarfPlanet"/>
+<fullyQualifiedTypeName name="Response"/>
 </qualifiedTypeNameHistroy>

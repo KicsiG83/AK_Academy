@@ -20,40 +20,40 @@ public class Original {
 
 		System.out.println("Alkotott szám hárommal való oszthatóságának vizsgálata.\n");
 
-		do {
-			userInputNumber.setNumber(userInputNumber.getInput(sc));
-			for (i = userInputNumber.getNumber(); i >= 10; i--) {
-				if (i % 10 == 0) {
-					System.out.println(i);
-					dividePossible = true;
-					numbers[j] = i;
-					j++;
-					sumNumber = sumNumber + (i / 10);
-				}
-			}
-			if (dividePossible) {
-				for (int i = numbers.length - 1; i >= 0; i--) {
-					if (numbers[i] != 0) {
-						strNumber = strNumber + numbers[i];
+			do {
+				userInputNumber.setNumber(userInputNumber.getInput(sc));
+				for (i = userInputNumber.getNumber(); i >= 10; i--) {
+					if (i % 10 == 0) {
+						System.out.println(i);
+						dividePossible = true;
+						numbers[j] = i;
+						j++;
+						sumNumber = sumNumber + (i / 10);
 					}
 				}
-				System.out.println(strNumber);
-				if (sumNumber % 3 == 0) {
-					System.out.println("\nA szám osztható 3-mal.");
-				} else {
-					System.out.println("\nA szám nem osztható 3-mal.");
+				if (dividePossible) {
+					for (int i = numbers.length - 1; i >= 0; i--) {
+						if (numbers[i] != 0) {
+							strNumber = strNumber + numbers[i];
+						}
+					}
+					System.out.println(strNumber);
+					if (sumNumber % 3 == 0) {
+						System.out.println("\nA szám osztható 3-mal.");
+					} else {
+						System.out.println("\nA szám nem osztható 3-mal.");
+					}
 				}
-			}
-			if (!dividePossible) {
-				System.out.println("A megadott szám és az az alatti számok közül egyik sem osztható 10-zel.");
-			}
-			response = response();
+				if (!dividePossible) {
+					System.out.println("A megadott szám és az az alatti számok közül egyik sem osztható 10-zel.");
+				}
+				response = response();
 
-		} while (!response.equals(no));
-		System.out.println("Köszönöm, hogy segíthettem :) ");
-		sc.close();
-	}
-
+			} while (!response.equals(no));
+			System.out.println("Köszönöm, hogy segíthettem :) ");
+			sc.close();
+		}
+		
 	private static String response() {
 		String response;
 		System.out.println("\nSzeretné újra futtatni a programot?\n");
