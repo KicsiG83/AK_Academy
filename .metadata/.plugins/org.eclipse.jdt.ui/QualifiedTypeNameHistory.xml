@@ -39,4 +39,5 @@
 <fullyQualifiedTypeName name="org.omg.PortableServer.ServantRetentionPolicyValue"/>
 <fullyQualifiedTypeName name="sun.plugin2.message.SetJVMIDMessage"/>
 <fullyQualifiedTypeName name="Calculate"/>
+<fullyQualifiedTypeName name="Print"/>
 </qualifiedTypeNameHistroy>

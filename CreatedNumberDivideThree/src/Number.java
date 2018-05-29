@@ -13,7 +13,6 @@ public class Number {
 	}
 
 	public int getInput(Scanner sc) {
-		int number = 0;
 		do {
 			try {
 				System.out.print("Kérem írjon be egy 100 vagy 100-nál kisebb számot: ");
@@ -23,8 +22,8 @@ public class Number {
 					System.out.println("A megadott szám nagyobb 100-nál.");
 				}
 			} catch (Exception e) {
-				sc.nextLine();
 				System.out.println("A megadott input nem értelmezett.");
+				number = 101;
 			}
 		} while (number > 100);
 		return number;

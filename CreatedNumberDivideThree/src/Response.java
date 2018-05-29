@@ -4,12 +4,9 @@ public class Response {
 
 	private String yes = "i";
 	private String no = "n";
-	private String strNumber = "";
-	private int[] numbers;
-	private int sumNumber = 0;
 	private boolean validResponse = false;
 	private String response;
-	
+
 	public String getResponse() {
 		return response;
 	}
@@ -22,40 +19,8 @@ public class Response {
 		return yes;
 	}
 
-	public void setYes(String yes) {
-		this.yes = yes;
-	}
-
 	public String getNo() {
 		return no;
-	}
-
-	public void setNo(String no) {
-		this.no = no;
-	}
-
-	public String getStrNumber() {
-		return strNumber;
-	}
-
-	public void setStrNumber(String strNumber) {
-		this.strNumber = strNumber;
-	}
-
-	public int[] getNumbers() {
-		return numbers;
-	}
-
-	public void setNumbers(int[] numbers) {
-		this.numbers = numbers;
-	}
-
-	public int getSumNumber() {
-		return sumNumber;
-	}
-
-	public void setSumNumber(int sumNumber) {
-		this.sumNumber = sumNumber;
 	}
 
 	public boolean isValidResponse() {
@@ -66,10 +31,7 @@ public class Response {
 		this.validResponse = validResponse;
 	}
 
-	public String response() {
-		int i = 0;
-		int j = 0;
-		Scanner sc = new Scanner(System.in);
+	public String response(Scanner sc) {
 		System.out.println("\nSzeretné újra futtatni a programot?\n");
 		do {
 			System.out.print("Kérem adja meg a válaszát (i vagy n): ");
@@ -77,13 +39,6 @@ public class Response {
 			sc.nextLine();
 			responseValidator(getResponse());
 		} while (!validResponse);
-		if (getResponse().equals(getYes())) {
-			i = 0;
-			j = 0;
-			strNumber = "";
-			numbers = new int[10];
-			sumNumber = 0;
-		}
 		return response;
 	}
 
