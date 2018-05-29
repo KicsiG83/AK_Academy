@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Response {
 
-	private String yes = "i";
 	private String no = "n";
 	private boolean validResponse = false;
 	private String response;
@@ -15,16 +14,8 @@ public class Response {
 		this.response = response;
 	}
 
-	public String getYes() {
-		return yes;
-	}
-
 	public String getNo() {
 		return no;
-	}
-
-	public boolean isValidResponse() {
-		return validResponse;
 	}
 
 	public void setValidResponse(boolean validResponse) {
@@ -32,7 +23,7 @@ public class Response {
 	}
 
 	public String response(Scanner sc) {
-		System.out.println("\nSzeretné újra futtatni a programot?\n");
+		System.out.println("Szeretné újra futtatni a programot?");
 		do {
 			System.out.print("Kérem adja meg a válaszát (i vagy n): ");
 			setResponse(sc.next());

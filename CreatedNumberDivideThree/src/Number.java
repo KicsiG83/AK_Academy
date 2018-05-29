@@ -22,6 +22,7 @@ public class Number {
 					System.out.println("A megadott szám nagyobb 100-nál.");
 				}
 			} catch (Exception e) {
+				sc.nextLine();
 				System.out.println("A megadott input nem értelmezett.");
 				number = 101;
 			}
