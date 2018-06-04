@@ -7,9 +7,8 @@ public class ExerciseThreeGetInput {
 		do {
 			userResult = getMenuIndex(sc);
 		} while (userResult != 2);
-
 	}
-
+	
 	public static int getMenuIndex(Scanner sc) {
 		int result = 0;
 		do {
@@ -55,7 +54,7 @@ public class ExerciseThreeGetInput {
 										+ "A megadott érték nem teljesül az alábbi feltételek egyikének:\n"
 										+ "- A megadott szám nem egészszám\n" + "- A megadott szám nem pozitív\n"
 										+ "- A 0-nak nincs előjele\n"
-										+ "- A megadott szám nagyobb mint 10.000.\nPl: 42\n");
+										+ "- A megadott szám nagyobb mint 10.000.\nPl: 1764\n");
 						invalidInput++;
 					} else {
 						System.out.println("A program megóvása érdekében a program most leáll.");
@@ -75,7 +74,7 @@ public class ExerciseThreeGetInput {
 	}
 
 	public static void calculate(int number) {
-		if (number == 42) {
+		if (number == 1764) {
 			System.out.println("BINGO!");
 		} else {
 			int sqrt = (int) Math.sqrt(number);
