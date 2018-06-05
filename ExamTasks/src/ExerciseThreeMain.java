@@ -3,13 +3,12 @@ import java.util.Scanner;
 public class ExerciseThreeMain {
 
 	public static void main(String[] args) {
-		new ExerciseThreeMain().run();
+		new ThreeGoodMain().run();
 	}
-
 	public void run() {
 		Scanner sc = new Scanner(System.in);
-		ExerciseThreePrinter.printWelcome();
-		ExerciseThreeGetInput.close(sc);
+		System.out.println("Négyzetszám vizsgálati program.");
+		ExerciseThreeGetInput.getInput(sc);
 		ExerciseThreePrinter.PrintBye();
 		sc.close();
 	}
