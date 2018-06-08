@@ -57,4 +57,6 @@
 <fullyQualifiedTypeName name="ThreeGoodGetInput"/>
 <fullyQualifiedTypeName name="ThreeGoodMain"/>
 <fullyQualifiedTypeName name="ExerciseThreePrinter"/>
+<fullyQualifiedTypeName name="java.sql.ResultSetMetaData"/>
+<fullyQualifiedTypeName name="Data"/>
 </qualifiedTypeNameHistroy>
