@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+<<<<<<< Updated upstream
 		<item value="D:\JAVA\AK_Academy\AK_Academy\GetCurrency"/>
+=======
+		<item value="D:\Java\AK_Academy\JDBC"/>
+>>>>>>> Stashed changes
 		<item value="D:\Java\AK_Academy\ExamTasks"/>
 		<item value="D:\JAVA\AK_Academy\AK_Academy\ExamTasks"/>
 		<item value="D:\Java\AK_Academy\Hangman"/>
