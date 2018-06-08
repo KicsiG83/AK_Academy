@@ -17,7 +17,7 @@ public class JDBC {
 		Statement st = con.createStatement();
 		ResultSet rs = st.executeQuery(sqlSelect);
 		while (rs.next()) {
-			System.out.println(rs.getString(1));
+			System.out.println("Ügyfélszám: "+rs.getString(1) + "\nSzámla fizetés státusza: " + rs.getString(2));
 		}
 	}
 }

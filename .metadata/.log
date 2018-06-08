@@ -9019,3 +9019,383 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/ExamTasks/src
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
 !SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2018-06-07 18:14:59.765
 !MESSAGE Cannot determine URI for '/ExamTasks/src/ExerciseThreeCalculator.java'.
+!SESSION 2018-06-08 08:01:39.121 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=hu_HU
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-06-08 08:01:53.611
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Balogh Geri'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-06-08 08:01:56.449
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<. ; version: 2.0.7.v20170906-1327
+!STACK 0
+com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<
+	at com.google.gson.Gson.fromJson(Gson.java:902)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:100)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:109)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.loadConfiguration(IO.java:71)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:121)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<
+	at com.google.gson.stream.JsonReader.syntaxError(JsonReader.java:1559)
+	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:530)
+	at com.google.gson.stream.JsonReader.skipValue(JsonReader.java:1224)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:218)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	... 8 more
+
+!ENTRY org.eclipse.core.jobs 4 2 2018-06-08 09:10:51.220
+!MESSAGE An internal error occurred during: "Update validate job".
+!STACK 0
+org.eclipse.oomph.util.ReflectUtil$ReflectionException: java.lang.NullPointerException
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:132)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:409)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager.loadRepository(CachingRepositoryManager.java:201)
+	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Metadata.loadRepository(CachingRepositoryManager.java:476)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.loadMetadataRepository(ProvisioningContext.java:216)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getLoadedMetadataRepositories(ProvisioningContext.java:199)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getMetadata(ProvisioningContext.java:280)
+	at org.eclipse.equinox.internal.p2.director.SimplePlanner.updatesFor(SimplePlanner.java:784)
+	at org.eclipse.equinox.p2.operations.UpdateOperation.updatesFor(UpdateOperation.java:142)
+	at org.eclipse.equinox.p2.operations.UpdateOperation.computeProfileChangeRequest(UpdateOperation.java:179)
+	at org.eclipse.equinox.p2.operations.UpdateOperation$1.run(UpdateOperation.java:323)
+	at org.eclipse.equinox.internal.p2.operations.SearchForUpdatesResolutionJob.runModal(SearchForUpdatesResolutionJob.java:37)
+	at org.eclipse.equinox.p2.operations.ProfileChangeOperation.resolveModal(ProfileChangeOperation.java:115)
+	at org.eclipse.equinox.internal.p2.ui.sdk.scheduler.AutomaticUpdater.updatesAvailable(AutomaticUpdater.java:117)
+	at org.eclipse.equinox.internal.p2.ui.sdk.scheduler.AutomaticUpdater.updatesAvailable(AutomaticUpdater.java:98)
+	at org.eclipse.equinox.internal.p2.ui.sdk.scheduler.AutomaticUpdater$6.run(AutomaticUpdater.java:359)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.findMatchingRepositoryExtensions(AbstractRepositoryManager.java:404)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:763)
+	at sun.reflect.GeneratedMethodAccessor47.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
+	... 18 more
+!SESSION 2018-06-08 09:10:51.674 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=hu_HU
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product -data file:/D:/JAVA/AK_Academy/AK_Academy/ -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-06-08 09:11:13.522
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Balogh Geri'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-06-08 09:11:21.272
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<. ; version: 2.0.7.v20170906-1327
+!STACK 0
+com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<
+	at com.google.gson.Gson.fromJson(Gson.java:902)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:100)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:109)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.loadConfiguration(IO.java:71)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:121)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<
+	at com.google.gson.stream.JsonReader.syntaxError(JsonReader.java:1559)
+	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:530)
+	at com.google.gson.stream.JsonReader.skipValue(JsonReader.java:1224)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:218)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	... 8 more
+
+!ENTRY com.yattasolutions.umllab 4 0 2018-06-08 09:12:27.303
+!MESSAGE UML Lab internal error: Error acquiring license.
+!STACK 0
+java.lang.NullPointerException
+	at com.yattasolutions.obf.mv.h.a(SourceFile:591)
+	at CTMZ3HSDP2RD3XJMAXBQQJVLFDYQT6LRTSO2YKXGKC4THSCWXJWCQMAQ6CIWFSJ5JQNDWQT4Z2XLRN3Z7EA45FQGP65FEI3OUWQF3XOMLXXDJWIXGXCDTZXVK7RLAW47ZNRNV2FGX6HDQ7GAK2SKZ76Y3GXRRTMPEEJY2DKL2Q7NF2QLY3PMIB3VJRDKSKYSHVGC2DIJUQSCVWMXM5PBUPMW2IBVPXBEL53VH4AXQ5XT4HA2TCOLS7LIVUEALA7T7ZZCWZQP7V7F4IDBJVISHZGURLIYGM2TOGMW56UDDHMGK4TMKQQPCT4QRF42ROVD2VIPPD5LMSSD7T4E7EVKO6D747GT52F54N3ZDMRTLUVYJUUE4P7EH7XXH7OQKOCA3QP7WDEIHHIYMH6LYLBULXCAB47LG5CHJ7Q3DFS5LMOVQ6ZNE4TLGA7QW2GYMGY4FIHXBBDTBQQ3GOEQIQKTTM2ATFC6EA25PHXOPBO6WAVIIGJNSTFEVR2YON35CNA3AFWTOACP477QQ4RJ5AIXSZPIT6TLI2HUVKK6KGJ62VROSVNK6WNXPL547LNMOPO3KP5T2GKO2XCLJYJ6VGDQBDW2XOYGV2AM5RAU4TPRGL4TI6UY3CRJSX5SHGTY6OMLGH7HQW3URN4WMQ2VHG3QIPSIZRGD7JQE6FBKZFCCZMZSF2VSLVDM2SKKTUM2FCIUTGWLY6DHF5XFUF7G6TOOCQACLZLIVOVOWF4AJPC6P6C42UPPTKO6JEHJ5RHH7OB3642OIWVINZRLIHNMKXVTOYHPTSVW3RBSTDMID2FEFTOONHQKSEM3S6T73BIUJZKMDUUXHAKVBIGOQ2LPRAVYGV2LRC37LK5CYV4KRP7DWXTJ222EDKK22CBGOHTMRGRGL7MDXV4VOA6WIPH6GUXDRC7UBG7QHDNURDVRENGKMUEXAII6PLCUSZCQ7ZEXYNX4JUKTSTSMB2BDNFRPK3GUOP3K7RD3UO3PHGR5GJYVKB3VQRCXNTEK4V3UPCRYSUW6C36ADOL5EX64FR46RMBS5R7I3SRWB5OTO2UKL2AJC2RQ2MPRTBIC5UIYLBJ6FYCGQP4QBWWZDZF227P7DH5LFUZ277TLGAVKNRWQYGNE6WBNVD27OX2NGPFUUTSHYRRHVOGX2TOLCXK2DTSDVUCRHTRFVXNRG42REYQRWBLJ4ERTUFDXV2ZJJ5L7XYHCYEYEKWBEVNTHVNCKBP44FU3GJVD26V5X5OYDVLN7T7GOLN24ADISAUH2WE2VBSC3ACGV4JOLLFS6IBXDPYZVEIRNEOAMHUG7LT6UK6YAN3PNWIIYNV7O544O7WBII2SSJY4L3RHOBLFS7Y5M5WT76WN4RFMFSIO5AARTHXAGWOC/RANY6WMCLMONFZUDJU42ZW2NGE.<unknown>(Unknown Source)
+
+!ENTRY org.eclipse.ui 4 0 2018-06-08 09:12:27.305
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at com.yattasolutions.obf.mv.h.a(SourceFile:591)
+	at com.yattasolutions.obf.mv.h.a(SourceFile:504)
+	at com.yattasolutions.obf.mv.h.a(SourceFile:610)
+	at com.yattasolutions.obf.mv.h.a(SourceFile:350)
+	at com.yattasolutions.obf.oh.b$1.run(SourceFile:50)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:37)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:182)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4213)
+	at org.eclipse.swt.widgets.Display.msgFilterProc(Display.java:3534)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2555)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:506)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4941)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:359)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1657)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2199)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5178)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2555)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:506)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4941)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:359)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1657)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2199)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5178)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2560)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3815)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1150)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1039)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:680)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:336)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:594)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:148)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:151)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+!SESSION 2018-06-08 09:21:23.661 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=hu_HU
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -data file:/D:/JAVA/AK_Academy/AK_Academy/ -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-06-08 09:21:39.698
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Balogh Geri'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-06-08 09:21:40.163
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<. ; version: 2.0.7.v20170906-1327
+!STACK 0
+com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<
+	at com.google.gson.Gson.fromJson(Gson.java:902)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:100)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:109)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.loadConfiguration(IO.java:71)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:121)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<
+	at com.google.gson.stream.JsonReader.syntaxError(JsonReader.java:1559)
+	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:530)
+	at com.google.gson.stream.JsonReader.skipValue(JsonReader.java:1224)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:218)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	... 8 more
+!SESSION 2018-06-08 09:28:17.708 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=hu_HU
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -data file:/D:/JAVA/AK_Academy/AK_Academy/ -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2018-06-08 09:28:34.494
+!MESSAGE Removing part descriptor with the 'com.yattasolutions.umllab.hintView' id and the 'UML Lab Hints' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-06-08 09:28:34.850
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Balogh Geri'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-06-08 09:28:35.248
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<. ; version: 2.0.7.v20170906-1327
+!STACK 0
+com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<
+	at com.google.gson.Gson.fromJson(Gson.java:902)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:100)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:109)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.loadConfiguration(IO.java:71)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:121)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<
+	at com.google.gson.stream.JsonReader.syntaxError(JsonReader.java:1559)
+	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:530)
+	at com.google.gson.stream.JsonReader.skipValue(JsonReader.java:1224)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:218)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	... 8 more
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2018-06-08 09:28:35.707
+!MESSAGE Removing part descriptor with the 'com.yattasolutions.umllab.views.treeview' id and the 'UML Lab Tree' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 10053 2018-06-08 09:32:53.480
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10053 2018-06-08 09:32:53.480
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2018-06-08 09:32:53.480
+!MESSAGE Software being installed: UML Designer with Product Specific Branding 8.0.0.201709181143 (org.obeonetwork.dsl.uml2.runtime.product.feature.feature.group 8.0.0.201709181143)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2018-06-08 09:32:53.480
+!MESSAGE Missing requirement: UML Designer with Product Specific Branding 8.0.0.201709181143 (org.obeonetwork.dsl.uml2.runtime.product.feature.feature.group 8.0.0.201709181143) requires 'org.eclipse.sirius.runtime.acceleo.feature.group 0.0.0' but it could not be found
+
+!ENTRY org.eclipse.equinox.p2.operations 4 10053 2018-06-08 09:32:53.487
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10053 2018-06-08 09:32:53.487
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2018-06-08 09:32:53.487
+!MESSAGE Software being installed: UML Designer with Product Specific Branding 8.0.0.201709181143 (org.obeonetwork.dsl.uml2.runtime.product.feature.feature.group 8.0.0.201709181143)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2018-06-08 09:32:53.487
+!MESSAGE Missing requirement: UML Designer with Product Specific Branding 8.0.0.201709181143 (org.obeonetwork.dsl.uml2.runtime.product.feature.feature.group 8.0.0.201709181143) requires 'org.eclipse.sirius.runtime.acceleo.feature.group 0.0.0' but it could not be found
+
+!ENTRY org.eclipse.equinox.p2.operations 4 10053 2018-06-08 09:32:53.500
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10053 2018-06-08 09:32:53.500
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2018-06-08 09:32:53.500
+!MESSAGE Software being installed: UML Designer with Product Specific Branding 8.0.0.201709181143 (org.obeonetwork.dsl.uml2.runtime.product.feature.feature.group 8.0.0.201709181143)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2018-06-08 09:32:53.500
+!MESSAGE Missing requirement: UML Designer with Product Specific Branding 8.0.0.201709181143 (org.obeonetwork.dsl.uml2.runtime.product.feature.feature.group 8.0.0.201709181143) requires 'org.eclipse.sirius.runtime.acceleo.feature.group 0.0.0' but it could not be found
+
+!ENTRY org.eclipse.equinox.p2.operations 4 10053 2018-06-08 09:32:53.501
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10053 2018-06-08 09:32:53.501
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2018-06-08 09:32:53.501
+!MESSAGE Software being installed: UML Designer with Product Specific Branding 8.0.0.201709181143 (org.obeonetwork.dsl.uml2.runtime.product.feature.feature.group 8.0.0.201709181143)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2018-06-08 09:32:53.501
+!MESSAGE Missing requirement: UML Designer with Product Specific Branding 8.0.0.201709181143 (org.obeonetwork.dsl.uml2.runtime.product.feature.feature.group 8.0.0.201709181143) requires 'org.eclipse.sirius.runtime.acceleo.feature.group 0.0.0' but it could not be found
+!SESSION 2018-06-08 09:34:53.773 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=hu_HU
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -data file:/D:/JAVA/AK_Academy/AK_Academy/ -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-06-08 09:35:16.291
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Balogh Geri'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-06-08 09:35:16.706
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<. ; version: 2.0.7.v20170906-1327
+!STACK 0
+com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<
+	at com.google.gson.Gson.fromJson(Gson.java:902)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:100)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:109)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.loadConfiguration(IO.java:71)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:121)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<
+	at com.google.gson.stream.JsonReader.syntaxError(JsonReader.java:1559)
+	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:530)
+	at com.google.gson.stream.JsonReader.skipValue(JsonReader.java:1224)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:218)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	... 8 more
+!SESSION 2018-06-08 10:29:56.468 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=hu_HU
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-06-08 10:30:10.929
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Balogh Geri'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-06-08 10:30:12.591
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<. ; version: 2.0.7.v20170906-1327
+!STACK 0
+com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<
+	at com.google.gson.Gson.fromJson(Gson.java:902)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:100)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:109)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.loadConfiguration(IO.java:71)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:121)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<
+	at com.google.gson.stream.JsonReader.syntaxError(JsonReader.java:1559)
+	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:530)
+	at com.google.gson.stream.JsonReader.skipValue(JsonReader.java:1224)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:218)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	... 8 more
+!SESSION 2018-06-08 13:45:49.568 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=hu_HU
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-06-08 13:46:15.867
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Balogh Geri'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-06-08 13:46:18.373
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<. ; version: 2.0.7.v20170906-1327
+!STACK 0
+com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<
+	at com.google.gson.Gson.fromJson(Gson.java:902)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:100)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:109)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.loadConfiguration(IO.java:71)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:121)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<
+	at com.google.gson.stream.JsonReader.syntaxError(JsonReader.java:1559)
+	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:530)
+	at com.google.gson.stream.JsonReader.skipValue(JsonReader.java:1224)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:218)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	... 8 more
