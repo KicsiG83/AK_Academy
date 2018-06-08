@@ -8532,6 +8532,7 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=hu_HU
 Framework arguments:  -product org.eclipse.epp.package.java.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 !SESSION 2018-06-07 18:12:46.368 -----------------------------------------------
 eclipse.buildId=4.7.3.M20180330-0640
 java.version=1.8.0_161
@@ -8539,6 +8540,8 @@ java.vendor=Oracle Corporation
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=hu_HU
 Framework arguments:  -product org.eclipse.epp.package.java.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -9208,6 +9211,7 @@ Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4
 	at com.google.gson.Gson.fromJson(Gson.java:887)
 	... 8 more
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 !ENTRY org.eclipse.ui 4 4 2018-06-07 18:12:56.523
 !MESSAGE Unable to create part
@@ -9811,3 +9815,5 @@ Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:218)
 	at com.google.gson.Gson.fromJson(Gson.java:887)
 	... 8 more
+=======
+>>>>>>> Stashed changes
