@@ -1,36 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
-<<<<<<< HEAD
-		<item value="C:\eets-selenium"/>
-		<item value="D:\JAVA\AK_Academy\AK_Academy\GetCurrency"/>
-=======
-		<item value="D:\Java\AK_Academy\JDBC"/>
-<<<<<<< Updated upstream
-=======
->>>>>>> master
-		<item value="D:\Java\AK_Academy\ExamTasks"/>
-		<item value="D:\JAVA\AK_Academy\AK_Academy\ExamTasks"/>
-		<item value="D:\Java\AK_Academy\Hangman"/>
-		<item value="D:\Java\AK_Academy\GetCurrency"/>
-		<item value="D:\JAVA\AK_Academy\AK_Academy\CreatedNumberDivideThree"/>
-		<item value="D:\Java\AK_Academy\CreatedNumberDivideThree"/>
-		<item value="D:\JAVA\AK_Academy\AK_Academy\PiApproach"/>
-		<item value="D:\Java\AK_Academy\PiApproach"/>
-		<item value="D:\Java\AK_Academy\Universe"/>
-		<item value="D:\JAVA\AK_Academy\AK_Academy\Universe"/>
-		<item value="D:\JAVA\AK_Academy\AK_Academy\TaxNumberGenerator"/>
-		<item value="D:\JAVA\AK_Academy\AK_Academy\BubbleSort"/>
-		<item value="D:\Java\AK_Academy\BubbleSort"/>
-		<item value="D:\JAVA\AK_Academy\AK_Academy\RiverCafe"/>
-		<item value="D:\Java\AK_Academy\TennisSimulation"/>
-		<item value="D:\JAVA\AK_Academy\AK_Academy\TennisSimulation"/>
-		<item value="D:\Java\AK_Academy"/>
-		<item value="D:\JAVA\AK_Academy\AK_Academy"/>
->>>>>>> Stashed changes
+		<item value="D:\JAVA\AK_Academy\AK_Academy\JDBC"/>
 	</list>
 	<section name="ResourceNavigator">
-		<item value="Aggregate for window 1528429549422" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
+		<item value="Aggregate for window 1528459849099" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
 		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
 	</section>
 </section>
