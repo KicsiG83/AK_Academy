@@ -6,8 +6,8 @@ import java.sql.SQLException;
 public class JDBCUser {
 
 	public static void uploadUser(String name, String password, String email, String status) throws SQLException {
-		Connection connection = JDBCConnection.createConnection();
 		String[] userColumns = {name, password, email, status};
+		Connection connection = JDBCConnection.createConnection();
 		String upload = "INSERT INTO USER_DATA VALUES (user_seq.nextval, ?, ?, ?, ?)";
 		try (PreparedStatement userStatement = connection.prepareStatement(upload)) {
 			for(int i = 1; i <= userColumns.length; i++) {

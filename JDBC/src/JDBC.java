@@ -10,7 +10,7 @@ public class JDBC {
 	private String clientEmail = "micimacko@szazholdaspagony.hu";
 	private String phoneNumber = "36701234567";
 	private String type = "Eladó";
-	private String comment = "NincsMegjegyzés";
+	private String comment = "na";
 	
 	public static void main(String[] args) throws SQLException {
 		new JDBC().run();
@@ -18,9 +18,8 @@ public class JDBC {
 	
 	private void run() throws SQLException {
 		JDBCUser.uploadUser(name, password, email, status);
-//		JDBCClient.uploadClient(clientName, clientEmail, phoneNumber, type, comment);
-//		JDBCProperty.uploadProperty(1, 1, "Eladó", "Lakás", "1000000", "Budapest", "XI. kerület", "Tétényi út", "1", "FSZ", "1", "Van", "Eladás alatt", "50 nm", "2", "Nincs", "Nincs", "Nincs", "Igen", "2,5", "Felújított", "Blablabla");
-//		uploadStatement();
+		JDBCClient.uploadClient(clientName, clientEmail, phoneNumber, type, comment);
+		JDBCProperty.uploadProperty(1, 1, "Eladó", "Lakás", "1000000", "Budapest", "XI. kerület", "Tétényi út", "1", "FSZ", "1", "Van", "Eladás alatt", "50 nm", "2", "Nincs", "Nincs", "Nincs", "Igen", "2,5", "Felújított", "Blablabla");
 		JDBCUser.listAllUserData();
 	}
 }

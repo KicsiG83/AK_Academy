@@ -8,7 +8,7 @@ public class JDBCConnection {
 
 	public static Connection createConnection() {
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String user = "patient_manager";
+		String user = "pinCodeAdminUser";
 		String password = "admin";
 		try {
 			connection = DriverManager.getConnection(url, user, password);
