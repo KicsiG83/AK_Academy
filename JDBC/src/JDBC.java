@@ -1,29 +1,27 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class JDBC {
-
+	
+	private String name = "Kitty";
+	private String password = "Teszt1234";
+	private String email = "tesztEmail@Teszt.hu";
+	private String status = "ACTIVE";
+	private String clientName = "Micimackó";
+	private String clientEmail = "micimacko@szazholdaspagony.hu";
+	private String phoneNumber = "36701234567";
+	private String type = "Eladó";
+	private String comment = "NincsMegjegyzés";
+	
 	public static void main(String[] args) throws SQLException {
-
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/xe", "patient_manager", "admin");
-			String SQL = "SELECT A.NAME, A.PASSWORD FROM USER_DATA A WHERE A.USER_ID = '1'";
-			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery(SQL);
-			while (rs.next()) {
-				System.out.println("Ez itt a válasz: " + rs.getString(1) + "\n" + rs.getString(2));
-				System.out.println("Ez itt a getRow: " + rs.getRow());
-			}
-			con.close();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			System.out.println("Hiba: " + e.getMessage());
-		}
+		new JDBC().run();
+	}
+	
+	private void run() throws SQLException {
+		JDBCUser.uploadUser(name, password, email, status);
+//		JDBCClient.uploadClient(clientName, clientEmail, phoneNumber, type, comment);
+//		JDBCProperty.uploadProperty(1, 1, "Eladó", "Lakás", "1000000", "Budapest", "XI. kerület", "Tétényi út", "1", "FSZ", "1", "Van", "Eladás alatt", "50 nm", "2", "Nincs", "Nincs", "Nincs", "Igen", "2,5", "Felújított", "Blablabla");
+//		uploadStatement();
+		JDBCUser.listAllUserData();
 	}
 }
 
