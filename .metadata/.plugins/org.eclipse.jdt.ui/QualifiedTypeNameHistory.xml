@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javafx.scene.control.Separator"/>
-<fullyQualifiedTypeName name="WelcomeAndGetNumber"/>
-<fullyQualifiedTypeName name="Euler"/>
-<fullyQualifiedTypeName name="MathematicalCalculation"/>
-<fullyQualifiedTypeName name="Liebniz"/>
-<fullyQualifiedTypeName name="Wallis"/>
-<fullyQualifiedTypeName name="Ancient"/>
 <fullyQualifiedTypeName name="Viètel"/>
 <fullyQualifiedTypeName name="Mathematics"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
@@ -27,7 +20,6 @@
 <fullyQualifiedTypeName name="com.sun.corba.se.spi.activation.InitialNameServicePackage.NameAlreadyBound"/>
 <fullyQualifiedTypeName name="DwarfPlanet"/>
 <fullyQualifiedTypeName name="Response"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="org.omg.PortableServer.ServantRetentionPolicyValue"/>
 <fullyQualifiedTypeName name="sun.plugin2.message.SetJVMIDMessage"/>
 <fullyQualifiedTypeName name="Calculate"/>
@@ -42,7 +34,6 @@
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="sun.jvm.hotspot.debugger.AddressException"/>
 <fullyQualifiedTypeName name="Validation"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="ExerciseOnePrint"/>
 <fullyQualifiedTypeName name="ThreeGoodCalculator"/>
 <fullyQualifiedTypeName name="ThreeGoodGetInput"/>
@@ -60,4 +51,13 @@
 <fullyQualifiedTypeName name="JDBCUser"/>
 <fullyQualifiedTypeName name="JDBCProperty"/>
 <fullyQualifiedTypeName name="java.sql.ResultSetMetaData"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="Player"/>
+<fullyQualifiedTypeName name="Main"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.classfile.LineNumber"/>
+<fullyQualifiedTypeName name="java.util.zip.CheckedInputStream"/>
+<fullyQualifiedTypeName name="Board"/>
+<fullyQualifiedTypeName name="WinChecker"/>
+<fullyQualifiedTypeName name="javax.sql.rowset.RowSetWarning"/>
 </qualifiedTypeNameHistroy>
