@@ -9,7 +9,7 @@ public class Player {
 	private static int diagonalLeft;
 	private static int diagonalRight;
 
-	public static int getLine() {
+	public int getLine() {
 		return line;
 	}
 
@@ -17,7 +17,7 @@ public class Player {
 		Player.line = line;
 	}
 
-	public static int getColumn() {
+	public int getColumn() {
 		return column;
 	}
 
@@ -25,7 +25,7 @@ public class Player {
 		Player.column = column;
 	}
 
-	public static int getDiagonalLeft() {
+	public int getDiagonalLeft() {
 		return diagonalLeft;
 	}
 
@@ -33,7 +33,7 @@ public class Player {
 		Player.diagonalLeft = diagonalLeft;
 	}
 
-	public static int getDiagonalRight() {
+	public int getDiagonalRight() {
 		return diagonalRight;
 	}
 
@@ -52,7 +52,7 @@ public class Player {
 	public Player(Scanner sc) {
 		getInput(sc);
 	}
-	
+
 	public String getPlayerName() {
 		return playerName;
 	}
@@ -60,10 +60,10 @@ public class Player {
 	public void setPlayerName(String playerName) {
 		this.playerName = playerName;
 	}
-	
+
 	public void getInput(Scanner sc) {
 		System.out.print("Kérem adja meg a játékos nevét: ");
 		setPlayerName(sc.nextLine());
 	}
-	
+
 }

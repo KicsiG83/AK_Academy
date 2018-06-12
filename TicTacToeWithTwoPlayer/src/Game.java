@@ -19,11 +19,10 @@ public class Game {
 					gameOver = WinChecker.isWin(player1);
 				}
 			}
-		
 		} while (!gameOver);
-		if(player1.isWin()) {
+		if (player1.isWin()) {
 			System.out.println(player1.getPlayerName() + " nyert.");
-		}else {
+		} else {
 			System.out.println(player2.getPlayerName() + " nyert.");
 		}
 	}
@@ -76,6 +75,36 @@ public class Game {
 	}
 
 	public static void checkNeighbours(int rowIndex, int columnIndex, char sign) {
+		boolean checkLeft = false;
+		boolean checkRight = false;
+		boolean checkUp = false;
+		boolean checkDown = false;
+		
+		if (rowIndex == 1) {
+			checkDown = true;
+		}
+		if(rowIndex == Board.getBoardSize()) {
+			checkUp = true;
+		}
+		if(columnIndex == 1) {
+			checkRight = true;
+		}
+		if(columnIndex == Board.getBoardSize()) {
+			checkLeft = true;
+		}
+		if(checkLeft) {
+			
+		}
+		if(checkRight) {
+			
+		}
+		if(checkUp) {
+			
+		}
+		if(checkDown) {
+			
+		}
+		//Balra vizsgál
 		int line = 0;
 		boolean win = false;
 		int i = columnIndex - 1;
@@ -89,6 +118,7 @@ public class Game {
 				break;
 			}
 		}
+		//jobbra vizsgál
 		i = columnIndex - 1;
 		while (!win && i < 10) {
 			if (Board.getTableField(rowIndex, i) == sign) {

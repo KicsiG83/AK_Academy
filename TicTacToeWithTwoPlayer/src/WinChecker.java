@@ -3,16 +3,15 @@ public class WinChecker {
 
 	public static boolean isWin(Player player) {
 		boolean win = false;
-		if(player.getLine()==5) {
+		if (player.getLine() == 5) {
 			player.setWin(true);
-		}else if(player.getColumn()== 5) {
+		} else if (player.getColumn() == 5) {
 			player.setWin(true);
-		}else if(player.getDiagonalLeft()==5) {
+		} else if (player.getDiagonalLeft() == 5) {
 			player.setWin(true);
-		}
-		else if(player.getDiagonalRight()==5) {
+		} else if (player.getDiagonalRight() == 5) {
 			player.setWin(true);
-		}else {
+		} else {
 			player.setWin(false);
 			player.setLine(0);
 			player.setColumn(0);
@@ -21,5 +20,5 @@ public class WinChecker {
 		}
 		return win;
 	}
-	
+
 }

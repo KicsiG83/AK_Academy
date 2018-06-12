@@ -7,11 +7,11 @@ public class Board {
 	private static int boardSize;
 	public static char[][] table;
 	private static char sign;
-	
+
 	public static void setTableField(int rowIndex, int columnIndex, char sign) {
-		table[rowIndex-1][columnIndex-1] = sign;
+		table[rowIndex - 1][columnIndex - 1] = sign;
 	}
-	
+
 	public static char getTableField(int rowIndex, int columnIndex) {
 		int row = 0;
 		int column = 0;
@@ -27,7 +27,7 @@ public class Board {
 		}
 		return sign = table[row][column];
 	}
-	
+
 	public static int getBoardSize() {
 		return boardSize;
 	}
@@ -40,7 +40,7 @@ public class Board {
 		setBoardSize(getBoardSize(sc));
 		setBoard(getBoardSize());
 	}
-	
+
 	public static int getBoardSize(Scanner sc) {
 		boolean result = false;
 		do {
@@ -48,29 +48,29 @@ public class Board {
 				System.out.print("Kérem adja meg a játéktér méretét (legalább 5): ");
 				Board.setBoardSize(sc.nextInt());
 				sc.nextLine();
-				if(Board.getBoardSize()>=5) {
+				if (Board.getBoardSize() >= 5) {
 					result = true;
-				}else {
+				} else {
 					System.out.println("A tábla mérete túl kicsi, nem fér el rajta 5 jel egy vonalban!\n");
 				}
-			}catch (Exception e) {
+			} catch (Exception e) {
 				sc.nextLine();
 				System.out.println("\nA megadott érték érvénytelen.\n");
 			}
-		}while(!result);
-		
+		} while (!result);
+
 		return Board.getBoardSize();
 	}
-	
+
 	public static void setBoard(int number) {
 		table = new char[number][number];
-		for(int i = 0; i < table.length; i++) {
-			for(int j = 0; j < table.length; j++){
+		for (int i = 0; i < table.length; i++) {
+			for (int j = 0; j < table.length; j++) {
 				table[i][j] = '_';
 			}
 		}
 	}
-	
+
 	public static void printBoard() {
 		System.out.println();
 		String space = " ";
@@ -82,7 +82,7 @@ public class Board {
 		}
 		System.out.println();
 		for (int i = 0; i < table.length; i++) {
-			int iLength = (int) (Math.log10(i+1) + 1);
+			int iLength = (int) (Math.log10(i + 1) + 1);
 			String iSpaces = new String(new char[length - iLength]).replace("\0", space);
 			System.out.print(i + 1 + iSpaces);
 			for (int j = 0; j < table.length; j++) {
