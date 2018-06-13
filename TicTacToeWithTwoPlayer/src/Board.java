@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import javax.sql.rowset.RowSetWarning;
-
 public class Board {
 
 	private static int boardSize;
@@ -9,26 +7,11 @@ public class Board {
 	private static char sign;
 
 	public static void setTableField(int rowIndex, int columnIndex, char sign) {
-		table[rowIndex - 1][columnIndex - 1] = sign;
+		table[rowIndex][columnIndex] = sign;
 	}
-
-	
-	// Itt van a gond, elcsúszik a számolás
 	
 	public static char getTableField(int rowIndex, int columnIndex) {
-		int row = 0;
-		int column = 0;
-		if (rowIndex >= 1 && rowIndex < Board.getBoardSize()) {
-			row = rowIndex;
-		} else {
-			row = rowIndex - 1;
-		}
-		if (columnIndex >= 1 && columnIndex < Board.getBoardSize()) {
-			column = columnIndex;
-		} else {
-			column = columnIndex - 1;
-		}
-		return sign = table[row][column];
+		return sign = table[rowIndex][columnIndex];
 	}
 
 	public static int getBoardSize() {
@@ -80,14 +63,14 @@ public class Board {
 		int length = (int) (Math.log10(table.length) + 1);
 		String spaces = new String(new char[length]).replace("\0", space);
 		System.out.print(spaces);
-		for (int i = 1; i <= table.length; i++) {
+		for (int i = 0; i < table.length; i++) {
 			System.out.print(i + " ");
 		}
 		System.out.println();
 		for (int i = 0; i < table.length; i++) {
-			int iLength = (int) (Math.log10(i + 1) + 1);
+			int iLength = (int) (Math.log10(i == 0 ? i + 1 : i + 0 ) + 1);
 			String iSpaces = new String(new char[length - iLength]).replace("\0", space);
-			System.out.print(i + 1 + iSpaces);
+			System.out.print(i + iSpaces);
 			for (int j = 0; j < table.length; j++) {
 				System.out.format(table[i][j] + " ");
 				if (j == table.length - 1) {

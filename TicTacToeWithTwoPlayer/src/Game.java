@@ -49,7 +49,6 @@ public class Game {
 		} else {
 			System.out.println("A megadott mező foglalt.");
 		}
-
 		return validInput;
 	}
 
@@ -61,7 +60,7 @@ public class Game {
 				System.out.print(message);
 				userInput = sc.nextInt();
 				sc.nextLine();
-				if (userInput < 1 || userInput > number) {
+				if (userInput < 0 || userInput >= number) {
 					System.out.println("Határértéken túli input.");
 				} else {
 					validInput = true;
