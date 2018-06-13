@@ -12,15 +12,18 @@ public class Board {
 		table[rowIndex - 1][columnIndex - 1] = sign;
 	}
 
+	
+	// Itt van a gond, elcsúszik a számolás
+	
 	public static char getTableField(int rowIndex, int columnIndex) {
 		int row = 0;
 		int column = 0;
-		if (rowIndex == 1) {
+		if (rowIndex >= 1 && rowIndex < Board.getBoardSize()) {
 			row = rowIndex;
 		} else {
 			row = rowIndex - 1;
 		}
-		if (columnIndex == 1) {
+		if (columnIndex >= 1 && columnIndex < Board.getBoardSize()) {
 			column = columnIndex;
 		} else {
 			column = columnIndex - 1;

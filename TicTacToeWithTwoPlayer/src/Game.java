@@ -77,58 +77,59 @@ public class Game {
 	public static void checkNeighbours(int rowIndex, int columnIndex, char sign) {
 		boolean checkLeft = false;
 		boolean checkRight = false;
-		boolean checkUp = false;
-		boolean checkDown = false;
+//		boolean checkUp = false;
+//		boolean checkDown = false;
+//		boolean direction = true;
+		boolean win = false;
+		int i = columnIndex;
+		int line = 1;
 		
-		if (rowIndex == 1) {
-			checkDown = true;
-		}
-		if(rowIndex == Board.getBoardSize()) {
-			checkUp = true;
-		}
-		if(columnIndex == 1) {
+//		if (rowIndex >= 1) {
+//			checkDown = true;
+//		}
+//		if(rowIndex <= Board.getBoardSize()) {
+//			checkUp = true;
+//		}
+		if(columnIndex >= 1 && columnIndex < Board.getBoardSize()) {
 			checkRight = true;
 		}
-		if(columnIndex == Board.getBoardSize()) {
+		if(columnIndex <= Board.getBoardSize() && columnIndex > 1) {
 			checkLeft = true;
 		}
 		if(checkLeft) {
-			
+			i = columnIndex - 1;
+			while (!win && i > 0) {
+				if (Board.getTableField(rowIndex, i) == sign) {
+					line++;
+					Player.setLine(line);
+					i -= 1;
+				} else {
+//					i -= 1;
+					break;
+				}
+			}
 		}
 		if(checkRight) {
-			
-		}
-		if(checkUp) {
-			
-		}
-		if(checkDown) {
-			
-		}
-		//Balra vizsgál
-		int line = 0;
-		boolean win = false;
-		int i = columnIndex - 1;
-		while (!win && i > 0) {
-			if (Board.getTableField(rowIndex, i) == sign) {
-				line++;
-				Player.setLine(line);
-				i -= 1;
-			} else {
-				i -= 1;
-				break;
+			i = columnIndex + 1;
+			while (!win && i < Board.getBoardSize()) {
+				if (Board.getTableField(rowIndex, i) == sign) {
+					line++;
+					Player.setLine(line);
+					i += 1;
+				} else {
+//					i += 1;
+					break;
+				}
 			}
 		}
-		//jobbra vizsgál
-		i = columnIndex - 1;
-		while (!win && i < 10) {
-			if (Board.getTableField(rowIndex, i) == sign) {
-				line++;
-				Player.setLine(line);
-				i += 1;
-			} else {
-				i += 1;
-				break;
-			}
+//		if(checkUp) {
+//			
+//		}
+//		if(checkDown) {
+//			
+//		}
+		if(line == 5) {
+			
 		}
 	}
 }
