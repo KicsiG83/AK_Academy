@@ -8,23 +8,30 @@ public class Game {
 		boolean gameOver = false;
 		do {
 			Board.printBoard();
-			for (int i = 1; i < Board.getBoardSize() * Board.getBoardSize(); i++) {
+			for (int i = 1; i < Math.pow(Board.getBoardSize(), 2); i++) {
 				if (i % 2 == 0) {
 					System.out.print(player2.getPlayerName() + " ");
 					getUserInput(sc, player2, Board.getBoardSize(), 'O');
-					gameOver = WinChecker.isWin(player2);
+					WinChecker.isWin(player2);
+					gameOver = player2.isWin();
+					if (gameOver) {
+						System.out.println(player2.getPlayerName() + " nyert. Gratulálok a győztesnek.\n"
+								+ player1.getPlayerName() + " ne csüggedj, legközelebb jobban fog menni :)");
+						break;
+					}
 				} else {
 					System.out.print(player1.getPlayerName() + " ");
 					getUserInput(sc, player1, Board.getBoardSize(), 'X');
-					gameOver = WinChecker.isWin(player1);
+					WinChecker.isWin(player1);
+					gameOver = player1.isWin();
+					if (gameOver) {
+						System.out.println(player1.getPlayerName() + " nyert. Gratulálok a győztesnek.\n"
+								+ player2.getPlayerName() + " ne csüggedj, legközelebb jobban fog menni :)");
+						break;
+					}
 				}
 			}
 		} while (!gameOver);
-		if (player1.isWin()) {
-			System.out.println(player1.getPlayerName() + " nyert.");
-		} else {
-			System.out.println(player2.getPlayerName() + " nyert.");
-		}
 	}
 
 	public static void getUserInput(Scanner sc, Player player, int number, char sign) {
@@ -37,7 +44,7 @@ public class Game {
 			result = checkInputOnBoard(line, column, sign);
 		} while (!result);
 		Board.printBoard();
-		checkNeighbours(line, column, sign);
+		checkNeighbours(player, line, column, sign);
 	}
 
 	public static boolean checkInputOnBoard(int line, int column, char userSign) {
@@ -73,62 +80,123 @@ public class Game {
 		return userInput;
 	}
 
-	public static void checkNeighbours(int rowIndex, int columnIndex, char sign) {
-		boolean checkLeft = false;
-		boolean checkRight = false;
-//		boolean checkUp = false;
-//		boolean checkDown = false;
-//		boolean direction = true;
+	public static void checkNeighbours(Player player, int rowIndex, int columnIndex, char sign) {
 		boolean win = false;
-		int i = columnIndex;
-		int line = 1;
-		
-//		if (rowIndex >= 1) {
-//			checkDown = true;
-//		}
-//		if(rowIndex <= Board.getBoardSize()) {
-//			checkUp = true;
-//		}
-		if(columnIndex >= 1 && columnIndex < Board.getBoardSize()) {
-			checkRight = true;
-		}
-		if(columnIndex <= Board.getBoardSize() && columnIndex > 1) {
-			checkLeft = true;
-		}
-		if(checkLeft) {
-			i = columnIndex - 1;
-			while (!win && i > 0) {
-				if (Board.getTableField(rowIndex, i) == sign) {
-					line++;
-					Player.setLine(line);
-					i -= 1;
-				} else {
-//					i -= 1;
-					break;
-				}
+		player.setLine(1);
+		player.setColumn(1);
+		player.setDiagonalLeft(1);
+		player.setDiagonalRight(1);
+		checkLineLeft(player, rowIndex, columnIndex, sign);
+		checkLineRight(player, rowIndex, columnIndex, sign);
+		checkColumnUp(player, rowIndex, columnIndex, sign);
+		checkColumnDown(player, rowIndex, columnIndex, sign);
+		checkDiagonalLeftAndUp(player, rowIndex, columnIndex, sign);
+		checkDiagonalRightAndDown(player, rowIndex, columnIndex, sign);
+		checkDiagonalRightAndUp(player, rowIndex, columnIndex, sign);
+		checkDiagonalLeftAndDown(player, rowIndex, columnIndex, sign);
+	}
+
+	private static void checkLineRight(Player player, int rowIndex, int columnIndex, char sign) {
+		int i = columnIndex + 1;
+		while (i < Board.getBoardSize()) {
+			if (Board.getTableField(rowIndex, i) == sign) {
+				player.setLine(player.getLine() + 1);
+				i += 1;
+			} else {
+				break;
 			}
 		}
-		if(checkRight) {
-			i = columnIndex + 1;
-			while (!win && i < Board.getBoardSize()) {
-				if (Board.getTableField(rowIndex, i) == sign) {
-					line++;
-					Player.setLine(line);
-					i += 1;
-				} else {
-//					i += 1;
-					break;
-				}
+	}
+
+	private static void checkLineLeft(Player player, int rowIndex, int columnIndex, char sign) {
+		int i = columnIndex - 1;
+		while (i >= 0) {
+			if (Board.getTableField(rowIndex, i) == sign) {
+				player.setLine(player.getLine() + 1);
+				i -= 1;
+			} else {
+				break;
 			}
 		}
-//		if(checkUp) {
-//			
-//		}
-//		if(checkDown) {
-//			
-//		}
-		if(line == 5) {
-			
+	}
+
+	private static void checkColumnDown(Player player, int rowIndex, int columnIndex, char sign) {
+		int i = rowIndex + 1;
+		while (i < Board.getBoardSize()) {
+			if (Board.getTableField(i, columnIndex) == sign) {
+				player.setColumn(player.getColumn() + 1);
+				i += 1;
+			} else {
+				break;
+			}
+		}
+	}
+
+	private static void checkColumnUp(Player player, int rowIndex, int columnIndex, char sign) {
+		int i = rowIndex - 1;
+		while (i >= 0) {
+			if (Board.getTableField(i, columnIndex) == sign) {
+				player.setColumn(player.getColumn() + 1);
+				i -= 1;
+			} else {
+				break;
+			}
+		}
+	}
+
+	private static void checkDiagonalLeftAndUp(Player player, int rowIndex, int columnIndex, char sign) {
+		int i = rowIndex - 1;
+		int j = columnIndex - 1;
+		while (i >= 0 && j >= 0) {
+			if (Board.getTableField(i, j) == sign) {
+				player.setDiagonalLeft(player.getDiagonalLeft() + 1);
+				i -= 1;
+				j -= 1;
+			} else {
+				break;
+			}
+		}
+	}
+
+	private static void checkDiagonalRightAndDown(Player player, int rowIndex, int columnIndex, char sign) {
+		int i = rowIndex + 1;
+		int j = columnIndex + 1;
+		while (i < Board.getBoardSize() && j < Board.getBoardSize()) {
+			if (Board.getTableField(i, j) == sign) {
+				player.setDiagonalLeft(player.getDiagonalLeft() + 1);
+				i += 1;
+				j += 1;
+			} else {
+				break;
+			}
+		}
+	}
+
+	private static void checkDiagonalRightAndUp(Player player, int rowIndex, int columnIndex, char sign) {
+		int i = rowIndex - 1;
+		int j = columnIndex + 1;
+		while (i >= 0 && j < Board.getBoardSize()) {
+			if (Board.getTableField(i, j) == sign) {
+				player.setDiagonalRight(player.getDiagonalRight() + 1);
+				i -= 1;
+				j += 1;
+			} else {
+				break;
+			}
+		}
+	}
+
+	private static void checkDiagonalLeftAndDown(Player player, int rowIndex, int columnIndex, char sign) {
+		int i = rowIndex + 1;
+		int j = columnIndex - 1;
+		while (i < Board.getBoardSize() && j >= 0) {
+			if (Board.getTableField(i, j) == sign) {
+				player.setDiagonalRight(player.getDiagonalRight() + 1);
+				i += 1;
+				j -= 1;
+			} else {
+				break;
+			}
 		}
 	}
 }

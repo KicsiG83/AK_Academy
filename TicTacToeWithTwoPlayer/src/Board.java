@@ -9,7 +9,7 @@ public class Board {
 	public static void setTableField(int rowIndex, int columnIndex, char sign) {
 		table[rowIndex][columnIndex] = sign;
 	}
-	
+
 	public static char getTableField(int rowIndex, int columnIndex) {
 		return sign = table[rowIndex][columnIndex];
 	}
@@ -68,7 +68,7 @@ public class Board {
 		}
 		System.out.println();
 		for (int i = 0; i < table.length; i++) {
-			int iLength = (int) (Math.log10(i == 0 ? i + 1 : i + 0 ) + 1);
+			int iLength = (int) (Math.log10(i == 0 ? i + 1 : i + 0) + 1);
 			String iSpaces = new String(new char[length - iLength]).replace("\0", space);
 			System.out.print(i + iSpaces);
 			for (int j = 0; j < table.length; j++) {

@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Player {
 
 	private String playerName;
-	private boolean win;
+	private static boolean win;
 	private static int line;
 	private static int column;
 	private static int diagonalLeft;
@@ -41,12 +41,12 @@ public class Player {
 		Player.diagonalRight = diagonalRight;
 	}
 
-	public boolean isWin() {
+	public static boolean isWin() {
 		return win;
 	}
 
-	public void setWin(boolean win) {
-		this.win = win;
+	public void setWin(boolean winInfo) {
+		win = winInfo;
 	}
 
 	public Player(Scanner sc) {
