@@ -14,5 +14,4 @@ public class Main {
 		Printer.bye();
 		sc.close();
 	}
-
 }

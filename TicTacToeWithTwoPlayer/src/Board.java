@@ -23,11 +23,11 @@ public class Board {
 	}
 
 	public Board(Scanner sc) {
-		setBoardSize(getBoardSize(sc));
+		setBoardSize(initBoardSize(sc));
 		setBoard(getBoardSize());
 	}
 
-	public static int getBoardSize(Scanner sc) {
+	public static int initBoardSize(Scanner sc) {
 		boolean result = false;
 		do {
 			try {
