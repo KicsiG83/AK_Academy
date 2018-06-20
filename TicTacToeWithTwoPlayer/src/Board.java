@@ -18,12 +18,8 @@ public class Board {
 		return boardSize;
 	}
 
-	public static void setBoardSize(int size) {
-		boardSize = size;
-	}
-
 	public Board(Scanner sc) {
-		setBoardSize(initBoardSize(sc));
+		initBoardSize(sc);
 		setBoard(getBoardSize());
 	}
 
@@ -32,9 +28,9 @@ public class Board {
 		do {
 			try {
 				System.out.print("Kérem adja meg a játéktér méretét (legalább 5): ");
-				Board.setBoardSize(sc.nextInt());
+				boardSize = sc.nextInt();
 				sc.nextLine();
-				if (Board.getBoardSize() >= 5) {
+				if (boardSize >= 5) {
 					result = true;
 				} else {
 					System.out.println("A tábla mérete túl kicsi, nem fér el rajta 5 jel egy vonalban!\n");
@@ -45,7 +41,7 @@ public class Board {
 			}
 		} while (!result);
 
-		return Board.getBoardSize();
+		return boardSize;
 	}
 
 	public static void setBoard(int number) {

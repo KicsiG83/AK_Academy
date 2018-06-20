@@ -22,7 +22,6 @@ public class Checker {
 	}
 
 	public static void checkNeighbours(Player player, int rowIndex, int columnIndex, char sign) {
-		boolean win = false;
 		player.setLine(1);
 		player.setColumn(1);
 		player.setDiagonalLeft(1);

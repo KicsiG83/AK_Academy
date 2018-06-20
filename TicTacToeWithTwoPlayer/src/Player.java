@@ -3,46 +3,46 @@ import java.util.Scanner;
 public class Player {
 
 	private String playerName;
-	private static boolean win;
-	private static int line;
-	private static int column;
-	private static int diagonalLeft;
-	private static int diagonalRight;
+	private boolean win;
+	private int line;
+	private int column;
+	private int diagonalLeft;
+	private int diagonalRight;
 
 	public int getLine() {
 		return line;
 	}
 
-	public static void setLine(int line) {
-		Player.line = line;
+	public void setLine(int line) {
+		this.line = line;
 	}
 
 	public int getColumn() {
 		return column;
 	}
 
-	public static void setColumn(int column) {
-		Player.column = column;
+	public void setColumn(int column) {
+		this.column = column;
 	}
 
 	public int getDiagonalLeft() {
 		return diagonalLeft;
 	}
 
-	public static void setDiagonalLeft(int diagonalLeft) {
-		Player.diagonalLeft = diagonalLeft;
+	public void setDiagonalLeft(int diagonalLeft) {
+		this.diagonalLeft = diagonalLeft;
 	}
 
 	public int getDiagonalRight() {
 		return diagonalRight;
 	}
 
-	public static void setDiagonalRight(int diagonalRight) {
-		Player.diagonalRight = diagonalRight;
+	public boolean isWin() {
+		return win;
 	}
 
-	public static boolean isWin() {
-		return win;
+	public void setDiagonalRight(int diagonalRight) {
+		this.diagonalRight = diagonalRight;
 	}
 
 	public void setWin(boolean winInfo) {
