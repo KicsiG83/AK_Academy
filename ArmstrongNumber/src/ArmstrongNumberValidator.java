@@ -2,27 +2,25 @@ import java.util.Scanner;
 
 public class ArmstrongNumberValidator {
 
-	static long nDigits;
 	static long number;
 	static long nLastDigitPow;
 
 	public static void main(String[] args) {
-		long number = getInput();
-		checkNumber(number);
+		checkNumber(getInput());
 	}
 
 	private static void checkNumber(long number) {
 		long nSum = 0L;
-		nDigits = number;
+		long nDigits = number;
 		int length = (int) (Math.log10(number) + 1);
-		long nLastDigit = nDigits % 10;
 		long j = number;
 		nDigits = j;
-		if (j == 0) {
+		if (length == 1) {
+			System.out.println("Armstong szám: " + j);
 		} else {
 			length = (int) (Math.log10(j) + 1);
 			for (int i = 0; i < length; i++) {
-				nLastDigit = nDigits % 10;
+				long nLastDigit = nDigits % 10;
 				nDigits = nDigits / 10;
 				pow(nLastDigit, length);
 				nSum = nSum + nLastDigitPow;

@@ -1,21 +1,21 @@
 import java.util.Scanner;
 
 public class ArmstrongNumber {
-	static Scanner sc;
 	static long nLastDigitPow;
-	static int n;
 
 	public static void main(String[] args) {
+		run();
+	}
+
+	private static void run() {
 		long i;
-		int length;
-		int piece = 1;
-		long startTime = System.currentTimeMillis();
-		long nDigits;
-		long nSum = 0;
-		int nOriginal = n;
 		long j = 0;
-		getN();
-		
+		int length;
+		long nDigits;
+		int piece = 1;
+		long nSum = 0L;
+		int nOriginal = getN();
+		long startTime = System.currentTimeMillis();
 		do {
 			nDigits = j;
 			if (j == 0) {
@@ -32,7 +32,8 @@ public class ArmstrongNumber {
 				}
 				if (nSum == j) {
 					System.out.println(piece + " - Armstong szám: " + nSum);
-					System.out.println("A futási idő: " + (System.currentTimeMillis() - startTime) / 1000 + " másodperc.");
+					System.out.println(
+							"A futási idő: " + (System.currentTimeMillis() - startTime) / 1000 + " másodperc.");
 					piece++;
 				}
 				nSum = 0;
@@ -42,7 +43,8 @@ public class ArmstrongNumber {
 	}
 
 	private static int getN() {
-		sc = new Scanner(System.in);
+		int n = 0;
+		Scanner sc = new Scanner(System.in);
 		System.out.println("Armstrong szám vizsgálat.\nKérem adjon meg egy 1 és 50 közötti számot.");
 		do {
 			try {
