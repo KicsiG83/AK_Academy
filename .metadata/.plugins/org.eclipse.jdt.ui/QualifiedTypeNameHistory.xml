@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.Math"/>
-<fullyQualifiedTypeName name="Quasar"/>
-<fullyQualifiedTypeName name="Nebula"/>
 <fullyQualifiedTypeName name="Star"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="BrownDwarf"/>
@@ -49,9 +46,7 @@
 <fullyQualifiedTypeName name="JDBCUser"/>
 <fullyQualifiedTypeName name="JDBCProperty"/>
 <fullyQualifiedTypeName name="java.sql.ResultSetMetaData"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="Main"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.classfile.LineNumber"/>
 <fullyQualifiedTypeName name="java.util.zip.CheckedInputStream"/>
 <fullyQualifiedTypeName name="Board"/>
@@ -60,4 +55,9 @@
 <fullyQualifiedTypeName name="Game"/>
 <fullyQualifiedTypeName name="Player"/>
 <fullyQualifiedTypeName name="SHA512Crypter"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="Convert"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="GetInput"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
 </qualifiedTypeNameHistroy>
