@@ -1,16 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1523257668381_0" label="Window Working Set" name="Aggregate for window 1523257668381"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1524486877498_1" label="Window Working Set" name="Aggregate for window 1524486877498"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1524655239889_2" label="Window Working Set" name="Aggregate for window 1524655239889"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1525243148137_3" label="Window Working Set" name="Aggregate for window 1525243148137"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1525316847809_4" label="Window Working Set" name="Aggregate for window 1525316847809"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1526623833451_5" label="Window Working Set" name="Aggregate for window 1526623833451"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1528429549422_6" label="Window Working Set" name="Aggregate for window 1528429549422"/>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1528462730527_7" label="Window Working Set" name="Aggregate for window 1528459849099"/>
-<<<<<<< Updated upstream
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1529504128662_8" label="Window Working Set" name="Aggregate for window 1529504128662"/>
-=======
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1529594713627_8" label="Window Working Set" name="Aggregate for window 1529594713627"/>
->>>>>>> Stashed changes
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1529935498522_0" label="Window Working Set" name="Aggregate for window 1529935498522"/>
 </workingSetManager>

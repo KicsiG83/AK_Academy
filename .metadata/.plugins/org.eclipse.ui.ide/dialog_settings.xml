@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\JAVA\AK_Academy\AK_Academy\KFC"/>
 		<item value="D:\JAVA\AK_Academy\AK_Academy\ArmstrongNumber"/>
 		<item value="D:\JAVA\AK_Academy\AK_Academy\Crypter"/>
 		<item value="D:\JAVA\AK_Academy\AK_Academy\TicTacToeWithTwoPlayer"/>
@@ -10,7 +11,7 @@
 		<item value="D:\JAVA\AK_Academy\AK_Academy\JDBC"/>
 	</list>
 	<section name="ResourceNavigator">
-		<item value="Aggregate for window 1528459849099" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
+		<item value="" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
 		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
 	</section>
 	<section name="NewWizardAction">
