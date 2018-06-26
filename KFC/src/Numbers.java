@@ -1,23 +1,46 @@
 
 public class Numbers {
+	
+	private static int z;
+	private static int y;
+	private static int length;
+	private static String strNumber;
+	private static boolean minusNumber;
+	private static String[][] strArray;
+	public static int[] numberArray;
+	private static String[] dummy = new String[6];
+	private static final String[] minus = { "         ", "         ", "  ______ ", " /_____/ ", "         ", "         " };
+	private final static String[] zero = { "_______   ", "\\   _  \\  ", "/  /_\\  \\ ", "\\  \\_/   \\", " \\_____  /","       \\/ " };
+	private final static String[] one = { " ____ ", "/_   |", " |   |", " |   |", " |___|","      " };
+	private final static String[] two = { "________  ", "\\_____  \\ ", " /  ____/ ", "/       \\ ", "\\_______ \\","        \\/" };
+	private final static String[] three = { "________  ", "\\_____  \\ ", "  _(__  < ", " /       \\", "/______  /","       \\/ " };
+	private final static String[] four = { "   _____  ", "  /  |  | ", " /   |  |_", "/    ^   /", "\\____   | ", "     |__|" };
+	private final static String[] five = { " .________", " |   ____/", " |____  \\ ", " /       \\", "/______  /","       \\/ " };
+	private final static String[] six = { "  ________", " /  _____/", "/   __  \\ ", "\\  |__\\  \\", " \\_____  /","       \\/ " };
+	private final static String[] seven = { "_________ ", "\\______  \\", "    /    /", "   /    / ", "  /____/  ","          " };
+	private final static String[] eight = { "  ______  ", " /  __  \\ ", " >      < ", "/   --   \\", "\\______  /","       \\/ " };
+	private final static String[] nine = { " ________ ", "/   __   \\", "\\____    /", "   /    / ", "  /____/  ","          " };
+	
+	public static String getStrNumber() {
+		return strNumber;
+	}
+
+	public static void setStrNumber(String strNumber) {
+		Numbers.strNumber = strNumber;
+	}
 
 	public static void numbers(int number) {
-		int length = 0;
-		int z= 0;
-		int y = 0;
-		String[] dummy = new String[6];
-		String[] minus = { "         ", "         ", "  ______ ", " /_____/ ", "         ", "         " };
-		String[] zero = { "_______   ", "\\   _  \\  ", "/  /_\\  \\ ", "\\  \\_/   \\", " \\_____  /","       \\/ " };
-		String[] one = { " ____ ", "/_   |", " |   |", " |   |", " |___|","      " };
-		String[] two = { "________  ", "\\_____  \\ ", " /  ____/ ", "/       \\ ", "\\_______ \\","        \\/" };
-		String[] three = { "________  ", "\\_____  \\ ", "  _(__  < ", " /       \\", "/______  /","       \\/ " };
-		String[] four = { "   _____  ", "  /  |  | ", " /   |  |_", "/    ^   /", "\\____   | ", "     |__|" };
-		String[] five = { " .________", " |   ____/", " |____  \\ ", " /       \\", "/______  /","       \\/ " };
-		String[] six = { "  ________", " /  _____/", "/   __  \\ ", "\\  |__\\  \\", " \\_____  /","       \\/ " };
-		String[] seven = { "_________ ", "\\______  \\", "    /    /", "   /    / ", "  /____/  " };
-		String[] eight = { "  ______  ", " /  __  \\ ", " >      < ", "/   --   \\", "\\______  /","       \\/ " };
-		String[] nine = { " ________ ", "/   __   \\", "\\____    /", "   /    / ", "  /____/  ","          " };
-		boolean minusNumber = false;
+		number = getNumberLength(number);
+		strArray = new String[6][length];
+		strArray = uploadMinusSign(strArray);
+		strNumber = Integer.toString(number);
+		numberArray = new int[strNumber.length()];
+		getDigitFromNumber(strNumber, numberArray);
+		getAsciiForUpload(z, strArray, numberArray);
+		printAsciiNumber(strArray);
+	}
+
+	private static int getNumberLength(int number) {
 		if(number == 0) {
 			length = 1;
 		}else{
@@ -27,7 +50,10 @@ public class Numbers {
 			}
 			length = (int) Math.log10(number) + 1;
 		}
-		String[][] strArray = new String[6][length];
+		return number;
+	}
+
+	private static String[][] uploadMinusSign(String[][] strArray) {
 		if(minusNumber) {
 			length = length + 1;
 			strArray = new String[6][length];
@@ -38,10 +64,11 @@ public class Numbers {
 			z = 1;
 			y = 1;
 		};
-		String strNumber = Integer.toString(number);
-		int[] array = new int[strNumber.length()];
-		getDigitFromNumber(strNumber, array);
-		for (int i = 0; i < strNumber.length(); i++) {
+		return strArray;
+	}
+
+	private static int getAsciiForUpload(int z, String[][] strArray, int[] array) {
+		for (int i = 0; i < getStrNumber().length(); i++) {
 			switch (array[i]) {
 			case 0:
 				dummy = zero;
@@ -74,17 +101,21 @@ public class Numbers {
 				dummy = nine;
 				break;
 			}
-			for(int j = 0; j < dummy.length; j++) {
-				strArray[j][z] = dummy[j]; 
-			}
+			uploadKfcArray(z, strArray);
 			z++;
 		}
-		printAsciiNumber(strArray);
+		return z;
+	}
+
+	private static void uploadKfcArray(int z, String[][] strArray) {
+		for(int j = 0; j < dummy.length; j++) {
+			strArray[j][z] = dummy[j]; 
+		}
 	}
 
 	private static void getDigitFromNumber(String strNumber, int[] array) {
 		int digit;
-		for(int i = 0; i < strNumber.length(); i++) {
+		for(int i = 0; i < array.length; i++) {
 			String digitNumber = strNumber.charAt(i)+ "";
 			digit = Integer.parseInt(digitNumber);
 			array[i] = digit;
