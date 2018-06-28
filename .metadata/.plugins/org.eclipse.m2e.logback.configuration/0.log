@@ -418,3 +418,4 @@ org.eclipse.core.runtime.CoreException: Launch configuration New_configuration (
 >>>>>>> Stashed changes
 2018-06-25 16:05:01,016 [Worker-8] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2018-06-26 04:47:16,248 [Worker-17] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-06-28 14:51:53,643 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.

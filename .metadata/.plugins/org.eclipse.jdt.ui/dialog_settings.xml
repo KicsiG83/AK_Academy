@@ -141,4 +141,7 @@
 		<item value="false" key="CASE_SENSITIVE"/>
 		<item value="15" key="INCLUDE_MASK"/>
 	</section>
+	<section name="NewPackageWizardPage">
+		<item value="false" key="create_package_info_java"/>
+	</section>
 </section>
