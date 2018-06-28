@@ -2,11 +2,9 @@ import java.util.Scanner;
 
 public class GetInput {
 
-	public int getMenuIndex() {
-		Scanner sc = new Scanner(System.in);
+	public int getMenuIndex(Scanner sc) {
 		int index = 0;
 		boolean valid = false;
-		System.out.println("        Menüből\n-------------------------\n1 - Arabszám konvertálása Római számra\n2 - Rómaiszám konvertálása Arab számra\n3 - Kilépés");
 		do {
 			try {
 				System.out.print("Kérem válasszon a menüből: ");
@@ -25,24 +23,34 @@ public class GetInput {
 		return index;
 	}
 	
-	public int getInput() {
-		Scanner sc = new Scanner(System.in);
+	public int getInput(Scanner sc, int index) {
+		Check ch = new Check();
 		boolean isValid = false;
 		int number = 0;
+		String userInput = "";
 		System.out.println();
 		do {
 			try {
 				System.out.print("Kérem adja meg az átváltandó számot: ");
-				number = sc.nextInt();
-				sc.nextLine();
-				if (number > 0) {
-					isValid = true;
-				} else {
-					System.out.println("A megadott szám érvénytelen.");
+				if(index == 1) {
+					userInput = sc.nextLine();
+					isValid = ch.checkArabicNumber(userInput);
+					if (isValid) {
+						number = Integer.parseInt(userInput);
+						if (number > 0) {
+							isValid = true;
+						} else {
+							System.out.println("A megadott szám érvénytelen.");
+							isValid = false;
+						}
+					}
+				}else {
+					userInput = sc.nextLine();
+					System.out.println("Római szám");
 				}
 			} catch (Exception e) {
-				sc.nextLine();
 				System.out.println("A megadott input érvénytelen.");
+				isValid = false;
 			}
 		} while (!isValid);
 		return number;

@@ -8,12 +8,18 @@ public class Main {
 
 	public void run() {
 		Printer print = new Printer();
-		print.printWelcomeMessage();
+		Menu menu = new Menu();
+		GetInput gi = new GetInput();
 		Scanner sc = new Scanner(System.in);
-		int number = new GetInput().getInput();
+		print.printWelcomeMessage();
+		print.printMenu();
+		boolean exit = false;
+		do {
+			exit = menu.menu(gi.getMenuIndex(sc));
+		}while(!exit);
 
 		sc.close();
-		print.printBye();
 
 	}
+
 }

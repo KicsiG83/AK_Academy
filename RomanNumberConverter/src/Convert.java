@@ -1,63 +1,32 @@
+import java.util.TreeMap;
 
 public class Convert {
 
-	public static void convert(int number) {
-		switch (number) {
-		case 1:
-			System.out.print("I");
-			break;
-		case 2:
-			System.out.print("II");
-			break;
-		case 3:
-			System.out.print("III");
-			break;
-		case 4:
-			System.out.print("IV");
-			break;
-		case 5:
-			System.out.print("V");
-			break;
-		case 6:
-			System.out.print("VI");
-			break;
-		case 7:
-			System.out.print("VII");
-			break;
-		case 8:
-			System.out.print("VIII");
-			break;
-		case 9:
-			System.out.print("IX");
-			break;
-		case 10:
-			System.out.print("X");
-			break;
-		case 40:
-			System.out.print("CL");
-			break;
-		case 50:
-			System.out.print("L");
-			break;
-		case 90:
-			System.out.print("XC");
-			break;
-		case 100:
-			System.out.print("C");
-			break;
-		case 400:
-			System.out.print("CD");
-			break;
-		case 500:
-			System.out.print("D");
-			break;
-		case 900:
-			System.out.print("CM");
-			break;
-		case 1000:
-			System.out.print("M");
-			break;
-		}
-	}
+	public final static TreeMap<Integer, String> arabicToRoman = new TreeMap<Integer, String>();
 
+    static {
+        arabicToRoman.put(1000, "M");
+        arabicToRoman.put(900, "CM");
+        arabicToRoman.put(500, "D");
+        arabicToRoman.put(400, "CD");
+        arabicToRoman.put(100, "C");
+        arabicToRoman.put(90, "XC");
+        arabicToRoman.put(50, "L");
+        arabicToRoman.put(40, "XL");
+        arabicToRoman.put(10, "X");
+        arabicToRoman.put(9, "IX");
+        arabicToRoman.put(5, "V");
+        arabicToRoman.put(4, "IV");
+        arabicToRoman.put(1, "I");
+    }
+
+    public String toRoman(int number) {
+        int l =  arabicToRoman.floorKey(number);
+        if ( number == l ) {
+        	System.out.print(arabicToRoman.get(l));
+            return arabicToRoman.get(number);
+        }
+        System.out.print(arabicToRoman.get(l));
+        return arabicToRoman.get(l) + toRoman(number-l);
+    }
 }

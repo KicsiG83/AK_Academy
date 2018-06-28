@@ -9,4 +9,8 @@ public class Printer {
 		System.out.println("Köszönöm, hogy igénybe vette a szolgáltatásomat.");
 	}
 	
+	public void printMenu() {
+		System.out.println("--------------------------------------\n1 - Arabszám konvertálása Római számra\n2 - Rómaiszám konvertálása Arab számra\n3 - Kilépés");
+	}
+	
 }
