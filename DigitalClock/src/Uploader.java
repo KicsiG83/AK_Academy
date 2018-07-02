@@ -8,7 +8,6 @@ public class Uploader implements UploaderInterface {
 		this.strArray = new String[6][max];
 	}
 
-
 	public String[][] getStrArray() {
 		return strArray;
 	}
@@ -25,6 +24,7 @@ public class Uploader implements UploaderInterface {
 			this.strArray[j][index] = dummy[j];
 		}
 	}
+
 	@Override
 	public void uploadTime(int number, int startIndex, String[] dummy, String[][] strArray) {
 		int loopMaxIndex = 2;
@@ -85,12 +85,8 @@ public class Uploader implements UploaderInterface {
 		case 2:
 			stopperUploadStructureAndPrint(menuIndex);
 			break;
-		case 3:
-			
-			break;
 		}
 	}
-
 
 	private void stopperUploadStructureAndPrint(int menuIndex) throws InterruptedException {
 		int max = 59;
@@ -120,7 +116,6 @@ public class Uploader implements UploaderInterface {
 		}
 	}
 
-
 	private void exactTimeUploadStructure(ExactTime et) {
 		for (int i = 0; i < 5; i++) {
 			switch (i) {
@@ -143,31 +138,25 @@ public class Uploader implements UploaderInterface {
 		}
 	}
 
-	public void counterTimeUploadStructure(int number) {
-		for (int i = 0; i < 5; i++) {
-			switch (i) {
-			case 0:
-				uploadTime(number, 0, dummy, strArray);
-				break;
-			case 1:
-				uploadSeparator(2);
-				break;
-			case 2:
-				uploadTime(number, 3, dummy, strArray);
-				break;
-			case 3:
-				uploadSeparator(5);
-				break;
-			case 4:
-				uploadTime(number, 6, dummy, strArray);
-				break;
-			}
+	public void counterTimeUploadStructure(int number, int index) {
+		switch (index) {
+		case 0:
+			uploadTime(number, 0, dummy, strArray);
+			uploadSeparator(2);
+			break;
+		case 1:
+			uploadTime(number, 3, dummy, strArray);
+			uploadSeparator(5);
+			break;
+		case 2:
+			uploadTime(number, 6, dummy, strArray);
+			break;
 		}
 	}
-	
+
 	public void printAsciiNumber(String[][] strArray, int menuIndex) {
 		int startPrint = 0;
-		if(menuIndex == 2) {
+		if (menuIndex == 2) {
 			startPrint = 1;
 		}
 		for (int i = 0; i < strArray.length; i++) {
@@ -177,19 +166,28 @@ public class Uploader implements UploaderInterface {
 			System.out.println();
 		}
 	}
-	
+
 	public void counterPrinter(Counter ct) throws InterruptedException {
-		for(int i = ct.getHour(); i >= 0; i--) {
-			for(int j = ct.getMinute(); j >= 0; j--) {
-				for(int k = ct.getSecond(); k >= 0; k--) {
-					counterTimeUploadStructure(i);
-					counterTimeUploadStructure(j);
-					counterTimeUploadStructure(k);
+		int minute = ct.getMinute();
+		int second = ct.getSecond();
+
+		for (int i = ct.getHour(); i >= 0; i--) {
+			for (int j = minute; j >= 0; j--) {
+				if (j == 0 && i != 0) {
+					minute = 59;
+				}
+				for (int k = second; k >= 0; k--) {
+					if (k == 0 && j != 0) {
+						second = 59;
+					}
+					counterTimeUploadStructure(i, 0);
+					counterTimeUploadStructure(j, 1);
+					counterTimeUploadStructure(k, 2);
+					printAsciiNumber(strArray, 1);
+					Thread.sleep(1000L);
 				}
 			}
 		}
-		printAsciiNumber(strArray, 1);
-		Thread.sleep(1000L);
 	}
-	
+
 }

@@ -3,9 +3,10 @@ import java.util.Scanner;
 public class Menu {
 
 	public void menu() {
-		System.out.println("\nDigitális óra menü\n------------------\n1 - Pontos idő\n2 - Stopper\n3 - Visszaszámláló\n4 - Kilépés");
+		System.out.println(
+				"\nDigitális óra menü\n------------------\n1 - Pontos idő\n2 - Stopper\n3 - Visszaszámláló\n4 - Kilépés");
 	}
-	
+
 	public int getMenuNumber(Scanner sc) {
 		menu();
 		boolean isValid = false;
@@ -15,21 +16,20 @@ public class Menu {
 				System.out.print("\nKérem válasszon a menüből: ");
 				index = sc.nextInt();
 				sc.nextLine();
-				if(index <1 || index >4) {
+				if (index < 1 || index > 4) {
 					System.out.println("A megadott menü index érvénytelen.");
 					isValid = false;
-				}
-				else {
+				} else {
 					isValid = true;
 				}
-			}catch (Exception e) {
+			} catch (Exception e) {
 				sc.nextLine();
 				System.out.println("A megadott menü index érvénytelen.");
 			}
-		}while(!isValid);
+		} while (!isValid);
 		return index;
 	}
-	
+
 	public void menuController(int number, Scanner sc) throws InterruptedException {
 		Uploader ul = new Uploader();
 		switch (number) {
@@ -50,6 +50,4 @@ public class Menu {
 		}
 	}
 
-	
-	
 }

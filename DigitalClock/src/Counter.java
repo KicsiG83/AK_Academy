@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
 public class Counter {
-	
+
 	private int hour;
 	private int minute;
 	private int second;
-	
+
 	public int getHour() {
 		return hour;
 	}
@@ -29,12 +29,12 @@ public class Counter {
 	public void setSecond(int second) {
 		this.second = second;
 	}
-	
+
 	public Counter() {
 	}
-	
+
 	public void setter(int controller, int number) {
-		switch(controller) {
+		switch (controller) {
 		case 1:
 			setHour(number);
 			break;
@@ -46,17 +46,17 @@ public class Counter {
 			break;
 		}
 	}
-	
+
 	public Counter(Scanner sc) {
 		getUserInput(sc, "Kérem adja meg az órákat: ", 1);
 		getUserInput(sc, "Kérem adja meg a perceket: ", 2);
 		getUserInput(sc, "Kérem adja meg a másodperceket: ", 3);
 	}
-	
-	public void getUserInput (Scanner sc, String message, int controller) {
+
+	public void getUserInput(Scanner sc, String message, int controller) {
 		boolean isValid = false;
 		int max = 0;
-		switch(controller) {
+		switch (controller) {
 		case 1:
 			max = 99;
 			break;
@@ -72,17 +72,17 @@ public class Counter {
 				System.out.print(message);
 				int number = sc.nextInt();
 				sc.nextLine();
-				if(number <0 || number > max) {
+				if (number < 0 || number > max) {
 					System.out.println("A megadott adat érvénytelen.");
-				}else {
+				} else {
 					setter(controller, number);
 					isValid = true;
 				}
-			}catch (Exception e) {
+			} catch (Exception e) {
 				sc.nextLine();
 				System.out.println("A meadott adat érvénytelen.");
 			}
-		}while(!isValid);
+		} while (!isValid);
 	}
-	
+
 }
