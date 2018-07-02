@@ -16,10 +16,7 @@ public class Main {
 		boolean exit = false;
 		do {
 			exit = menu.menu(gi.getMenuIndex(sc));
-		}while(!exit);
-
+		} while (!exit);
 		sc.close();
-
 	}
-
 }
