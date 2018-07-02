@@ -3,7 +3,12 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		new Main().run();
+//		new Main().run();
+		
+		String phoneNumber = "1235678";
+		boolean valid =  phoneNumber.matches("^([1-9]{1}[\\d]{7})$");
+		System.out.println(valid);
+		
 	}
 
 	public void run() {

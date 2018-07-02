@@ -21,12 +21,12 @@ public class Convert {
     }
 
     public String toRoman(int number) {
-        int l =  arabicToRoman.floorKey(number);
-        if ( number == l ) {
-        	System.out.print(arabicToRoman.get(l));
+        int index =  arabicToRoman.floorKey(number);
+        if ( number == index ) {
+        	System.out.print(arabicToRoman.get(index));
             return arabicToRoman.get(number);
         }
-        System.out.print(arabicToRoman.get(l));
-        return arabicToRoman.get(l) + toRoman(number-l);
+        System.out.print(arabicToRoman.get(index));
+        return arabicToRoman.get(index) + toRoman(number-index);
     }
 }
