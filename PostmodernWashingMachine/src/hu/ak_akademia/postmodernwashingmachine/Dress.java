@@ -7,17 +7,31 @@ public class Dress implements Washable {
 	private int name;
 	private int durability;
 	private int wet;
-	
-	/**
-	 * A ruha ki van vasalva
-	 */
+	private boolean whiteDresses;
+	private boolean colorDresses;
 	private boolean ironed;
-
-	/**
-	 * A ruha szakadt
-	 */
 	private boolean torn;
-	
+
+	public Dress() {
+
+	}
+
+	public boolean isWhiteDresses() {
+		return whiteDresses;
+	}
+
+	public void setWhiteDresses(boolean whiteDresses) {
+		this.whiteDresses = whiteDresses;
+	}
+
+	public boolean isColorDresses() {
+		return colorDresses;
+	}
+
+	public void setColorDresses(boolean colorDresses) {
+		this.colorDresses = colorDresses;
+	}
+
 	public int getDirty() {
 		return dirty;
 	}
@@ -74,19 +88,24 @@ public class Dress implements Washable {
 		this.torn = torn;
 	}
 
-	
 	@Override
-	public void clean(PostModernWashingMachine pmm) {
-		pmm.check();
+	public void clean(Dress d) {
+		d.setDirty(getDirty() - 1);
+		d.setDurability(getDurability() - 1);
+		while (getWet() <= 100) {
+			d.setWet(getWet() + 1);
+		}
 	}
 
 	@Override
-	public void dry() {
-
+	public void dry(Dress d) {
+		while(getWet() == 0) {
+			d.setWet(getWet() - 1);
+		}
 	}
 
 	@Override
-	public void iron() {
+	public void iron(Dress d) {
 
 	}
 

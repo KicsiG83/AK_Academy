@@ -14,29 +14,21 @@ public class PostModernWashingMachine {
 	 * Legyen a PostModernWashingMachine osztálynak egy startWash metódusa, ami elindítja a mosást és kimossa a betöltött ruhákat, de csak akkor, ha a check metódus ezt jóváhagyja egy OK üzenettel!
 	 */
 
-	private boolean whiteDresses;
-	private boolean colorDresses;
+
 	private boolean canWeStartWashing;
 	private int sumDirty;
 	private boolean empty;
 	private boolean itIsOn;
 	private boolean doorIsOpen;
 	private WashingMachineStatus status;
+	private boolean loaded;
 
-	public boolean isWhiteDresses() {
-		return whiteDresses;
+	public boolean isLoaded() {
+		return loaded;
 	}
 
-	public void setWhiteDresses(boolean whiteDresses) {
-		this.whiteDresses = whiteDresses;
-	}
-
-	public boolean isColorDresses() {
-		return colorDresses;
-	}
-
-	public void setColorDresses(boolean colorDresses) {
-		this.colorDresses = colorDresses;
+	public void setLoaded(boolean loaded) {
+		this.loaded = loaded;
 	}
 
 	public boolean isCanWeStartWashing() {
@@ -104,7 +96,7 @@ public class PostModernWashingMachine {
 	}
 
 	public void load() {
-
+		
 	}
 
 	public void unload() {
@@ -123,22 +115,23 @@ public class PostModernWashingMachine {
 		
 	}
 	
-	public void check() {
+	public boolean check(Dress d) {
 		if (isEmpty()) {
 			System.out.println("Üresen a mosógép.");
 			setCanWeStartWashing(false);
-		}
-		if (sumDirty > 800) {
-			System.out.println("Egyszerre ennyi koszos ruhát nem tud kimostni a mosógép.");
+		}else if (sumDirty > 800) {
+			System.out.println("Egyszerre ennyi koszos ruhát nem tud kimosni a gép.");
 			setCanWeStartWashing(false);
-		}
-		if (sumDirty < 50) {
-			System.out.println("A ruhák nem elég piszkosak a hatékony mosás elindításához.");
+		}else if (sumDirty < 50) {
+			System.out.println("A ruhák nem elég piszkosak, nem szükségs kimosni.");
 			setCanWeStartWashing(false);
-		}
-		if (whiteDresses && colorDresses) {
+		}else if (d.isColorDresses() && d.isWhiteDresses()) {
 			System.out.println("A mosás indítás letiltva, a ruhák össze fogják egymást.");
 			setCanWeStartWashing(false);
+		}else {
+			System.out.println("Ellenőrzés OK. Kezdhetjük a mosást.");
+			setCanWeStartWashing(true);
 		}
+		return canWeStartWashing;
 	}
 }
