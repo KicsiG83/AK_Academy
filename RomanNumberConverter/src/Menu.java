@@ -6,21 +6,12 @@ public class Menu {
 		boolean exit = false;
 		Scanner sc = new Scanner(System.in);
 		GetInput gi = new GetInput();
-		String userInput;
-		switch(index) {
+		switch (index) {
 		case 1:
-			System.out.println("\nArabszám konvertálása Római számmá.");
-			userInput = gi.getInput(sc, index);
-			new Convert().toRoman(Integer.parseInt(userInput));
-			System.out.println();
-			exit = false;
+			exit = numberConverter(index, sc, gi, "\nArab szám konvertálása Római számmá.");
 			break;
 		case 2:
-			System.out.println("Rómaiszám konvertálása Arab számmá.");
-			userInput = gi.getInput(sc, index);
-			System.out.println(new Convert().toArabic(userInput));
-			System.out.println();
-			exit = false;
+			exit = numberConverter(index, sc, gi, "\nRómai szám konvertálása Arab számmá.");
 			break;
 		case 3:
 			new Printer().printBye();
@@ -28,5 +19,17 @@ public class Menu {
 		}
 		return exit;
 	}
-	
+
+	private boolean numberConverter(int index, Scanner sc, GetInput gi, String message) {
+		String userInput;
+		System.out.println(message);
+		userInput = gi.getInput(sc, index);
+		if (index == 1) {
+			new Convert().toRoman(Integer.parseInt(userInput));
+		} else {
+			System.out.println(new Convert().toArabic(userInput));
+		}
+		System.out.println();
+		return false;
+	}
 }

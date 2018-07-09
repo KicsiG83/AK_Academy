@@ -10,10 +10,10 @@ public class GetInput {
 				System.out.print("Kérem válasszon a menüből: ");
 				index = sc.nextInt();
 				sc.nextLine();
-				if (index < 1 && index > 3) {
-					System.out.println("A megadott input érvénytelen.");
-				} else {
+				if (Integer.toString(index).matches("^[1-3]{1}$")) {
 					valid = true;
+				} else {
+					System.out.println("A megadott input érvénytelen.");
 				}
 			} catch (Exception e) {
 				sc.nextLine();
@@ -26,7 +26,6 @@ public class GetInput {
 	public String getInput(Scanner sc, int index) {
 		Check ch = new Check();
 		boolean isValid = false;
-		int number = 0;
 		String userInput = "";
 		System.out.println();
 		do {
@@ -34,19 +33,10 @@ public class GetInput {
 				System.out.print("Kérem adja meg az átváltandó számot: ");
 				if (index == 1) {
 					userInput = sc.nextLine();
-					isValid = ch.checkArabicNumber(userInput);
-					if (isValid) {
-						number = Integer.parseInt(userInput);
-						if (number > 0) {
-							isValid = true;
-						} else {
-							System.out.println("A megadott szám érvénytelen.");
-							isValid = false;
-						}
-					}
+					isValid = ch.checkUserInput(userInput, 1);
 				} else {
 					userInput = sc.nextLine().toUpperCase();
-					isValid = new Check().checkRomanNumber(userInput);
+					isValid = ch.checkUserInput(userInput, 2);
 				}
 			} catch (Exception e) {
 				System.out.println("A megadott input érvénytelen.");
