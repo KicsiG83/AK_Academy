@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="sun.plugin2.message.SetJVMIDMessage"/>
 <fullyQualifiedTypeName name="Calculate"/>
 <fullyQualifiedTypeName name="Print"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
@@ -44,7 +43,6 @@
 <fullyQualifiedTypeName name="Printer"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="GetInput"/>
-<fullyQualifiedTypeName name="Check"/>
 <fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
 <fullyQualifiedTypeName name="java.util.TreeMap"/>
 <fullyQualifiedTypeName name="java.time.LocalTime"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="Calculator.Division"/>
 <fullyQualifiedTypeName name="Counter"/>
 <fullyQualifiedTypeName name="UploaderInterface"/>
+<fullyQualifiedTypeName name="java.lang.Character"/>
+<fullyQualifiedTypeName name="Check"/>
 </qualifiedTypeNameHistroy>

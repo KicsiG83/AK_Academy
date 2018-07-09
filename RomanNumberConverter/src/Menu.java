@@ -6,17 +6,20 @@ public class Menu {
 		boolean exit = false;
 		Scanner sc = new Scanner(System.in);
 		GetInput gi = new GetInput();
+		String userInput;
 		switch(index) {
 		case 1:
 			System.out.println("\nArabszám konvertálása Római számmá.");
-			int number = gi.getInput(sc, index);
-			new Convert().toRoman(number);
+			userInput = gi.getInput(sc, index);
+			new Convert().toRoman(Integer.parseInt(userInput));
 			System.out.println();
 			exit = false;
 			break;
 		case 2:
 			System.out.println("Rómaiszám konvertálása Arab számmá.");
-			System.out.println("Fejlesztés alatt!");
+			userInput = gi.getInput(sc, index);
+			System.out.println(new Convert().toArabic(userInput));
+			System.out.println();
 			exit = false;
 			break;
 		case 3:

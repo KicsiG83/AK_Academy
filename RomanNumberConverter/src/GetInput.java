@@ -10,20 +10,20 @@ public class GetInput {
 				System.out.print("Kérem válasszon a menüből: ");
 				index = sc.nextInt();
 				sc.nextLine();
-				if(index < 1 && index > 3) {
+				if (index < 1 && index > 3) {
 					System.out.println("A megadott input érvénytelen.");
-				}else {
+				} else {
 					valid = true;
 				}
-			}catch (Exception e) {
+			} catch (Exception e) {
 				sc.nextLine();
 				System.out.println("A megadott input érvénytelen.");
 			}
-		}while(!valid);
+		} while (!valid);
 		return index;
 	}
-	
-	public int getInput(Scanner sc, int index) {
+
+	public String getInput(Scanner sc, int index) {
 		Check ch = new Check();
 		boolean isValid = false;
 		int number = 0;
@@ -32,7 +32,7 @@ public class GetInput {
 		do {
 			try {
 				System.out.print("Kérem adja meg az átváltandó számot: ");
-				if(index == 1) {
+				if (index == 1) {
 					userInput = sc.nextLine();
 					isValid = ch.checkArabicNumber(userInput);
 					if (isValid) {
@@ -44,16 +44,16 @@ public class GetInput {
 							isValid = false;
 						}
 					}
-				}else {
-					userInput = sc.nextLine();
-					System.out.println("Római szám");
+				} else {
+					userInput = sc.nextLine().toUpperCase();
+					isValid = new Check().checkRomanNumber(userInput);
 				}
 			} catch (Exception e) {
 				System.out.println("A megadott input érvénytelen.");
 				isValid = false;
 			}
 		} while (!isValid);
-		return number;
+		return userInput;
 	}
-	
+
 }
