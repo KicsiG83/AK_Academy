@@ -3,33 +3,24 @@ import java.util.Scanner;
 public class Menu {
 
 	public boolean menu(int index) {
-		boolean exit = false;
 		Scanner sc = new Scanner(System.in);
 		GetInput gi = new GetInput();
-		switch (index) {
-		case 1:
-			exit = numberConverter(index, sc, gi, "\nArab szám konvertálása Római számmá.");
-			break;
-		case 2:
-			exit = numberConverter(index, sc, gi, "\nRómai szám konvertálása Arab számmá.");
-			break;
-		case 3:
+		if (index == 3) {
 			new Printer().printBye();
-			exit = true;
+		} else {
+			numberConverter(index, sc, gi);
 		}
-		return exit;
+		return index == 3;
 	}
 
-	private boolean numberConverter(int index, Scanner sc, GetInput gi, String message) {
-		String userInput;
-		System.out.println(message);
-		userInput = gi.getInput(sc, index);
+	private void numberConverter(int index, Scanner sc, GetInput gi) {
 		if (index == 1) {
-			new Convert().toRoman(Integer.parseInt(userInput));
+			System.out.println("\nArab szám konvertálása Római számmá.");
+			new Convert().toRoman(Integer.parseInt(gi.getInput(sc, index)));
 		} else {
-			System.out.println(new Convert().toArabic(userInput));
+			System.out.println("\nRómai szám konvertálása Arab számmá.");
+			System.out.println(new Convert().toArabic(gi.getInput(sc, index)));
 		}
 		System.out.println();
-		return false;
 	}
 }
