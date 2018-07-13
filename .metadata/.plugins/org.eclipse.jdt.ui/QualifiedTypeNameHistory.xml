@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="Calculate"/>
 <fullyQualifiedTypeName name="Print"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
@@ -49,7 +48,6 @@
 <fullyQualifiedTypeName name="Messages"/>
 <fullyQualifiedTypeName name="ExactTime"/>
 <fullyQualifiedTypeName name="sun.util.resources.Bundles.Strategy"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="Uploader"/>
 <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
 <fullyQualifiedTypeName name="Calculator.Addition"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="UploaderInterface"/>
 <fullyQualifiedTypeName name="java.lang.Character"/>
 <fullyQualifiedTypeName name="Check"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>

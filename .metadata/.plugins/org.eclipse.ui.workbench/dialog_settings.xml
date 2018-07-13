@@ -28,4 +28,6 @@
 			<item value="org.eclipse.fx.ide/org.eclipse.fx.ide.clazz"/>
 		</list>
 	</section>
+	<section name="ImportExportAction">
+	</section>
 </section>
