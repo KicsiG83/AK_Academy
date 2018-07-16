@@ -1,7 +1,6 @@
 
 public enum Ships {
-	CARRIER("Carrier", 5), BATTLESHIP("Battleship", 4), CRUISER("Crusier", 3), SUBMARINE("Submarine",
-			3), DESTROYER("Destroyer", 2);
+	CARRIER("Carrier", 5), BATTLESHIP("Battleship", 4), CRUISER("Crusier", 3), SUBMARINE("Submarine", 3), DESTROYER("Destroyer", 2);
 	private String name;
 	private int size;
 
@@ -17,4 +16,5 @@ public enum Ships {
 	public int getSize() {
 		return size;
 	}
+
 }
