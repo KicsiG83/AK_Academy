@@ -16,6 +16,7 @@ public class LetsPlay {
 		int shipLength = checkShipLength(ship);
 		int shipDirection = ui.selectDirection(sc);
 		ui.getCoordinate(sc, "Please enter the ship's coordinate: ");
+		ownTable.checkPosition(ui.getStepHorizontal(), ui.getStepVertical(), shipDirection, shipLength);
 //		s.setCoordinate(sc, message, shipDirection, shipLength);
 	}
 

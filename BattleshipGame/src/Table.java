@@ -4,6 +4,14 @@ public class Table {
 	int row;
 	int column;
 
+	Table ownTable;
+	Table opponentTable;
+	
+	public Table(){
+		ownTable = new Table("OWN TABLE", '~');
+		opponentTable = new Table("OPPONENT TABLE", '~');
+	}
+	
 	public Table(String message, char separator) {
 		fillUpTable(table, separator);
 		PrintTable(message);
@@ -38,4 +46,26 @@ public class Table {
 			System.out.println();
 		}
 	}
+	
+	public boolean checkPosition(int horizontal, int vertical, int direction, int shipLength) {
+//		char checkedField = '~';
+		
+																											//Szar van a palacsintában
+		
+		System.out.println(ownTable.getTable(horizontal, vertical));
+//		switch(direction) {
+//		case 1:
+//			for(int i = horizontal; i < horizontal + shipLength; i++) {
+//				if(Character.toString(checkedField).equals('~')) {
+//					
+//				}
+//			}
+//			break;
+//		case 2:
+//			break;
+//		}
+		
+		return false;
+	}
+	
 }

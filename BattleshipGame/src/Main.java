@@ -11,8 +11,7 @@ public class Main {
 		System.out.println("Welcome to the Battleship game!\n");
 		new WhichLevel(scanner); // a szint beépítése az később kerül hozzá
 		System.out.println();
-		LetsPlay game = new LetsPlay();
-		game.getUserInput(scanner);
+		new LetsPlay().getUserInput(scanner);
 		scanner.close();
 	}
 }
