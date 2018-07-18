@@ -2,22 +2,22 @@ import java.util.Scanner;
 
 public class LetsPlay {
 
-	Table ownTable = new Table("OWN TABLE", '~');
-	Table opponentTable = new Table("OPPONENT TABLE", '~');
 	Ship carrier = new Ship(Ships.CARRIER.getName(), Ships.CARRIER.getSize(), 1);
 	Ship battleship = new Ship(Ships.BATTLESHIP.getName(), Ships.BATTLESHIP.getSize(), 2);
 	Ship cruiser = new Ship(Ships.CRUISER.getName(), Ships.CRUISER.getSize(), 3);
 	Ship submarine = new Ship(Ships.SUBMARINE.getName(), Ships.SUBMARINE.getSize(), 4);
 	Ship destroyer = new Ship(Ships.DESTROYER.getName(), Ships.DESTROYER.getSize(), 5);
+	Table t = new Table();
+	UserInput ui = new UserInput();
 
 	public void getUserInput(Scanner sc) {
-		UserInput ui = new UserInput();
 		int ship = ui.selectShip(sc);
 		int shipLength = checkShipLength(ship);
 		int shipDirection = ui.selectDirection(sc);
-		ui.getCoordinate(sc, "Please enter the ship's coordinate: ");
-		ownTable.checkPosition(ui.getStepHorizontal(), ui.getStepVertical(), shipDirection, shipLength);
-//		s.setCoordinate(sc, message, shipDirection, shipLength);
+		String coordinate = ui.getCoordinate(sc, "Please enter the ship's coordinate: ");
+		t.getCoordinate(coordinate);
+		t.checkPosition(t.getStepHorizontal(), t.getStepVertical(), shipDirection, shipLength);
+//		t.setCoordinate(sc, message, shipDirection, shipLength);
 	}
 
 	private int checkShipLength(int shipIndex) {
