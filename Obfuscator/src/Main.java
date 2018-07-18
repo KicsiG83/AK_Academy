@@ -4,16 +4,19 @@ public class Main {
 	public static void main(String[] args) {
 		new Main().run();
 	}
-	
+
 	private void run() {
 		String userInput = new UserInput().getUserInput();
 		Mixer mixi = new Mixer();
-		mixi.mixString(userInput);
-		String[] array = mixi.getMixedString();
-		String[] sep = mixi.getSeparatorCharacters();
-		for(int i = 0; i < mixi.getMixedString().length; i++) {
-			System.out.println(array[i]);
-			System.out.println(sep[i]);
-		}	
+		mixi.splitter(userInput);
+		mixi.mixer();
+		String[] mixedArray = mixi.getMixedString();
+		printResult(mixedArray);
+	}
+
+	private void printResult(String[] mixedArray) {
+		for (int i = 0; i < mixedArray.length; i++) {
+			System.out.print(mixedArray[i]);
+		}
 	}
 }
