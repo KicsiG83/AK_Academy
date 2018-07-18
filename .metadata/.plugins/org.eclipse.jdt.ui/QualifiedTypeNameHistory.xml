@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="sun.plugin2.message.SetJVMIDMessage"/>
-<fullyQualifiedTypeName name="Calculate"/>
-<fullyQualifiedTypeName name="Print"/>
-<fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
-<fullyQualifiedTypeName name="java.net.URL"/>
-<fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
-<fullyQualifiedTypeName name="com.sun.tools.internal.xjc.Driver"/>
-<fullyQualifiedTypeName name="java.sql.DriverManager"/>
-<fullyQualifiedTypeName name="java.sql.Statement"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="sun.jvm.hotspot.debugger.AddressException"/>
 <fullyQualifiedTypeName name="Validation"/>
 <fullyQualifiedTypeName name="ExerciseOnePrint"/>
 <fullyQualifiedTypeName name="ThreeGoodCalculator"/>
@@ -60,4 +48,16 @@
 <fullyQualifiedTypeName name="Calculator.Division"/>
 <fullyQualifiedTypeName name="Counter"/>
 <fullyQualifiedTypeName name="UploaderInterface"/>
+<fullyQualifiedTypeName name="hu.ak_akademia.postmodernwashingmachine.Color"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="hu.ak_akademia.postmodernwashingmachine.Dress"/>
+<fullyQualifiedTypeName name="com.sun.deploy.jcp.controller.General"/>
+<fullyQualifiedTypeName name="hu.ak_akademia.helper.Generate"/>
+<fullyQualifiedTypeName name="hu.ak_akademia.postmodernwashingmachine.Tshirt"/>
+<fullyQualifiedTypeName name="hu.ak_akademia.postmodernwashingmachine.Socks"/>
+<fullyQualifiedTypeName name="hu.ak_akademia.postmodernwashingmachine.Pants"/>
+<fullyQualifiedTypeName name="hu.ak_akademia.postmodernwashingmachine.Underpants"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

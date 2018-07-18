@@ -1,19 +1,58 @@
 package hu.ak_akademia.postmodernwashingmachine;
 
+import hu.ak_akademia.helper.Generate;
+
 public class Dress implements Washable {
 
+	/*
+	 *A ruhák tartsák magukról nyilván, hogy mennyire koszosak! 
+	 *		A koszosság mértékét egy egész szám reprezentálja, ami annál nagyobb, minél koszosabb!
+	 *A ruhák tartsák magukról nyilván, 
+	 *		hogy milyen színűek, 
+	 *			fehérek
+	 *			színesek!
+	 *A ruhák tartsák magukról nyilván a megnevezésüket!
+	 *A ruhák tartsák magukról nyilván, 
+	 *		hogy mennyi a tartósságuk! 
+	 *			Ezt egy durability nevű egész szám típusú változó tárolja és amikor egy ruha létrejön, akkor 100-ról induljon!
+	 *A ruhák tartsák magukról nyilván, 
+	 *		hogy ki vannak-e épp vasalva!
+	 *A ruhák tartsák magukról nyilván, 
+	 *		hogy szakadtak-e!
+	 *A ruhák tartsák magukról nyilván, 
+	 *		hogy mennyire vizesek! 
+	 *			Ez egy pozitív egész szám, ami 0 és 100 közötti. 0 jelenti a teljesen záraz, a 100 a teljesen vizes állapotot.
+	 *
+	 *A ruha osztályoknak override-old a toString-jét!
+	 */
+	
 	private int dirty;
-	private int color;
-	private int name;
+	private String name;
+	private String color;
 	private int durability;
 	private int wet;
 	private boolean whiteDresses;
 	private boolean colorDresses;
 	private boolean ironed;
 	private boolean torn;
+	private static int i = 1;
+	private Generate g = new Generate();
+	
+	public Dress(String message) {
+		setName(message+ "_" + i);
+		setDirty(g.generateDirty());
+		setColor(g.randomColor());
+		setDurability(100);
+		setWet(0);
+		i++;
+	}
 
-	public Dress() {
-
+	public String getColor() {
+		return color;
+	}
+	
+	public void setColor(String color) {
+		this.color = color;
 	}
 
 	public boolean isWhiteDresses() {
@@ -40,19 +79,11 @@ public class Dress implements Washable {
 		this.dirty = dirty;
 	}
 
-	public int getColor() {
-		return color;
-	}
-
-	public void setColor(int color) {
-		this.color = color;
-	}
-
-	public int getName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setName(int name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
@@ -107,6 +138,10 @@ public class Dress implements Washable {
 	@Override
 	public void iron(Dress d) {
 
+	}
+	
+	public String toString() {
+		return "Név: " + getName() + " Koszosság: " + getDirty() +  " Szín: " + getColor() + " Tartósság: " + getDurability() + " Vizesség: " + getWet(); 
 	}
 
 }
