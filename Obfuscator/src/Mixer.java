@@ -5,17 +5,19 @@ public class Mixer {
 	private String[] mixedString;
 	private String[] splittedStrings;
 
-	public String[] getMixedString() {
-		return mixedString;
+	public void absoluteMixer() {
+		splitter(new UserInput().getUserInput());
+		mixer();
+		printResult(mixedString);
 	}
-
-	public void splitter(String userInput) {
+	
+	private void splitter(String userInput) {
 		int userInputLength = userInput.length();
 		splittedStrings = new String[userInputLength];
-		splittedStrings = userInput.split("(?=-)|(?<=-)|(?= )|(?<= )|(?=,)|(?<=,)|(?=\\.)|(?<=\\.)|(?=\\?)|(?<=\\?)|(?=!)|(?<=!)");
+		splittedStrings = userInput.split("(?=[- ,\\.\\?!])|(?<=[- ,\\.\\?!])");
 	}
 
-	public void mixer() {
+	private void mixer() {
 		mixedString = new String[splittedStrings.length];
 		for (int i = 0; i < splittedStrings.length; i++) {
 			ArrayList<String> arrayList = new ArrayList<String>();
@@ -38,5 +40,11 @@ public class Mixer {
 		String formattedString = arrayList.toString().replace(",", "").replace("[", "").replace("]", "")
 				.replace(" ", "").trim();
 		return formattedString;
+	}
+	
+	private void printResult(String[] mixedArray) {
+		for (int i = 0; i < mixedArray.length; i++) {
+			System.out.print(mixedArray[i]);
+		}
 	}
 }
