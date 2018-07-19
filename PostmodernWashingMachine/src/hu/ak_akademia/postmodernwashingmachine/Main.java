@@ -55,7 +55,7 @@ public class Main {
 		System.out.println("----------------------------------------------------------------");
 		printWhite();
 		PostModernWashingMachine pmwm = new PostModernWashingMachine();
-		pmwm.loadDressToWashingMachine(whiteDressArrayList);
+		pmwm.load(whiteDressArrayList);
 		System.out.println(" Betöltött ruhák: " + pmwm .loadDress);
 		
 	}

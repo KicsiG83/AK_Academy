@@ -32,8 +32,7 @@ public class PostModernWashingMachine {
 	private boolean loaded;
 	public ArrayList<Dress> loadDress = new ArrayList<Dress>();
 
-
-	public ArrayList<Dress> loadDressToWashingMachine(ArrayList<Dress> al) {
+	public ArrayList<Dress> load(ArrayList<Dress> al) {
 		boolean valid = false;
 		int index = 0;
 		if (al.size() > 0) {

@@ -5,16 +5,6 @@ import hu.ak_akademia.helper.Generate;
 public class Dress implements Washable {
 
 	/*
-	 *A ruhák tartsák magukról nyilván, hogy mennyire koszosak! 
-	 *		A koszosság mértékét egy egész szám reprezentálja, ami annál nagyobb, minél koszosabb!
-	 *A ruhák tartsák magukról nyilván, 
-	 *		hogy milyen színűek, 
-	 *			fehérek
-	 *			színesek!
-	 *A ruhák tartsák magukról nyilván a megnevezésüket!
-	 *A ruhák tartsák magukról nyilván, 
-	 *		hogy mennyi a tartósságuk! 
-	 *			Ezt egy durability nevű egész szám típusú változó tárolja és amikor egy ruha létrejön, akkor 100-ról induljon!
 	 *A ruhák tartsák magukról nyilván, 
 	 *		hogy ki vannak-e épp vasalva!
 	 *A ruhák tartsák magukról nyilván, 
@@ -141,7 +131,7 @@ public class Dress implements Washable {
 	}
 	
 	public String toString() {
-		return "Név: " + getName() + " Koszosság: " + getDirty() +  " Szín: " + getColor() + " Tartósság: " + getDurability() + " Vizesség: " + getWet(); 
+		return "Név: " + getName() + " Koszosság: " + getDirty() +  " Szín: " + getColor() + " Tartósság: " + getDurability() + " Vizesség: " + getWet() + " Vasalt? " + isIroned() + " Szakadt? " + isTorn(); 
 	}
 
 }
