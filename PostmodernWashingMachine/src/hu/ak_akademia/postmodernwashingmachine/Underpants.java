@@ -6,5 +6,12 @@ public class Underpants extends Dress {
 		super("Alsógatya");
 	}
 
-
+	@Override
+	public void cleanCustom() {
+		clean();
+		if (!isTorn()) {
+			setDurability(getDurability() - 2);
+		}
+	}
+	
 }

@@ -6,5 +6,11 @@ public class Pants extends Dress {
 		super("Nadrág");
 	}
 
-
+	@Override
+	public void cleanCustom() {
+		clean();
+		if (!isTorn()) {
+			setDurability(getDurability() - 1);
+		}
+	}
 }

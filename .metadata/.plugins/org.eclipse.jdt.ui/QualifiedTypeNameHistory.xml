@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="Validation"/>
-<fullyQualifiedTypeName name="ExerciseOnePrint"/>
 <fullyQualifiedTypeName name="ThreeGoodCalculator"/>
 <fullyQualifiedTypeName name="ThreeGoodGetInput"/>
 <fullyQualifiedTypeName name="ThreeGoodMain"/>
@@ -59,5 +57,7 @@
 <fullyQualifiedTypeName name="hu.ak_akademia.postmodernwashingmachine.Socks"/>
 <fullyQualifiedTypeName name="hu.ak_akademia.postmodernwashingmachine.Pants"/>
 <fullyQualifiedTypeName name="hu.ak_akademia.postmodernwashingmachine.Underpants"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.classfile.PMGClass"/>
+<fullyQualifiedTypeName name="hu.ak_akademia.postmodernwashingmachine.PostModernWashingMachine"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

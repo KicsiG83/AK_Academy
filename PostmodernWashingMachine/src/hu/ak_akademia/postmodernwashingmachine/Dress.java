@@ -27,6 +27,7 @@ public class Dress implements Washable {
 	private boolean torn;
 	private static int i = 1;
 	private Generate g = new Generate();
+	public static boolean jo = true;
 	
 	public Dress(String message) {
 		setName(message+ "_" + i);
@@ -110,28 +111,37 @@ public class Dress implements Washable {
 	}
 
 	@Override
-	public void clean(Dress d) {
-		d.setDirty(getDirty() - 1);
-		d.setDurability(getDurability() - 1);
-		while (getWet() <= 100) {
-			d.setWet(getWet() + 1);
+	public void clean() {
+		if (getDirty() > 0) {
+			setDirty(getDirty() - 1);
+			PostModernWashingMachine.setSumDirty(PostModernWashingMachine.getSumDirty() - 1);
 		}
+		if (getDurability() <= 0) {
+			setTorn(true);
+			setDurability(0);
+		}
+		if (getWet() < 100) {
+			setWet(getWet() + 1);
+
+		}
+	}
+	
+	public void cleanCustom() {
+
 	}
 
 	@Override
-	public void dry(Dress d) {
-		while(getWet() == 0) {
-			d.setWet(getWet() - 1);
-		}
+	public void dry() {
+		setWet(0);
 	}
 
 	@Override
-	public void iron(Dress d) {
-
+	public void iron() {
+		setIroned(true);
 	}
 	
 	public String toString() {
-		return "Név: " + getName() + " Koszosság: " + getDirty() +  " Szín: " + getColor() + " Tartósság: " + getDurability() + " Vizesség: " + getWet() + " Vasalt? " + isIroned() + " Szakadt? " + isTorn(); 
+		return "Név: " + getName() + " Koszosság: " + getDirty() +  " Szín: " + getColor() + " Tartósság: " + getDurability() + " Vizesség: " + getWet() + " Vasalt? " + (isIroned()? "Igen" : "Nem") + " Szakadt? " + (isTorn()? "Igen" : "Nem"); 
 	}
 
 }

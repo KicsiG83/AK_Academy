@@ -2,10 +2,10 @@ package hu.ak_akademia.postmodernwashingmachine;
 
 public interface Washable {
 
-	void clean(Dress d);
+	void clean();
 	
-	void dry(Dress d);
+	void dry();
 	
-	void iron(Dress d);
+	void iron();
 	
 }

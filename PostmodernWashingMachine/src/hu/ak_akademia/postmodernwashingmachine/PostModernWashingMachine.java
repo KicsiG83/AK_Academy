@@ -24,13 +24,14 @@ public class PostModernWashingMachine {
 	 */
 
 	private boolean canWeStartWashing;
-	private int sumDirty;
+	public static int sumDirty;
 	private boolean empty;
 	private boolean itIsOn;
-	private boolean doorIsOpen;
+	private boolean door;
 	private WashingMachineStatus status;
 	private boolean loaded;
 	public ArrayList<Dress> loadDress = new ArrayList<Dress>();
+
 
 	public ArrayList<Dress> load(ArrayList<Dress> al) {
 		boolean valid = false;
@@ -42,21 +43,16 @@ public class PostModernWashingMachine {
 					loadDress.add(al.get(index));
 					index++;
 				} else {
+					sumDirty = sumDirty - al.get(index).getDirty();
 					valid = true;
 				}
 			} while (!valid && al.size() > index);
 			al.removeAll(loadDress);
-			
-			/*
-			 * 
-			 * Ide kell betenni a mosás indítását meg a többit
-			 * Ha az al > 0 akkor újra kell futtatni, ha kisebb, akkor kilép és nem fog kelleni visszatérési érték.
-			 * 
-			 */
-			
+			Dress.jo=true;
 			return al;
 		}else {
 			System.out.println("Nincs ilyen színű ruha kupac.");
+			Dress.jo=false;
 			return al;
 		}
 	}
@@ -69,12 +65,12 @@ public class PostModernWashingMachine {
 		this.loaded = loaded;
 	}
 
-	public int getSumDirty() {
+	public static int getSumDirty() {
 		return sumDirty;
 	}
 
-	public void setSumDirty(int sumDirty) {
-		this.sumDirty = sumDirty;
+	public static void setSumDirty(int number) {
+		sumDirty = number;
 	}
 
 	public boolean isEmpty() {
@@ -94,11 +90,11 @@ public class PostModernWashingMachine {
 	}
 
 	public boolean isDoorIsOpen() {
-		return doorIsOpen;
+		return door;
 	}
 
 	public void setDoorIsOpen(boolean doorIsOpen) {
-		this.doorIsOpen = doorIsOpen;
+		this.door = doorIsOpen;
 	}
 
 	public WashingMachineStatus getStatus() {
@@ -125,31 +121,62 @@ public class PostModernWashingMachine {
 		setDoorIsOpen(false);
 	}
 
-	public void load() {
-		
-	}
-
 	public void unload() {
 
 	}
 
-	public void iron() {
-
-	}
-
-	public void dry() {
-
-	}
-
-	public void startWash() {
+	public void startWash(ArrayList<Dress> arrayList) throws InterruptedException {
+		check(arrayList);
 		if(canWeStartWashing) {
-			
+			//ide betenni az ajtónyitást ... 
+			System.out.println("---------------- Mosás elindítva. ----------------");
+			wash(arrayList);
+			System.out.println("---------------- Mosás vége. ----------------");
+			System.out.println(arrayList);
+			System.out.println("---------------- Szárítás elindítva. ---------------- ");
+			System.out.println(arrayList);
+			dry(arrayList);
+			System.out.println("---------------- Szárítás vége. ----------------");
+			System.out.println(arrayList);
+			System.out.println("---------------- Vasalás elindítva. ----------------");
+			System.out.println(arrayList);
+			iron(arrayList);
+			System.out.println("---------------- Vasalás vége. ----------------");
+			System.out.println(arrayList);
+			//ajtó nyitás + kipakolás
+			System.out.println("A ruhák mosva, vasalva, teregetve.");
+			arrayList.clear();
 		}else {
-			System.out.println("Mosás nem indítható.");
+			System.out.println("---------------- Mosás nem indítható. ----------------");
 		}
 	}
-	
-	public boolean check(Dress d) {
+
+	private void iron(ArrayList<Dress> arrayList) {
+		for(int i = 0; i < arrayList.size(); i++) {
+			arrayList.get(i).iron();
+		}
+	}
+
+	public void wash(ArrayList<Dress> arrayList) throws InterruptedException {
+		while (sumDirty > 30) {
+			for (int i = 0; i < arrayList.size(); i++) {
+					arrayList.get(i).cleanCustom();
+				System.out.println(arrayList.get(i).getName() + " - koszosság: " + arrayList.get(i).getDirty() + " Szín: " + arrayList.get(i).getColor() );
+				System.out.println("Összkoszosság: " + getSumDirty());
+				System.out.println("Vizesség: " + arrayList.get(i).getWet());
+				System.out.println("Tartósság: " + arrayList.get(i).getDurability());
+			}
+			Thread.sleep(1000);
+		}
+	}
+
+	private void dry(ArrayList<Dress> arrayList) {
+		for(int i = 0; i < arrayList.size(); i++) {
+			arrayList.get(i).dry();
+		}
+	}
+
+	public boolean check(ArrayList<Dress> arrayList) {
 		if (isEmpty()) {
 			System.out.println("Üresen a mosógép.");
 			return canWeStartWashing = false;
@@ -158,9 +185,7 @@ public class PostModernWashingMachine {
 			return canWeStartWashing = false;
 		}else if (sumDirty < 50) {
 			System.out.println("A ruhák nem elég piszkosak, nem szükségs kimosni.");
-			return canWeStartWashing = false;
-		}else if (d.isColorDresses() && d.isWhiteDresses()) {
-			System.out.println("A mosás indítás letiltva, a ruhák össze fogják egymást.");
+			arrayList.clear();
 			return canWeStartWashing = false;
 		}else {
 			System.out.println("Ellenőrzés OK. Kezdhetjük a mosást.");
