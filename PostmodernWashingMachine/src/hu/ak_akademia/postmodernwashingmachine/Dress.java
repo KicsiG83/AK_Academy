@@ -4,33 +4,19 @@ import hu.ak_akademia.helper.Generate;
 
 public class Dress implements Washable {
 
-	/*
-	 *A ruhák tartsák magukról nyilván, 
-	 *		hogy ki vannak-e épp vasalva!
-	 *A ruhák tartsák magukról nyilván, 
-	 *		hogy szakadtak-e!
-	 *A ruhák tartsák magukról nyilván, 
-	 *		hogy mennyire vizesek! 
-	 *			Ez egy pozitív egész szám, ami 0 és 100 közötti. 0 jelenti a teljesen záraz, a 100 a teljesen vizes állapotot.
-	 *
-	 *A ruha osztályoknak override-old a toString-jét!
-	 */
-	
+	private int wet;
 	private int dirty;
 	private String name;
+	private boolean torn;
 	private String color;
 	private int durability;
-	private int wet;
-	private boolean whiteDresses;
-	private boolean colorDresses;
 	private boolean ironed;
-	private boolean torn;
 	private static int i = 1;
-	private Generate g = new Generate();
 	public static boolean jo = true;
-	
+	private Generate g = new Generate();
+
 	public Dress(String message) {
-		setName(message+ "_" + i);
+		setName(message + "_" + i);
 		setDirty(g.generateDirty());
 		setColor(g.randomColor());
 		setDurability(100);
@@ -41,25 +27,9 @@ public class Dress implements Washable {
 	public String getColor() {
 		return color;
 	}
-	
+
 	public void setColor(String color) {
 		this.color = color;
-	}
-
-	public boolean isWhiteDresses() {
-		return whiteDresses;
-	}
-
-	public void setWhiteDresses(boolean whiteDresses) {
-		this.whiteDresses = whiteDresses;
-	}
-
-	public boolean isColorDresses() {
-		return colorDresses;
-	}
-
-	public void setColorDresses(boolean colorDresses) {
-		this.colorDresses = colorDresses;
 	}
 
 	public int getDirty() {
@@ -125,7 +95,7 @@ public class Dress implements Washable {
 
 		}
 	}
-	
+
 	public void cleanCustom() {
 
 	}
@@ -139,9 +109,11 @@ public class Dress implements Washable {
 	public void iron() {
 		setIroned(true);
 	}
-	
+
 	public String toString() {
-		return "Név: " + getName() + " Koszosság: " + getDirty() +  " Szín: " + getColor() + " Tartósság: " + getDurability() + " Vizesség: " + getWet() + " Vasalt? " + (isIroned()? "Igen" : "Nem") + " Szakadt? " + (isTorn()? "Igen" : "Nem"); 
+		return "Név: " + getName() + " Koszosság: " + getDirty() + " Szín: " + getColor() + " Tartósság: "
+				+ getDurability() + " Vizesség: " + getWet() + " Vasalt? " + (isIroned() ? "Igen" : "Nem")
+				+ " Szakadt? " + (isTorn() ? "Igen" : "Nem");
 	}
 
 }

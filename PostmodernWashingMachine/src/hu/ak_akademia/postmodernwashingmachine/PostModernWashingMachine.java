@@ -49,10 +49,12 @@ public class PostModernWashingMachine {
 			} while (!valid && al.size() > index);
 			al.removeAll(loadDress);
 			Dress.jo=true;
+			setLoaded(true);
 			return al;
 		}else {
 			System.out.println("Nincs ilyen színű ruha kupac.");
 			Dress.jo=false;
+			setLoaded(false);
 			return al;
 		}
 	}
@@ -126,29 +128,47 @@ public class PostModernWashingMachine {
 	}
 
 	public void startWash(ArrayList<Dress> arrayList) throws InterruptedException {
+		switchOn();
+		WashingMachineStatus.TURNON.getTextual();
+		if(!isDoorIsOpen()) {
+			setDoorIsOpen(true);
+			System.out.println(isDoorIsOpen()? "Ajtó nyitva": "Ajtó zárva.");
+		}
 		check(arrayList);
 		if(canWeStartWashing) {
-			//ide betenni az ajtónyitást ... 
+			WashingMachineStatus.INPROGRESS.getTextual();
+			System.out.println(isLoaded()? "A ruhák betöltve. ": "A ruhák nincsenek betöltve.");
+			setDoorIsOpen(false);
+			System.out.println(isDoorIsOpen()? "Ajtó nyitva": "Ajtó zárva.");
 			System.out.println("---------------- Mosás elindítva. ----------------");
 			wash(arrayList);
 			System.out.println("---------------- Mosás vége. ----------------");
 			System.out.println(arrayList);
 			System.out.println("---------------- Szárítás elindítva. ---------------- ");
+			Thread.sleep(1000);
 			System.out.println(arrayList);
 			dry(arrayList);
 			System.out.println("---------------- Szárítás vége. ----------------");
+			Thread.sleep(1000);
 			System.out.println(arrayList);
 			System.out.println("---------------- Vasalás elindítva. ----------------");
+			Thread.sleep(1000);
 			System.out.println(arrayList);
 			iron(arrayList);
 			System.out.println("---------------- Vasalás vége. ----------------");
+			Thread.sleep(1000);
 			System.out.println(arrayList);
+			System.out.println("---------------- Ajtó nyitás. ----------------");
+			setDoorIsOpen(true);
+			System.out.println(isDoorIsOpen()? "Ajtó nyitva": "Ajtó zárva.");
 			//ajtó nyitás + kipakolás
-			System.out.println("A ruhák mosva, vasalva, teregetve.");
+			System.out.println(new Print().getClothesAreCovered());
 			arrayList.clear();
 		}else {
+			System.out.println(isLoaded()? "A ruhák betöltve. ": "A ruhák nincsenek betöltve.");
 			System.out.println("---------------- Mosás nem indítható. ----------------");
 		}
+		WashingMachineStatus.TURNOFF.getTextual();
 	}
 
 	private void iron(ArrayList<Dress> arrayList) {
