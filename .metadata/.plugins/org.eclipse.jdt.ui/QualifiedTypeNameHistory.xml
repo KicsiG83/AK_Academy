@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="sun.jvm.hotspot.debugger.AddressException"/>
-<fullyQualifiedTypeName name="Validation"/>
-<fullyQualifiedTypeName name="ExerciseOnePrint"/>
 <fullyQualifiedTypeName name="ThreeGoodCalculator"/>
 <fullyQualifiedTypeName name="ThreeGoodGetInput"/>
 <fullyQualifiedTypeName name="ThreeGoodMain"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="hu.ak_akademia.sorting.SortAlgorithm"/>
+<fullyQualifiedTypeName name="hu.ak_akademia.sorting.MergeSort"/>
 </qualifiedTypeNameHistroy>
