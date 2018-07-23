@@ -10,5 +10,4 @@ public class Fizz implements Operation {
 	public String process() {
 		return " fizz";
 	}
-
 }

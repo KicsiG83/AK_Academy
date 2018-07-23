@@ -13,5 +13,4 @@ public class Tshirt extends Dress {
 			setDurability(getDurability() - 3);
 		}
 	}
-
 }

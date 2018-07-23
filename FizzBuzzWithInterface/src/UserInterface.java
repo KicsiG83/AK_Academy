@@ -11,20 +11,20 @@ public class UserInterface {
 				System.out.print("Kérem adja meg mennyi számot ellenőrizzek: ");
 				userInput = sc.nextInt();
 				sc.nextLine();
-				if(userInput<=0) {
+				if (userInput <= 0) {
 					System.out.println("A megadott érték hibás.");
 					validUserInput = false;
-				}else {
+				} else {
 					validUserInput = true;
 				}
-			}catch (Exception e) {
+			} catch (Exception e) {
 				sc.nextLine();
 				System.out.println("A megadott érték hibás.");
 				validUserInput = false;
 			}
-		}while(!validUserInput);
+		} while (!validUserInput);
 		sc.close();
 		return userInput;
 	}
-	
+
 }

@@ -10,5 +10,4 @@ public class Buzz implements Operation {
 	public String process() {
 		return " buzz";
 	}
-
 }

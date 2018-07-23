@@ -4,20 +4,6 @@ import java.util.ArrayList;
 
 public class Main {
 
-	/*
-	 * Mosás alatt ne lehessen kinyitni a mosógép ajtaját, ekkor hibaüzenetet adjon vissza az open metódus és ne nyíljon ki! 
-	 * Ha már be van csukva az ajtaja a mosógépnek, akkor ne lehessen újra becsukni, ekkor a close metódus adjon vissza egy hibaüzenetet! 
-	 * A mosógép metódusainak meghívása tájékoztassa a felhasználót a standard kimeneten, hogy melyik művelet került
-	 * meghívásra és annak mi az eredménye! 
-	 * A Main osztály main metódusában hozz létre egy
-	 * mosógépet és hozz létre koszos ruhákat, kapcsold be a mosógépet, nyisd ki az
-	 * ajtaját, töltsd be a koszos ruhákat és mosd ki őket! Amint a mosás
-	 * befejeződik, szárítsd meg a ruhákat, vasaltasd ki őket, majd nyisd ki az
-	 * ajtaját, vedd ki a ruhákat a gépből és kapcsold ki azt és teregesd ki a
-	 * ruhákat a standard kimenetre a ruhák toString-jének meghívásával!
-	 * 
-	 */
-
 	private ArrayList<ArrayList<Dress>> allDress = new ArrayList<ArrayList<Dress>>();
 	private ArrayList<Dress> whiteDressArrayList = new ArrayList<Dress>();
 	private ArrayList<Dress> colorDressArrayList = new ArrayList<Dress>();
@@ -27,33 +13,22 @@ public class Main {
 	}
 
 	private void run() throws InterruptedException {
-		for (int i = 0; i < 5; i++) {
-			Dress ts = new Tshirt();
-			Dress s = new Socks();
-			Dress p = new Pants();
-			Dress up = new Underpants();
-			checkColor(ts);
-			checkColor(s);
-			checkColor(p);
-			checkColor(up);
+		generateClothes();
+		letsGo();
+	}
+
+	private void generateClothes() {
+		for (int i = 0; i < 10; i++) {
+			Dress tshirt = new Tshirt();
+			Dress socks = new Socks();
+			Dress pants = new Pants();
+			Dress underPants = new Underpants();
+			checkColor(tshirt);
+			checkColor(socks);
+			checkColor(pants);
+			checkColor(underPants);
 		}
-		System.out.print("Színes ruhák: ");
-		printColor();
-		System.out.println("----------------------------------------------------------------");
-		System.out.print("Fehér ruhák: ");
-		printWhite();
-		allDress.add(colorDressArrayList);
-		allDress.add(whiteDressArrayList);
-		PostModernWashingMachine pmwm = new PostModernWashingMachine();
-		
-		for (int j = 0; j < allDress.size(); j++) {
-			while (Dress.jo || allDress.get(j).size()>0) {
-				pmwm.setSumDirty(0);
-				pmwm.load(allDress.get(j));
-				System.out.println("Összkoszosság: " + pmwm.getSumDirty() + " Betöltött ruhák: " + pmwm.loadDress);
-				pmwm.startWash(pmwm.loadDress);
-			}
-		}
+		printClothes();
 	}
 
 	private void checkColor(Dress d) {
@@ -64,13 +39,21 @@ public class Main {
 		}
 	}
 
-	private void printWhite() {
-		System.out.println(whiteDressArrayList);
+	private void printClothes() {
+		System.out.println("Fehér ruhák: \n" + whiteDressArrayList
+				+ "\n----------------------------------------------------------------\n" + "Színes ruhák: \n"
+				+ colorDressArrayList);
 	}
 
-	private void printColor() {
-		System.out.println(colorDressArrayList);
-
+	private void letsGo() throws InterruptedException {
+		PostModernWashingMachine pmwm = new PostModernWashingMachine();
+		allDress.add(whiteDressArrayList);
+		allDress.add(colorDressArrayList);
+		for (int j = 0; j < allDress.size(); j++) {
+			while (Dress.valid || allDress.get(j).size() > 0) {
+				PostModernWashingMachine.setSumDirty(0);
+				pmwm.load(allDress.get(j));
+			}
+		}
 	}
-
 }

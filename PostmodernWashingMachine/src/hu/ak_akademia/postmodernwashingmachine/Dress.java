@@ -12,7 +12,7 @@ public class Dress implements Washable {
 	private int durability;
 	private boolean ironed;
 	private static int i = 1;
-	public static boolean jo = true;
+	public static boolean valid = true;
 	private Generate g = new Generate();
 
 	public Dress(String message) {
@@ -110,6 +110,7 @@ public class Dress implements Washable {
 		setIroned(true);
 	}
 
+	@Override
 	public String toString() {
 		return "Név: " + getName() + " Koszosság: " + getDirty() + " Szín: " + getColor() + " Tartósság: "
 				+ getDurability() + " Vizesség: " + getWet() + " Vasalt? " + (isIroned() ? "Igen" : "Nem")

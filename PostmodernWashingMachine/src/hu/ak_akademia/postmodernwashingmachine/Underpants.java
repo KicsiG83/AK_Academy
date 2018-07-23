@@ -13,5 +13,4 @@ public class Underpants extends Dress {
 			setDurability(getDurability() - 2);
 		}
 	}
-	
 }
