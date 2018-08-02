@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="ThreeGoodMain"/>
     <fullyQualifiedTypeName name="ExerciseThreePrinter"/>
     <fullyQualifiedTypeName name="Data"/>
     <fullyQualifiedTypeName name="java.lang.OutOfMemoryError"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="hu.ak_akademia.divisibility.UserInput"/>
     <fullyQualifiedTypeName name="hu.ak_akademia.divisibility.IntegerDivisionCheck"/>
+    <fullyQualifiedTypeName name="hu.ak_akademia.divisibility.DivisionCheck"/>
 </qualifiedTypeNameHistroy>
