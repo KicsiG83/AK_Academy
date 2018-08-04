@@ -16,9 +16,9 @@ public class Main {
 	private void callDivisionCheck(DivisionCheck[] dc, int number) {
 		String separator = " ";
 		System.out.println("A(z) " + number + " osztói: ");
-		for (int i = 0; i < 10; i++) {
-			if (dc[i].isDivisible(number)) {
-				System.out.print(dc[i].toString() + separator);
+		for (DivisionCheck divisionCheck : dc) {
+			if (divisionCheck.isDivisible(number)) {
+				System.out.print(divisionCheck + separator);
 			}
 		}
 	}
