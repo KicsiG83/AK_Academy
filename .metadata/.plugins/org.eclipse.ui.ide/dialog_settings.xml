@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\Java\AK_Academy\ChessProgram"/>
+		<item value="D:\Java\AK_Academy\DivisibilityOOP"/>
 		<item value="D:\JAVA\AK_Academy\AK_Academy\Obfuscator"/>
 		<item value="D:\Java\AK_Academy\RomanNumberConverter"/>
 		<item value="D:\JAVA\AK_Academy\AK_Academy\RomanNumberConverter"/>

@@ -1,3 +1,4 @@
+
 package hu.ak_akademia.divisibility;
 
 public class Main {

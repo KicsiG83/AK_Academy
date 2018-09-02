@@ -2,11 +2,21 @@ package hu.ak_akademia.chess.figures;
 
 public class Queen implements Figures {
 
+	private boolean onBoard = true;
+
+	public boolean isOnBoard() {
+		return onBoard;
+	}
+
+	public void setOnBoard(boolean onBoard) {
+		this.onBoard = onBoard;
+	}
+
 	@Override
 	public char sign(Color c) {
-		if(c.equals(Color.BLACK)){
+		if (c.equals(Color.BLACK)) {
 			return '\u265B';
-		}else {
+		} else {
 			return '\u2655';
 		}
 	}
@@ -16,7 +26,6 @@ public class Queen implements Figures {
 		return null;
 	}
 
-
 	@Override
 	public int movementCount() {
 		return 0;
@@ -25,6 +34,11 @@ public class Queen implements Figures {
 	@Override
 	public boolean movementBack() {
 		return true;
+	}
+
+	@Override
+	public boolean onBoard() {
+		return isOnBoard();
 	}
 
 }
