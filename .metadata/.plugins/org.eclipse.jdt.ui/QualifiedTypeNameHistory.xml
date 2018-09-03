@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+<<<<<<< Updated upstream
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="JDBCConnection"/>
     <fullyQualifiedTypeName name="JDBCClient"/>
@@ -60,4 +61,66 @@
     <fullyQualifiedTypeName name="CharChecker"/>
     <fullyQualifiedTypeName name="Calculator"/>
     <fullyQualifiedTypeName name="TrafficLight"/>
+=======
+<fullyQualifiedTypeName name="ExerciseThreePrinter"/>
+<fullyQualifiedTypeName name="Data"/>
+<fullyQualifiedTypeName name="java.lang.OutOfMemoryError"/>
+<fullyQualifiedTypeName name="Regnarts"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="JDBC"/>
+<fullyQualifiedTypeName name="UploadProperty"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="JDBCConnection"/>
+<fullyQualifiedTypeName name="JDBCClient"/>
+<fullyQualifiedTypeName name="JDBCUser"/>
+<fullyQualifiedTypeName name="JDBCProperty"/>
+<fullyQualifiedTypeName name="java.sql.ResultSetMetaData"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.classfile.LineNumber"/>
+<fullyQualifiedTypeName name="java.util.zip.CheckedInputStream"/>
+<fullyQualifiedTypeName name="Board"/>
+<fullyQualifiedTypeName name="WinChecker"/>
+<fullyQualifiedTypeName name="javax.sql.rowset.RowSetWarning"/>
+<fullyQualifiedTypeName name="Game"/>
+<fullyQualifiedTypeName name="Player"/>
+<fullyQualifiedTypeName name="SHA512Crypter"/>
+<fullyQualifiedTypeName name="Convert"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="Main"/>
+<fullyQualifiedTypeName name="Printer"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="GetInput"/>
+<fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
+<fullyQualifiedTypeName name="java.util.TreeMap"/>
+<fullyQualifiedTypeName name="java.time.LocalTime"/>
+<fullyQualifiedTypeName name="Messages"/>
+<fullyQualifiedTypeName name="ExactTime"/>
+<fullyQualifiedTypeName name="sun.util.resources.Bundles.Strategy"/>
+<fullyQualifiedTypeName name="Uploader"/>
+<fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+<fullyQualifiedTypeName name="Calculator.Addition"/>
+<fullyQualifiedTypeName name="Calculator.Substraction"/>
+<fullyQualifiedTypeName name="Calculator.Multiplication"/>
+<fullyQualifiedTypeName name="Calculator.Division"/>
+<fullyQualifiedTypeName name="Counter"/>
+<fullyQualifiedTypeName name="UploaderInterface"/>
+<fullyQualifiedTypeName name="java.lang.Character"/>
+<fullyQualifiedTypeName name="Check"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="UserInput"/>
+<fullyQualifiedTypeName name="Mixer"/>
+<fullyQualifiedTypeName name="javax.sound.midi.Soundbank"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="hu.ak_akademia.sorting.SortAlgorithm"/>
+<fullyQualifiedTypeName name="hu.ak_akademia.sorting.MergeSort"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="hu.ak_akademia.divisibility.UserInput"/>
+<fullyQualifiedTypeName name="hu.ak_akademia.divisibility.IntegerDivisionCheck"/>
+<fullyQualifiedTypeName name="hu.ak_akademia.divisibility.DivisionCheck"/>
+>>>>>>> Stashed changes
 </qualifiedTypeNameHistroy>
