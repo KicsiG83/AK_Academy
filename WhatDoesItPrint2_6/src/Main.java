@@ -2,7 +2,7 @@
 public class Main {
 
 	public static void main(String[] args) {
-		int g = +2 - (2 - 3);
+		int g = +2 - (2 + 3);
 		int h = -g;
 		int i = -0 + ++h;
 		outer: switch (i) {
