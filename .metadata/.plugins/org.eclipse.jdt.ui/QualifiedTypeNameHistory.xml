@@ -4,4 +4,7 @@
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="com.sun.tools.javac.util.ArrayUtils"/>
     <fullyQualifiedTypeName name="StatisticsForSix"/>
+    <fullyQualifiedTypeName name="Saddle"/>
+    <fullyQualifiedTypeName name="SteeringWheel"/>
+    <fullyQualifiedTypeName name="Bicycle"/>
 </qualifiedTypeNameHistroy>

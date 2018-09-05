@@ -16,10 +16,10 @@ public class Wheel {
 
 	public void puffUp() {
 		Validator validator = new Validator();
-		boolean valid = validator.getMaxPressure(pressure, max);
+		boolean valid = validator.checkPressure(pressure, max);
 		while (!valid) {
 			pressure++;
-			valid = validator.getMaxPressure(pressure, max);
+			valid = validator.checkPressure(pressure, max);
 		}
 	}
 

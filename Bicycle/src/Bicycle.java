@@ -1,7 +1,7 @@
 
 public class Bicycle {
 
-	private Wheel[] wheel;
+	private Wheel[] wheel = new Wheel[2];
 	private Bell bell;
 	private Chain chain;
 	private Computer computer;
@@ -10,13 +10,31 @@ public class Bicycle {
 	private Pedal pedal;
 	private Saddle saddle;
 	private SteeringWheel steeringWheel;
+	private Brake brake;
+	private int speed;
+	private Gear gear;
+	private int distance;
 
 	public Bicycle() {
 		this.wheel[0] = new Wheel("front");
 		this.wheel[1] = new Wheel("back");
-		this.lamp = new Lamp();
+		this.bell = new Bell(); 
 		this.chain = new Chain();
 		this.computer = new Computer();
+		this.frame = new Frame();
+		this.lamp = new Lamp();
+		this.pedal = new Pedal(); //
+		this.saddle = new Saddle(); //
+		this.steeringWheel = new SteeringWheel();//
+		this.brake = new Brake(); //
+	}
+
+	public Brake getBrake() {
+		return brake;
+	}
+
+	public void setBrake(Brake brake) {
+		this.brake = brake;
 	}
 
 	public Wheel[] getWheel() {
