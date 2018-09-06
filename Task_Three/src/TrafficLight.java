@@ -22,11 +22,7 @@ public class TrafficLight {
 	}
 
 	public boolean isFree() {
-		if (getColor() == Color.Z) {
-			return true;
-		} else {
-			return false;
-		}
+		return (getColor().equals(Color.Z)) ? true : false;
 	}
 
 	public void setFree(boolean free) {

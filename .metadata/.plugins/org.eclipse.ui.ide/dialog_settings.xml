@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\JAVA\AK_Academy\AK_Academy\Task_Three"/>
+		<item value="D:\JAVA\AK_Academy\AK_Academy\Task_Two"/>
+		<item value="D:\JAVA\AK_Academy\AK_Academy\Task_One"/>
+		<item value="D:\JAVA\AK_Academy\AK_Academy\DiceOOP"/>
 		<item value="D:\Java\AK_Academy\DiceOOP"/>
 	</list>
+	<section name="ResourceNavigator">
+		<item value="Aggregate for window 1535999191289" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
+		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
+	</section>
 	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
 		<item value="false" key="FilterByLocation"/>
 		<item value="true" key="ShowStatusLine"/>
