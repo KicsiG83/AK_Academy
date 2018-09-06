@@ -1,7 +1,8 @@
+package dice;
 import java.util.ArrayList;
 import java.util.List;
-
-public class Experiment {
+import dice.Dice;
+public class ExperimentOriginal {
 
 	private int six;
 	private int[] count;
@@ -11,17 +12,11 @@ public class Experiment {
 	public void calculateCast(int statCounting, int xTimes) {
 		count = new int[statCounting];
 		for (int i = 0; i < count.length; i++) {
-			count[i] = new Experiment().diceRollForSix(i, xTimes);
+			count[i] = new ExperimentOriginal().diceRollForSix(i, xTimes);
 		}
-
-		int minValue = searchValue(count, 1);
-		System.out.println("\nMinimum dobás: " + minValue);
-
-		int maxValue = searchValue(count, 2);
-		System.out.println("Maximum dobás: " + maxValue);
-
-		int avgValue = searchValue(count, 3) / statCounting;
-		System.out.println("Átlag dobás: " + avgValue);
+		System.out.println("\nMinimum dobás: " + searchValue(count, 1));
+		System.out.println("Maximum dobás: " + searchValue(count, 2));
+		System.out.println("Átlag dobás: " + searchValue(count, 3) / statCounting);
 	}
 
 	public int diceRollForSix(int index, int xTimes) {
@@ -39,7 +34,7 @@ public class Experiment {
 		return counter;
 	}
 
-	public static int searchValue(int[] inputArray, int index) {
+	public int searchValue(int[] inputArray, int index) {
 		int value = inputArray[0];
 		for (int i = 0; i < inputArray.length; i++) {
 			switch (index) {

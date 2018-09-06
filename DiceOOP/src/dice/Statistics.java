@@ -1,3 +1,4 @@
+package dice;
 
 public class Statistics {
 
