@@ -5,30 +5,32 @@ public class Gear {
 	private final int maxGearSpeed = 3;
 	private int gearSpeed;
 	
+	{
+		gearSpeed = 1;
+	}
+	
 	public int getGearSpeed() {
 		return gearSpeed;
 	}
 
-	public void setGearSpeed(int gearSpeed) {
-		this.gearSpeed = gearSpeed;
-	}
-
-	public int getMinGearSpeed() {
-		return minGearSpeed;
-	}
-
-	public int getMaxGearSpeed() {
-		return maxGearSpeed;
-	}
-
 	//TODO validátor meghívása amíg a maxGearSpeed engedi
-	public void gearUp(Bicycle bike) {
-		gearSpeed++;
+	public void gearUp() {
+		int gear = gearSpeed + 1;
+		if (new Validator().checkGear(gear, minGearSpeed, maxGearSpeed)) {
+			gearSpeed = gear;
+		} else {
+			System.out.println("Nincs ilyen fokozat!");
+		}
 	}
 	
 	//TODO validátor meghívása amíg a minGearSpeed engedi
-	public void gearDown(Bicycle bike) {
-		gearSpeed--;
+	public void gearDown() {
+		int gear = gearSpeed - 1;
+		if (new Validator().checkGear(gear, minGearSpeed, maxGearSpeed)) {
+			gearSpeed = gear;
+		} else {
+			System.out.println("Nincs ilyen fokozat!");
+		}
 	}
 	
 	@Override

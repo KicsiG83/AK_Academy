@@ -5,7 +5,10 @@ public class Validator {
 		return max > pressure ? false : true;
 	}
 
-	public boolean checkGear() {
+	public boolean checkGear(int gearSpeed, int minGearSpeed, int maxGearSpeed) {
+		if(gearSpeed >= minGearSpeed && gearSpeed <= maxGearSpeed) {
+			return true;
+		}
 		return false;
 	}
 	

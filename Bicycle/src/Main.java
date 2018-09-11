@@ -13,5 +13,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		Bicycle bike = new Bicycle();
+		Gear gear = bike.getGear();
+		gear.gearUp();
+		System.out.println(bike.getSpeed());
 	}
 }

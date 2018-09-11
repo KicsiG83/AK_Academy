@@ -27,6 +27,31 @@ public class Bicycle {
 		this.saddle = new Saddle(); //
 		this.steeringWheel = new SteeringWheel();//
 		this.brake = new Brake(); //
+		this.gear = new Gear();
+	}
+
+	public int getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(int speed) {
+		this.speed = speed * Integer.parseInt(getGear().toString());
+	}
+
+	public Gear getGear() {
+		return gear;
+	}
+
+	public void setGear(Gear gear) {
+		this.gear = gear;
+	}
+
+	public int getDistance() {
+		return distance;
+	}
+
+	public void setDistance(int distance) {
+		this.distance = distance;
 	}
 
 	public Brake getBrake() {
