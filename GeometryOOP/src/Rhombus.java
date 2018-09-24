@@ -7,18 +7,12 @@ public class Rhombus extends AbstractShape {
 
 	@Override
 	public void draw() {
-		for (int i = height; i > 0; i--) {
-			String rombusStars = new String(new char[width]).replace("\0", SIGN);
-			String repeated = new String(new byte[i]).replace("\0", " ");
-			System.out.println(repeated + rombusStars);
-			width += 2;
-		}
-		int skew = 3;
+		print(width);
 		for (int i = 1; i < 3; i++) {
-			String rombusStarsDown = new String(new char[skew]).replace("\0", SIGN);
+			String starsDown = new String(new char[height]).replace("\0", SIGN);
 			String repeated = new String(new byte[i + 1]).replace("\0", " ");
-			System.out.println(repeated + rombusStarsDown);
-			skew -= 2;
+			System.out.println(repeated + starsDown);
+			height -= 2;
 		}
 	}
 }

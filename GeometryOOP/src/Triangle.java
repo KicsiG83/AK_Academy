@@ -10,8 +10,8 @@ public class Triangle extends AbstractShape {
 		int rowSignCount = 1;
 		int offset = width / (height - 1);
 		for (int row = 1; row <= height; row++) {
-			String trinagleStars = new String(new char[row == 1 ? 1 : rowSignCount - 1]).replace("\0", SIGN);
-			System.out.println(trinagleStars);
+			String stars = new String(new char[row == 1 ? 1 : rowSignCount - 1]).replace("\0", SIGN);
+			System.out.println(stars);
 			rowSignCount = rowSignCount + offset;
 		}
 	}
