@@ -16,7 +16,7 @@ public enum Name {
 	private static final int SIZE = VALUES.size();
 	private static final Random RANDOM = new Random();
 
-	private Name randomName() {
+	public static Name randomName() {
 		return VALUES.get(RANDOM.nextInt(SIZE));
 	}
 
