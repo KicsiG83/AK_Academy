@@ -2,58 +2,52 @@ package hu.ak_akademia.persons;
 
 import java.util.Random;
 
-public class Person {
+public abstract class Person implements IPerson {
 
 	private int age;
 	private String name;
-	private int minWaitingTime;
-	private int maxWaitingTime;
-	
-	public Person() {
+	private int checkOutTime;
+	private Type type;
+
+	protected Person() {
 		this.name = Name.randomName().getTextual();
-		this.age = new Random().nextInt(100) + 5;
-		this.minWaitingTime = setMinWaitingTime(age);
+		this.age = new Random().nextInt(100 - 10) + 10;
+		this.type = Type.randomType();
+		checkOut(type);
 	}
-	
+
+	@Override
 	public String getName() {
 		return name;
 	}
 
+	@Override
 	public int getAge() {
 		return age;
 	}
-	
-	public void setAge(int age) {
-		this.age = age;
+
+	@Override
+	public void checkOut(Type type) {
+		int max = 0;
+		int min = 0;
+		switch (type) {
+		case YOUNGADULT:
+			min = 1;
+			max = 6;
+			break;
+		case ADULT:
+			min = 4;
+			max = 8;
+			break;
+		default:
+			min = 8;
+			max = 12;
+			break;
+		}
+		this.checkOutTime = new Random().nextInt(max - min) + min;
 	}
 
-	public int getMinWaitingTime() {
-		return minWaitingTime;
+	public int getWaitingTime() {
+		return checkOutTime;
 	}
-	
-	public void setMaxWaitingTime(int age) {
-		//TODO a számokat a min-hez igazítani
-		if(age < 18) {
-			this.maxWaitingTime = new Random().nextInt(6) + 1;
-		}else if(age > 18 && age < 60) {
-			this.maxWaitingTime = new Random().nextInt(6) + 1;
-		}else {
-			this.maxWaitingTime = new Random().nextInt(6) + 1;
-		}
-	}
-	
-	public int getMaxWaitingTime() {
-		return maxWaitingTime;
-	}
-	
-	public int setMinWaitingTime(int age) {
-		if(age < 18) {
-			return new Random().nextInt(6) + 1;
-		}else if(age > 18 && age < 60) {
-			return new Random().nextInt(8) + 4;
-		}else {
-			return new Random().nextInt(12) + 8;
-		}
-	}
-	
 }

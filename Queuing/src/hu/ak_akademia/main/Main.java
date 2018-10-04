@@ -1,6 +1,11 @@
 package hu.ak_akademia.main;
 
+import java.util.LinkedList;
+import java.util.List;
+
+import hu.ak_akademia.persons.CreatePerson;
 import hu.ak_akademia.persons.Person;
+import hu.ak_akademia.queue.Waiting;
 
 public class Main {
 
@@ -9,13 +14,15 @@ public class Main {
 	}
 
 	private void run() {
-		Person[] persons = new Person[10];
-		for(int i = 0; i < persons.length; i++) {
-			persons[i] = new Person();
-		}
-		
-		for(int i = 0; i < persons.length; i++) {
-			System.out.println(persons[i].getName() + " " +  persons[i].getAge() + " vár " + persons[i].getMinWaitingTime());
+		List<Person> persons = new LinkedList<>();
+		int maxPersonNumber = 10;
+		fillPersonsArray(persons, maxPersonNumber);
+		new Waiting().waiting(persons);
+	}
+
+	private void fillPersonsArray(List<Person> persons, int maxIteration) {
+		for (int i = 0; i < maxIteration; i++) {
+			persons.add(new CreatePerson());
 		}
 	}
 }
