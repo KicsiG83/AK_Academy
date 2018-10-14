@@ -2,9 +2,9 @@ package pack.main;
 
 import java.util.Random;
 
-import pack.persons.Name;
-import pack.persons.Person;
-import pack.queue.Queue;
+import pack.people.Name;
+import pack.people.People;
+import pack.queue.CQueue;
 
 public class Main {
 
@@ -13,17 +13,17 @@ public class Main {
 	}
 
 	private void run() {
-		Queue q = new Queue();
+		CQueue q = new CQueue();
 		for (int i = 0; i < 6; i++) {
 			q.fillList(createPerson());
 		}
 		q.printList();
 	}
 
-	private Person createPerson() {
+	private People createPerson() {
 		int age = new Random().nextInt(100 - 10) + 10;
 		int wait = getWatingTime(age);
-		Person p = new Person(Name.randomName().getTextual(), age, wait);
+		People p = new People(Name.randomName().getTextual(), age, wait);
 		return p;
 	}
 

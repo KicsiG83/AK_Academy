@@ -1,11 +1,11 @@
-package pack.persons;
+package pack.people;
 
-public abstract class AbstractPerson implements IPerson {
+public abstract class AbstractPeople implements IPeople {
 
 	private String name;
 	private int age;
 	private int checkOutTime;
-	
+
 	@Override
 	public String getName() {
 		return name;
@@ -17,20 +17,19 @@ public abstract class AbstractPerson implements IPerson {
 	}
 
 	@Override
-	public void checkOut() {
+	public void checkOut(int number) {
 		try {
-			Thread.sleep(1_000L);
+			Thread.sleep(number * 1_000L);
 		} catch (InterruptedException e) {
 			System.out.println("Várakozás megszakítva.");
 		}
 	}
 
-	public AbstractPerson(String name, int age, int checkOutTime) {
+	public AbstractPeople(String name, int age, int checkOutTime) {
 		this.name = name;
 		this.age = age;
 		this.checkOutTime = checkOutTime;
 	}
-
 
 	public int getCheckOutTime() {
 		return checkOutTime;
