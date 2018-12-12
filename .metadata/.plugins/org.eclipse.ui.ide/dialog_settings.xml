@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+<<<<<<< Updated upstream
 		<item value="D:\JAVA\AK_Academy\AK_Academy\Task_Three"/>
 		<item value="D:\JAVA\AK_Academy\AK_Academy\Task_Two"/>
 		<item value="D:\JAVA\AK_Academy\AK_Academy\Task_One"/>
 		<item value="D:\JAVA\AK_Academy\AK_Academy\DiceOOP"/>
+=======
+		<item value="D:\JAVA\AK_Academy\AK_Academy\HangmanStreamApi"/>
+		<item value="D:\JAVA\AK_Academy\AK_Academy\WhatDoesItPrint"/>
+		<item value="D:\JAVA\AK_Academy\AK_Academy\Queuing"/>
+		<item value="D:\JAVA\AK_Academy\AK_Academy\Test"/>
+		<item value="D:\Java\AK_Academy\Bicycle"/>
+>>>>>>> Stashed changes
 		<item value="D:\Java\AK_Academy\DiceOOP"/>
 	</list>
 	<section name="ResourceNavigator">

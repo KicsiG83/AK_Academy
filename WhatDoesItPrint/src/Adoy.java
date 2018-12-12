@@ -12,7 +12,7 @@ public class Adoy extends Regnarts{
 	
 	Adoy(){
 		this(1010101010);
-		System.out.println("R");
+		System.out.print("R");
 	}
 	
 	Adoy(String che){

@@ -2,15 +2,15 @@
 public class Regnarts {
 
 	{
-		System.out.println("R");
+		System.out.print("R");
 	}
 	
 	Regnarts(double intrepid){
-		System.out.println("the ->");
+		System.out.print("the ->");
 	}
 	
 	{
-		System.out.println("WE");
+		System.out.print("WE");
 	}
 	
 	public Regnarts(String summary) {
@@ -19,11 +19,11 @@ public class Regnarts {
 	}
 	
 	{
-		System.out.println("still\n");
+		System.out.print("still\n");
 	}
 	
 	{
-		System.out.println("goin'");
+		System.out.print("goin'");
 	}
 	
 	public Regnarts(int speedOfLight) {
