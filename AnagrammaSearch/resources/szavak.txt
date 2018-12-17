@@ -1,9 +1,3 @@
-<<<<<<< Updated upstream
-almafa
-körtefa
-szilvafa
-barackfa
-=======
 aachen
 abba
 abban
@@ -4082,4 +4076,3 @@ zámoly
 zip
 zöld
 zsolnai
->>>>>>> Stashed changes

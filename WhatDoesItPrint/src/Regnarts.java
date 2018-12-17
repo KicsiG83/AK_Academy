@@ -15,7 +15,7 @@ public class Regnarts {
 	
 	public Regnarts(String summary) {
 		this(1.0 + summary.length());
-		System.out.println("way?\n");
+		System.out.print("way?\n");
 	}
 	
 	{
