@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 import org.apache.commons.lang3.StringUtils;
 
 /*
-	3.	int	String	generál egy véletlenszerű String-et, ami a bemenetként megadott szám hosszúságú  			-> Kész csak nem lambda-s
 	4.	String	int	megszámolja, hogy hány szóköz van a megadott String-ben										-> Kész csak nem lambda-s
 	5.	String	boolean	megállapítja, hogy a megadott szöveg palindrom-e
 	6.	String	String	abc sorrendbe rendezi a betűket a String-en belül
@@ -21,83 +20,84 @@ import org.apache.commons.lang3.StringUtils;
 
 public class Main {
 
-	private static String CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	private static String ORIGINALSTRING = "alma körte szilva barack";
+    private static String CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private static String ORIGINALSTRING = "alma körte szilva barack";
 
-	public static void main(String[] args) {
-		camelCase();
-		camelCaseByAndris();
-		fullUpperCase();
-		countDown(10);
+    public static void main(String[] args) {
 
-		String xLengthString = getRandomString(25);
-		System.out.println(xLengthString);
+        System.out.println(camelCase());
+        System.out.println(camelCaseByAndris());
+        fullUpperCase();
+        countDown(10);
 
-		System.out.println(getSpaceCount(ORIGINALSTRING));
+        String xLengthString = getRandomString(25);
+        System.out.println(xLengthString);
 
-		int number = 9974;
-		System.out.println(primNumberValidator(number) ? number + " prímszám" : number + " nem prímszám.");
+        System.out.println(getSpaceCount(ORIGINALSTRING));
 
-	}
+        int number = 9;
+        System.out.println(primNumberValidator(number) ? "A(z) " + number + " prímszám" : "A(z) " + number + " nem prímszám.");
 
-	private static void countDown(int inputNumber) {
-		List.of(inputNumber).stream().forEach(number -> {
-			while (number > 1) {
-				System.out.println(--number);
-			}
-		});
-	}
+    }
 
-	private static void camelCase() {
-		List<String> wordsList = new ArrayList<>();
-		String[] wordsArray = ORIGINALSTRING.split(" ");
-		Function<String, String> result = word -> StringUtils.capitalize(word);
-		for (String word : wordsArray) {
-			wordsList.add(result.apply(word));
-		}
-		System.out.println(wordsList.stream().collect(Collectors.joining("")));
-	}
+    private static void countDown(int inputNumber) {
+        List.of(inputNumber).stream().forEach(number -> {
+            while (number > 1) {
+                System.out.println(--number);
+            }
+        });
+    }
 
-	private static void camelCaseByAndris() {
-		System.out.println((new ArrayList<>(Arrays.asList(ORIGINALSTRING.toLowerCase().split(" ")))).stream()
-				.map(word -> Character.toUpperCase(word.charAt(0)) + word.substring(1))
-				.collect(Collectors.joining("")));
-	}
+    private static String camelCase() {
+        List<String> wordsList = new ArrayList<>();
+        String[] wordsArray = ORIGINALSTRING.split(" ");
+        Function<String, String> result = word -> StringUtils.capitalize(word);
+        for (String word : wordsArray) {
+            wordsList.add(result.apply(word));
+        }
+        return wordsList.stream().collect(Collectors.joining(""));
+    }
 
-	private static void fullUpperCase() {
-		System.out.println((new ArrayList<>(Arrays.asList(ORIGINALSTRING.toUpperCase().replaceAll(" ", "_")))).stream()
-				.collect(Collectors.joining("")));
-	}
+    private static String camelCaseByAndris() {
+        return (new ArrayList<>(Arrays.asList(ORIGINALSTRING.toLowerCase().split(" ")))).stream()
+                .map(word -> Character.toUpperCase(word.charAt(0)) + word.substring(1)).collect(Collectors.joining(""));
+    }
 
-	public static String getRandomString(int length) {
-		Random rn = new Random();
-		StringBuilder sb = new StringBuilder();
-		List.of(length).stream().forEach(lengthOfString -> {
-			for (int i = 0; i < length; ++i) {
-				sb.append(CHARACTERS.charAt(rn.nextInt(CHARACTERS.length())));
-			}
-		});
-		return sb.toString();
-	}
+    private static void fullUpperCase() {
+        System.out.println(
+                (new ArrayList<>(Arrays.asList(ORIGINALSTRING.toUpperCase().replaceAll(" ", "_")))).stream().collect(Collectors.joining("")));
+    }
 
-	private static int getSpaceCount(String originalString) {
-		int counter = 0;
-		char x = ' ';
-		for (int i = 0; i < originalString.length(); i++) {
-			if (originalString.charAt(i) == x) {
-				counter++;
-			}
-		}
-		return counter;
-	}
+    public static String getRandomString(int length) {
+        Random rn = new Random();
+        StringBuilder sb = new StringBuilder();
+        List.of(length).stream().forEach(lengthOfString -> {
+            for (int i = 0; i < length; ++i) {
+                sb.append(CHARACTERS.charAt(rn.nextInt(CHARACTERS.length())));
+            }
+        });
+        return sb.toString();
+    }
 
-	private static boolean primNumberValidator(int number) {
-		for (int i = 2; i < number / 2 + 1; i++) {
-			if (number % i == 0) {
-				return false;
-			}
-		}
-		return true;
-	}
+    private static int getSpaceCount(String originalString) {
+        int counter = 0;
+        char x = ' ';
+        for (int i = 0; i < originalString.length(); i++) {
+            if (originalString.charAt(i) == x) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    private static boolean primNumberValidator(int number) {
+        boolean result = true;
+        for (int i = 2; i <= (int) Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return result;
+    }
 
 }
