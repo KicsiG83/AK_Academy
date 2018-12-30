@@ -1,20 +1,20 @@
-package hu.ak_akademia.lot;
+package hu.ak_akademia.lotto;
 
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Lot {
+public class Lotto {
 
 	private int max = 90;
 	private int db = 5;
 	private Set<Integer> winnerNumbers = new TreeSet<>();
 
-	public Lot() {
+	public Lotto() {
 		lottery();
 	}
 
-	public Lot(int max, int db) {
+	public Lotto(int max, int db) {
 		if (max < db) {
 			System.out.println("Érvénytelen paraméter.");
 		} else {

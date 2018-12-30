@@ -1,6 +1,6 @@
 package hu.ak_akademia.main;
 
-import hu.ak_akademia.lot.Lot;
+import hu.ak_akademia.lotto.Lotto;
 
 public class Main {
 
@@ -12,12 +12,12 @@ public class Main {
 
 	private void run() {
 
-		Lot lottery = new Lot();
+		Lotto lottery = new Lotto();
 		System.out.println(lottery.getWinNum());
 		
 		System.out.println("-----------------------");
 		
-		Lot parametersLottery = new Lot(10, 10);
+		Lotto parametersLottery = new Lotto(10, 10);
 		System.out.println(parametersLottery.getWinNum());
 		
 	}
