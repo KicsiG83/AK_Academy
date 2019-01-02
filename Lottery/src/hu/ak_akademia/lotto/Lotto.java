@@ -3,12 +3,14 @@ package hu.ak_akademia.lotto;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.function.BiConsumer;
 
 public class Lotto {
 
 	private int max = 90;
 	private int db = 5;
 	private Set<Integer> winnerNumbers = new TreeSet<>();
+	private Random rn = new Random();
 
 	public Lotto() {
 		lottery();
@@ -23,9 +25,18 @@ public class Lotto {
 		}
 		lottery();
 	}
+	
+	public Lot(int a) {
+	    
+	}
 
+	public BiConsumer<Integer, Integer> lotteryWithStreamApi = (max, db) -> {
+	    while (winnerNumbers.size() < db) {
+            winnerNumbers.add(rn.nextInt(max) + 1);
+        }  
+	};
+	
 	private void lottery() {
-		Random rn = new Random();
 		while (winnerNumbers.size() < db) {
 			winnerNumbers.add(rn.nextInt(max) + 1);
 		}

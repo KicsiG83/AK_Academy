@@ -7,10 +7,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        new UserInput().getInput();
-        Calculator c = new Calculator();
-        c.calc.accept(c.getCurrentDate(), UserInput.getBirthDate());
-        c.printYear();
+        UserInput ui = new UserInput();
+        ui.getInput();
+        new Calculator().calculetWithLocalDateTime(ui.getBirthDate());
     }
 
 }
