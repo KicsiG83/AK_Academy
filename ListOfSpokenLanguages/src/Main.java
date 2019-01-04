@@ -1,11 +1,10 @@
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 public class Main {
-
-    private Set<String> fullSpokenLanguages = new TreeSet<>();
 
     public static void main(String[] args) {
         new Main().run();
@@ -13,15 +12,22 @@ public class Main {
 
     private void run() {
 
-        collectLanguages(new Person(getLanguages(2)));
-        collectLanguages(new Person(getLanguages(3)));
-        collectLanguages(new Person(getLanguages(4)));
-        collectLanguages(new Person(getLanguages(5)));
-        collectLanguages(new Person(getLanguages(6)));
+        List<Person> personList = Arrays.asList(
+                new Person(getLanguages(2)), 
+                new Person(getLanguages(3)), 
+                new Person(getLanguages(4)),
+                new Person(getLanguages(5)), 
+                new Person(getLanguages(6)));
 
-        System.out.println("\nBeszélt nyelvek listája: ");
-        fullSpokenLanguages.stream().forEach(System.out::println);
-
+        List<String> collect = personList
+                .stream()
+                .map(x -> x.getLanguages())
+                .flatMap(x -> x.stream())
+                .distinct()
+                .collect(Collectors.toList());
+        
+        System.out.println("\n----------------------------\n");
+        collect.forEach(System.out::println);
     }
 
     private Set<String> getLanguages(int size) {
@@ -31,13 +37,4 @@ public class Main {
         }
         return personLanguages;
     }
-
-    private void collectLanguages(Person person) {
-        List<String> personSpokenLanguagesList = new ArrayList<>();
-        personSpokenLanguagesList.addAll(person.getLanguages());
-        for (String language : personSpokenLanguagesList) {
-            fullSpokenLanguages.add(language);
-        }
-    }
-
 }
