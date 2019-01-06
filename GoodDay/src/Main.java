@@ -10,7 +10,9 @@ public class Main {
     private LocalDateTime valiDate = LocalDateTime.of(2019, 1, 1, 0, 0);
 
     public static void main(String[] args) {
+    	long start = System.nanoTime();
         new Main().run();
+        System.out.println((System.nanoTime() - start)/1000000);
     }
 
     private void run() {
