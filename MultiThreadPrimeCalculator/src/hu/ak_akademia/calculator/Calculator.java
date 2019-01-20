@@ -9,26 +9,21 @@ public class Calculator implements Runnable {
 
 	private int min;
 	private int max;
-	private int thread;
 	private Set<Integer> primeNumbers = new HashSet<>();
 
-	public Calculator(int min, int max, int thread) {
+	public Calculator(int min, int max) {
 		this.min = min;
 		this.max = max;
-		this.thread = thread;
 	}
 
 	@Override
 	public void run() {
-		long startTime = System.nanoTime();
 		for (int i = min; i < max; i++) {
 			if (isPrime(i) == true) {
 				primeNumbers.add(i);
 			}
 		}
 		Main.setFullSet(primeNumbers);
-		System.out.println("Számolási idő " + thread + " szálon: " + min + " - " + max + " - "
-				+ (System.nanoTime() - startTime) / 1_000_000 + " millisecond");
 	}
 
 	public static boolean isPrime(int number) {
