@@ -15,8 +15,8 @@ public class Main {
 		System.out.println(result.size() + " - " + result);
 	}
 
-	private List<Long> test() {
-		return LongStream.range(0L, 372L).parallel().filter(number -> armstrongValidator(number)).boxed()
+	private synchronized List<Long> test() {
+		return LongStream.rangeClosed(0L, 371L).parallel().filter(number -> armstrongValidator(number)).boxed()
 				.collect(Collectors.toList());
 	}
 
