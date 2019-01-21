@@ -76,13 +76,13 @@ public class Main {
 		printTime(numberOfThreads, startTime);
 	}
 
-	public synchronized static void setFullSet(Set<Integer> set) {
-		fullSet.addAll(set);
-	}
+    public synchronized static void setFullSet(Set<Integer> set) {
+        fullSet.addAll(set);
+    }
 
-	public static Set<Integer> getFullSet() {
-		return fullSet;
-	}
+    public static Set<Integer> getFullSet() {
+        return fullSet;
+    }
 
 	private void runStreamApi() {
 		long startTime = System.nanoTime();

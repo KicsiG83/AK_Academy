@@ -26,23 +26,23 @@ public class Calculator implements Runnable {
 		Main.setFullSet(primeNumbers);
 	}
 
-	public static boolean isPrime(int number) {
-		if (number < 2) {
-			return false;
-		}
-		if (number == 2) {
-			return true;
-		}
-		for (int possibleDisvisor = 2; possibleDisvisor < Math.sqrt(number) + 1; possibleDisvisor++) {
-			if (number % possibleDisvisor == 0) {
-				return false;
-			}
-		}
-		return true;
-	}
+    public static boolean isPrime(int number) {
+        if (number < 2) {
+            return false;
+        }
+        if (number == 2) {
+            return true;
+        }
+        for (int possibleDisvisor = 2; possibleDisvisor < Math.sqrt(number) + 1; possibleDisvisor++) {
+            if (number % possibleDisvisor == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 
-	public Set<Integer> getPrimeNumbers() {
-		return primeNumbers;
-	}
+    public Set<Integer> getPrimeNumbers() {
+        return primeNumbers;
+    }
 
 }
