@@ -1,19 +1,21 @@
 public class PrimeNumberValidator {
 
+	private int db = 0;
+
 	public static void main(String[] args) {
+		new PrimeNumberValidator().run();
+	}
 
-		int db = 0;
-
+	private void run() {
 		for (int i = 1; i <= 50; i++) {
 			if (isPrime(i) == true) {
 				System.out.println(db + " - " + i);
 				db++;
 			}
 		}
-
 	}
 
-	static boolean isPrime(int number) {
+	private boolean isPrime(int number) {
 		if (number < 2) {
 			return false;
 		}
@@ -24,5 +26,4 @@ public class PrimeNumberValidator {
 		}
 		return true;
 	}
-
 }
