@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.ForkJoinPool;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import hu.ak_akademia.calculator.Calculator;
+import hu.ak_akademia.calculator.PrimeCalculatorTask;
 
 public class Main {
 
@@ -20,6 +22,7 @@ public class Main {
 		m.runMultiThread();
 		m.runParameterizedThread(6);
 		m.runStreamApi();
+		m.forkJoin();
 	}
 
 	private void runOneThread() {
@@ -103,5 +106,17 @@ public class Main {
 			System.out.println(
 					"Számolási idő StreamApi-val: " + (System.nanoTime() - startTime) / 1_000_000 + " millisecond");
 		}
+	}
+	
+	private void forkJoin() {
+		long number = 1_000_000_021L;
+        long startTime;
+        long endTime;
+        ForkJoinPool forkJoinPool = new ForkJoinPool();
+        startTime = System.nanoTime();
+        boolean prime = forkJoinPool.invoke(new PrimeCalculatorTask(number));
+        endTime = System.nanoTime();
+        System.out.println(number + ": " + (prime ? "prím" : "összetett szám"));
+        System.out.println("Számításhoz szükséges idő: " + (endTime - startTime) / 1_000_000L + " ms");
 	}
 }
