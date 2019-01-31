@@ -1,9 +1,8 @@
+.settings/
 .gitignore
 .metadata
-ABC/bin/BB\.class
-
-ABC/bin/
-/.metadata/
-/.recommenders/
-
-ABC/
+bin/
+*.class
+*.xml
+*.xmi
+*.dat
