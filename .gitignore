@@ -1,9 +1,4 @@
 .gitignore
-.metadata
-ABC/bin/BB\.class
-
-ABC/bin/
+/.class/
 /.metadata/
 /.recommenders/
-
-ABC/
