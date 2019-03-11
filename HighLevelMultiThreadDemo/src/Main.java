@@ -10,6 +10,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
@@ -18,41 +19,54 @@ public class Main {
 
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		Main m = new Main();
-		m.task1();
+//		m.task1();
+
 		m.task2();
-		m.task3();
-		m.task4();
+		/*
+		 * m.task3(); 
+		 * m.task4();
+		 */
 	}
 
-	private void task1() throws InterruptedException {
-		/*
-		 * A Runnable interfészt implementáló feladat osztály írja ki a paraméterként
-		 * kapott pozitív egész szám osztóit!
+	private void task1() {
+		/**
+		 * A Runnable interfészt implementáló osztály kiírja a paraméterben kapott
+		 * pozitív egész szám osztóit!
 		 */
 		ExecutorService executor = Executors.newSingleThreadExecutor();
-		executor.execute(new PrintDivisorsTask(1000));
-		executor.shutdown();
-		executor.awaitTermination(2L, TimeUnit.HOURS);
+		try {
+			executor.execute(new PrintDivisorsTask(1000));
+			executor.shutdown();
+			executor.awaitTermination(2L, TimeUnit.HOURS);
+		} catch (InterruptedException ie) {
+			ie.printStackTrace();
+		}
 		System.out.println("Viszlát.");
 	}
 
-	private void task2() throws InterruptedException, ExecutionException {
-		/*
+	private void task2() {
+		/**
 		 * A Callable interfészt implementáló CalculateDivisorsTask nevű feladat osztály
 		 * adja vissza a paraméterként kapott pozitív egész szám osztóinak halmazát!
 		 */
 		ExecutorService executorService = Executors.newSingleThreadExecutor();
 		Future<Set<Integer>> result = executorService.submit(new CalculateDivisorsTask(1000));
-		System.out.println(result.get());
-		executorService.awaitTermination(2L, TimeUnit.HOURS);
-		executorService.shutdown();
+		try {
+			System.out.println(result.get());
+			executorService.shutdown();
+			executorService.awaitTermination(2L, TimeUnit.HOURS);
+		} catch (InterruptedException ie) {
+			ie.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		}
 		System.out.println("Viszlát.");
 	}
 
-	private void task3() throws InterruptedException, ExecutionException {
-		/*
-		 * Írj Java programot, ami fixen 5 méretű Thread poolt használ ahhoz, hogy
-		 * lefuttassa a következő feladatot:
+	private void task3() {
+		/**
+		 * Fixen 5 méretű Thread poolt használ ahhoz, hogy lefuttassa a következő
+		 * feladatot:
 		 * 
 		 * A Callable interfészt implementáló CalculateDivisorsTask nevű feladat osztály
 		 * adja vissza a paraméterként kapott pozitív egész szám osztóinak halmazát!
@@ -68,22 +82,28 @@ public class Main {
 		ExecutorService executorService = Executors.newFixedThreadPool(5);
 		List<Integer> numbersOfList = new ArrayList<>();
 		Map<Integer, Future<Set<Integer>>> futureMap = new TreeMap<>();
-		for (int i = 0; i < 10; i++) {
-			int number = new Random().nextInt(NUMBER) + 1;
-			numbersOfList.add(number);
-			futureMap.put(number, executorService.submit(new CalculateDivisorsTask(number)));
+		try {
+			for (int i = 0; i < 10; i++) {
+				int number = new Random().nextInt(NUMBER) + 1;
+				numbersOfList.add(number);
+				futureMap.put(number, executorService.submit(new CalculateDivisorsTask(number)));
+			}
+			for (Integer integer : numbersOfList) {
+				Future<Set<Integer>> temp = futureMap.get(integer);
+				System.out.println(integer + ": " + temp.get());
+			}
+			executorService.shutdown();
+			executorService.awaitTermination(2L, TimeUnit.HOURS);
+		} catch (InterruptedException ie) {
+			ie.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
 		}
-		for (Integer integer : numbersOfList) {
-			Future<Set<Integer>> temp = futureMap.get(integer);
-			System.out.println(integer + ": " + temp.get());
-		}
-		executorService.shutdown();
-		executorService.awaitTermination(2L, TimeUnit.HOURS);
 		System.out.println("Viszlát.");
 	}
 
-	private void task4() throws InterruptedException, ExecutionException {
-		/*
+	private void task4() {
+		/**
 		 * Írj Java programot, ami fixen 5 méretű Thread poolt használ ahhoz, hogy
 		 * lefuttassa a következő feladatot:
 		 * 
@@ -104,23 +124,29 @@ public class Main {
 		ExecutorService executorService = Executors.newScheduledThreadPool(5);
 		List<Integer> numbersOfList = new ArrayList<>();
 		Map<Integer, Future<Set<Integer>>> futureMap = new TreeMap<>();
-		for (int i = 0; i < 10; i++) {
-			int number = new Random().nextInt(NUMBER) + 1;
-			numbersOfList.add(number);
-			futureMap.put(number, executorService.submit(new CalculateDivisorsTask(number)));
-		}
-		while (!futureMap.isEmpty()) {
-			for (Iterator<Entry<Integer, Future<Set<Integer>>>> iterator = futureMap.entrySet().iterator(); iterator
-					.hasNext();) {
-				Entry<Integer, Future<Set<Integer>>> next = iterator.next();
-				if (next.getValue().isDone()) {
-					System.out.println(next.getKey() + ": " + next.getValue().get());
-					iterator.remove();
+		try {
+			for (int i = 0; i < 10; i++) {
+				int number = new Random().nextInt(NUMBER) + 1;
+				numbersOfList.add(number);
+				futureMap.put(number, executorService.submit(new CalculateDivisorsTask(number)));
+			}
+			while (!futureMap.isEmpty()) {
+				for (Iterator<Entry<Integer, Future<Set<Integer>>>> iterator = futureMap.entrySet().iterator(); iterator
+						.hasNext();) {
+					Entry<Integer, Future<Set<Integer>>> next = iterator.next();
+					if (next.getValue().isDone()) {
+						System.out.println(next.getKey() + ": " + next.getValue().get());
+						iterator.remove();
+					}
 				}
 			}
+			executorService.shutdown();
+			executorService.awaitTermination(2L, TimeUnit.HOURS);
+		} catch (InterruptedException ie) {
+			ie.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
 		}
-		executorService.shutdown();
-		executorService.awaitTermination(2L, TimeUnit.HOURS);
 		System.out.println("Viszlát.");
 	}
 }
