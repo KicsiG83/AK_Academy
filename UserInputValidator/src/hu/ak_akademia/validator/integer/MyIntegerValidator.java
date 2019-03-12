@@ -1,3 +1,4 @@
+package hu.ak_akademia.validator.integer;
 import java.util.List;
 
 public interface MyIntegerValidator {

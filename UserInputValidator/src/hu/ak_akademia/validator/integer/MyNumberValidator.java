@@ -1,3 +1,4 @@
+package hu.ak_akademia.validator.integer;
 
 public class MyNumberValidator {
 
