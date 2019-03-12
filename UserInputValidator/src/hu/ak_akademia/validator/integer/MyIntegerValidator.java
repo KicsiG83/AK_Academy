@@ -1,5 +1,4 @@
 package hu.ak_akademia.validator.integer;
-import java.util.List;
 
 public interface MyIntegerValidator {
 
@@ -14,7 +13,5 @@ public interface MyIntegerValidator {
 	boolean positiveNumberValidator(boolean positiveNumber, int myNumber);
 
 	boolean higherSmallerValidator(boolean isHigher, int targetNumber, int myNumber);
-
-	boolean integerValidator(List<String> myList);
 
 }

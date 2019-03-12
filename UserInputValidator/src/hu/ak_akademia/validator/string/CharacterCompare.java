@@ -1,3 +1,4 @@
+package hu.ak_akademia.validator.string;
 
 public class CharacterCompare implements Comparable<String> {
 

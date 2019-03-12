@@ -1,24 +1,33 @@
+package hu.ak_akademia.main;
+
 import java.util.List;
 
-import UserInput.UserInput;
+import hu.ak_akademia.userinput.UserInput;
 
 public class Main {
 
 	public static void main(String[] args) {
-		new Main().run2();
+		new Main().run();
 	}
 
 	private void run() {
+		boolean isLonger = true;
+		String isNotNull = null;
+		String myPartOfWord = "lma";
+		char[] myCharacters = { 'a', 'v', 'k', 'l', 'o' };
+		int min = 1;
+		int max = 10;
+		boolean isEven = true;
+		boolean isHigher = true;
+		boolean positiveNumber = true;
+		int targetNumber = 10;
 		List<String> myList = new UserInput().getUserInput();
-		MyNumberValidator myNumberValidator = new MyNumberValidator();
-		for (String string : myList) {
-			System.out.println(myNumberValidator.validator(string));
-		}
+		new CallStringValidator(isLonger, isNotNull, myPartOfWord, myCharacters, myList).callRun();
+		new CallIntegerValidator(myList, min, max, isEven, isHigher, positiveNumber, targetNumber).callRun();
 	}
 
-	private void run2() {
-		List<String> myList = new UserInput().getUserInput();
-		System.out.println(new MyStringChecker().caseSensitiveValidator(false, myList.get(0)));
+	public static void printSeparator() {
+		System.out.println("\n-------------------------------------\n");
 	}
-	
+
 }

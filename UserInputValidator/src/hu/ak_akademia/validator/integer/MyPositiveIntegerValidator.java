@@ -1,5 +1,5 @@
 package hu.ak_akademia.validator.integer;
-import java.util.List;
+
 import java.util.Optional;
 
 public class MyPositiveIntegerValidator implements MyIntegerValidator {
@@ -38,8 +38,7 @@ public class MyPositiveIntegerValidator implements MyIntegerValidator {
 
 	@Override
 	public boolean notNullValidator(int number) {
-		Optional<Integer> num = Optional.ofNullable(number);
-		return (num.isPresent()) ? true : false;
+		return (Optional.ofNullable(number).isPresent()) ? true : false;
 	}
 
 	@Override
@@ -49,19 +48,6 @@ public class MyPositiveIntegerValidator implements MyIntegerValidator {
 		} else {
 			return (myNumber < targetNumber) ? true : false;
 		}
-	}
-
-	@Override
-	public boolean integerValidator(List<String> myList) {
-		for (String string : myList) {
-			try {
-				Integer.parseInt(string);
-				return true;
-			} catch (Exception e) {
-				return false;
-			}
-		}
-		return false;
 	}
 
 	@Override

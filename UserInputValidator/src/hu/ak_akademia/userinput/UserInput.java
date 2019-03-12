@@ -1,4 +1,4 @@
-package UserInput;
+package hu.ak_akademia.userinput;
 
 import java.util.ArrayList;
 import java.util.List;
